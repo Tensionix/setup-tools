@@ -2,20 +2,21 @@
 
 <!-- audion:release -->
 <p align="center">
-  <a href="https://audion.dev/downloads/windows-tools-by-max.mov"><img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0b6db8?style=flat-square&logo=windows&logoColor=white"></a>
-  <a href="https://github.com/Tensionix/windows-tools-by-max.mov/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/Tensionix/windows-tools-by-max.mov?style=flat-square&label=release&color=e08a63"></a>
-  <a href="https://github.com/Tensionix/windows-tools-by-max.mov/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/Tensionix/windows-tools-by-max.mov/total?style=flat-square&label=downloads&color=5fd08a"></a>
-  <a href="https://github.com/Tensionix/windows-tools-by-max.mov/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/windows-tools-by-max.mov?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
+  <a href="https://audion.dev/downloads/setup-tools-by-max.mov"><img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0b6db8?style=flat-square&logo=windows&logoColor=white"></a>
+  <a href="https://github.com/Tensionix/setup-tools-by-max.mov/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/Tensionix/setup-tools-by-max.mov?style=flat-square&label=release&color=2a7488"></a>
+  <a href="https://github.com/Tensionix/setup-tools-by-max.mov/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/Tensionix/setup-tools-by-max.mov/total?style=flat-square&label=downloads&color=5fd08a"></a>
+  <a href="https://github.com/Tensionix/setup-tools-by-max.mov/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/setup-tools-by-max.mov?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
 </p>
 
-**Version 1.11.3** · 2026-09-20 · 131.2 MB
+**Version 2.0.0** · 2026-09-27 · 87.7 MB
 
-- [Direct download](https://audion.dev/get/windows-tools-by-max.mov/1.11.3/Audion_Windows_Tools_by_Max.mov_v1.11.3_Full.zip) — unmetered, no rate limits
-- [Project page](https://audion.dev/downloads/windows-tools-by-max.mov) — every version and how to install
+- [Direct download](https://dl.audion.dev/setup-tools-by-max.mov/2.0.0/Audion_Setup_Tools_by_Max.mov_v2.0.0_Full.zip) — unmetered, no rate limits
+- [Project page](https://audion.dev/downloads/setup-tools-by-max.mov) — every version and how to install
+- [GitHub release](https://github.com/Tensionix/setup-tools-by-max.mov/releases/tag/v2.0.0)
 
-<p align="center"><img src="docs/screenshot.png" alt="The program window" width="560"></p>
+<p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: cc55754379f92494ef62bce8e0e5e9c4e5706ea8ee5ca092573b6bed73e578bf`
+`SHA-256: eae6c1b087b47f2f1712733bb9cb3b0248d4eaa14912efc42cc92e795f5a5db9`
 
 ---
 
