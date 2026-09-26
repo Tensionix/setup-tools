@@ -1,13 +1,13 @@
 # Audion Build Licenses Scan Report
 
-- Project: **Audion Windows Tools by Max.mov** (`audion-windows-tools-by-max-mov`)
-- Run: `20260918T030300Z_audion-windows-tools-by-max-mov_c94350d4`
-- Project root: `S:\Releases\Audion Windows Tools by Max.mov`
-- Scan root: `S:\Releases\Audion Windows Tools by Max.mov`
-- Output: `S:\Releases\Audion Windows Tools by Max.mov\licenses`
+- Project: **Audion Setup Tools by Max.mov** (`audion-setup-tools-by-max-mov`)
+- Run: `20260926T194925Z_audion-setup-tools-by-max-mov_95bf1feb`
+- Project root: `E:\Release\Audion Setup Tools by Max.mov`
+- Scan root: `E:\Release\Audion Setup Tools by Max.mov`
+- Output: `E:\Release\Audion Setup Tools by Max.mov\licenses`
 - Status: **PASS**
-- Components: 2
-- Bundled: 2
+- Components: 1
+- Bundled: 1
 - Optional runtime: 0
 
 ## Issues
@@ -18,8 +18,7 @@ No issues detected.
 
 | Component | Change | Old | New |
 |---|---|---:|---:|
-| Audion launcher | `NEW_COMPONENT_APPROVED_PROFILE` | - | bundled |
-| PowerShell | `UNCHANGED` | portable | portable |
+| Audion launcher | `VERSION_OR_ARTIFACT_CHANGED_LICENSE_SAME` | bundled | bundled |
 
 ## Scope
 

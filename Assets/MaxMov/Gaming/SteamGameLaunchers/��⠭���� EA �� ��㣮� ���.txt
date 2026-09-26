@@ -1,1 +1,0 @@
-.\EAappInstaller.exe /i DefaultInstallFolder="D:\Gaming\EA Games" 

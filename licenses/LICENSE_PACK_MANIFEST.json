@@ -1,36 +1,36 @@
 {
   "schema": "audion.build_licenses.pack_manifest.v1",
-  "generated_utc": "2026-09-18T03:03:00Z",
-  "run_id": "20260918T030300Z_audion-windows-tools-by-max-mov_c94350d4",
-  "project_id": "audion-windows-tools-by-max-mov",
-  "project_name": "Audion Windows Tools by Max.mov",
-  "scan_root": "S:\\Releases\\Audion Windows Tools by Max.mov",
-  "output_dir": "S:\\Releases\\Audion Windows Tools by Max.mov\\licenses",
+  "generated_utc": "2026-09-26T19:49:25Z",
+  "run_id": "20260926T194925Z_audion-setup-tools-by-max-mov_95bf1feb",
+  "project_id": "audion-setup-tools-by-max-mov",
+  "project_name": "Audion Setup Tools by Max.mov",
+  "scan_root": "E:\\Release\\Audion Setup Tools by Max.mov",
+  "output_dir": "E:\\Release\\Audion Setup Tools by Max.mov\\licenses",
   "files": [
     {
       "name": "THIRD_PARTY_NOTICES.txt",
-      "sha256": "142cff0f30347252094ece2f413936b44228060587b58418be6e95e1d6f0f364",
-      "size": 3519
+      "sha256": "a4d57267516fbd64d8adc02d7d5ececd15f982a3880111f2c717d02478292694",
+      "size": 1809
     },
     {
       "name": "SOURCE_CODE_AVAILABILITY.txt",
-      "sha256": "e5b6cf14f28f1a957fdbcdd28f970174fcb0f4bfc13a7476ad41ac0879649569",
-      "size": 672
+      "sha256": "b0be807d5fd6bdb5f29e8758b079b349ea44747a399e92413386e1408ab9259c",
+      "size": 668
     },
     {
       "name": "COMPONENTS.json",
-      "sha256": "9a41d073431fe89c7ce9a28b3188cca56e54f7c88984625b9a7d6112a4dd574c",
-      "size": 3342
+      "sha256": "251650b02d4659104d8b62d50e7356478dd584e1cb6d2cdb24aad13d4fa354bc",
+      "size": 1794
     },
     {
       "name": "_records.json",
-      "sha256": "15fa01eb9e7a5ffb8245a9f86f422dc5181f62905df7e719e3c39b13bd5d8305",
-      "size": 809
+      "sha256": "4fa1831928cc7050917a072b15b3fa59359db7b737931b65a08706391270b47a",
+      "size": 415
     },
     {
       "name": "LICENSE_SCAN_REPORT.md",
-      "sha256": "566e60250a0493209207969e0cbea46010dd53852c57975f7b69839ae8202979",
-      "size": 825
+      "sha256": "331ab94bea3c83c7d0499d1cb287dd84e82dc8e7e4e81242de2ec0308ad9d133",
+      "size": 775
     }
   ]
 }

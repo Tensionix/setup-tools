@@ -1,9 +1,9 @@
 {
   "schema": "audion.build_licenses.components.v1",
-  "generated_utc": "2026-09-18T03:03:00Z",
-  "project_id": "audion-windows-tools-by-max-mov",
-  "project_name": "Audion Windows Tools by Max.mov",
-  "scan_root": "S:\\Releases\\Audion Windows Tools by Max.mov",
+  "generated_utc": "2026-09-26T19:49:25Z",
+  "project_id": "audion-setup-tools-by-max-mov",
+  "project_name": "Audion Setup Tools by Max.mov",
+  "scan_root": "E:\\Release\\Audion Setup Tools by Max.mov",
   "components": [
     {
       "id": "audion-launcher",
@@ -15,7 +15,7 @@
       "bundled": true,
       "optional_runtime": false,
       "provider": "",
-      "artifact_sha256": "8a6ae838fa66b3cdfdae6ea83488bab7bd73e9bfd9a88f7092553258edb5d5fe",
+      "artifact_sha256": "fec6518109375f4460c6a464023afcd9ee1ac8d40698aef3fd9bcde448ccc47f",
       "artifact_path": "Start.exe",
       "obligation_class": "permissive",
       "redistributable": true,
@@ -24,7 +24,7 @@
         {
           "sha256": "f9aa24d322c0d39ff478dbcd0b3df9fa5514a44419e33fde66421029ec02a985",
           "display_name": "NOTICE-Audion-Launcher.md",
-          "source_path": "S:\\TOOLS\\Audion Build Licenses\\workspace\\runs\\20260918T030300Z_audion-windows-tools-by-max-mov_c94350d4\\collector_legal_files\\audion-launcher-bundled\\NOTICE-Audion-Launcher.md",
+          "source_path": "E:\\TOOLS\\Audion Build Licenses\\workspace\\runs\\20260926T194925Z_audion-setup-tools-by-max-mov_95bf1feb\\collector_legal_files\\audion-launcher-bundled\\NOTICE-Audion-Launcher.md",
           "raw_size": 419
         }
       ],
@@ -45,48 +45,6 @@
         }
       },
       "license_fingerprint": "3d34b48b986e72171636407e8241394892758ca2f4b323dd5023b828569cea85"
-    },
-    {
-      "id": "powershell",
-      "name": "PowerShell",
-      "normalized_name": "powershell",
-      "version": "portable",
-      "license_summary": "MIT",
-      "source_kind": "baseline-runtime",
-      "bundled": true,
-      "optional_runtime": false,
-      "provider": "",
-      "artifact_sha256": "c76d329e32a1ec350582af6098f3701497ebee6620a0e84d3fc51ac54ef0aa0c",
-      "artifact_path": "Engine/PowerShell/pwsh.exe",
-      "obligation_class": "permissive",
-      "redistributable": true,
-      "source_reference": null,
-      "legal_documents": [
-        {
-          "sha256": "7c77a44a8acd9b41fdc209864a8016b3d430b5d0e09309818d5b7444336df744",
-          "display_name": "LICENSE-PowerShell.txt",
-          "source_path": "S:\\TOOLS\\Audion Build Licenses\\workspace\\runs\\20260918T030300Z_audion-windows-tools-by-max-mov_c94350d4\\collector_legal_files\\powershell-portable\\LICENSE-PowerShell.txt",
-          "raw_size": 1095
-        }
-      ],
-      "metadata": {
-        "manifest": {
-          "name": "PowerShell",
-          "version": "portable",
-          "license": "MIT",
-          "source": "baseline-runtime",
-          "whenPathExists": [
-            "Engine/PowerShell/pwsh.exe",
-            "system_core/powershell/pwsh.exe"
-          ],
-          "files": [
-            "files/LICENSE-PowerShell.txt"
-          ],
-          "obligation_class": "permissive",
-          "redistributable": true
-        }
-      },
-      "license_fingerprint": "d0683d9983a55f60dd8ef9ea38091fb4a6bc54ede806b3e832ec73fb2cd3c143"
     }
   ]
 }
