@@ -10,13 +10,13 @@
 
 **Version 2.0.0** · 2026-09-27 · 87.7 MB
 
-- [Direct download](https://dl.audion.dev/setup-tools-by-max.mov/2.0.0/Audion_Setup_Tools_by_Max.mov_v2.0.0_Full.zip) — unmetered, no rate limits
+- [Direct download](https://dl.audion.dev/setup-tools-by-max.mov/2.0.0/Audion_Setup_Tools_by_Max.mov_v2.0.0.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/setup-tools-by-max.mov) — every version and how to install
 - [GitHub release](https://github.com/Tensionix/setup-tools-by-max.mov/releases/tag/v2.0.0)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: eae6c1b087b47f2f1712733bb9cb3b0248d4eaa14912efc42cc92e795f5a5db9`
+`SHA-256: db47d1ae36f86161a924a58034257e36192fb34ad5cb3d64502168cd3400ed81`
 
 ---
 
