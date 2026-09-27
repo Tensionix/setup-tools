@@ -2,20 +2,21 @@
 
 <!-- audion:release -->
 <p align="center">
-  <a href="https://audion.dev/downloads/setup-tools-by-max.mov"><img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0b6db8?style=flat-square&logo=windows&logoColor=white"></a>
-  <a href="https://github.com/Tensionix/setup-tools-by-max.mov/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/Tensionix/setup-tools-by-max.mov?style=flat-square&label=release&color=2a7488"></a>
-  <a href="https://github.com/Tensionix/setup-tools-by-max.mov/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/Tensionix/setup-tools-by-max.mov/total?style=flat-square&label=downloads&color=5fd08a"></a>
-  <a href="https://github.com/Tensionix/setup-tools-by-max.mov/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/setup-tools-by-max.mov?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
+  <a href="https://audion.dev/downloads/setup-tools"><img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0b6db8?style=flat-square&logo=windows&logoColor=white"></a>
+  <a href="https://github.com/Tensionix/setup-tools/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/Tensionix/setup-tools?style=flat-square&label=release&color=2a7488"></a>
+  <a href="https://github.com/Tensionix/setup-tools/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/Tensionix/setup-tools/total?style=flat-square&label=downloads&color=5fd08a"></a>
+  <a href="https://github.com/Tensionix/setup-tools/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/setup-tools?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
 </p>
 
-**Version 2.1.0** · 2026-09-27 · 88.2 MB
+**Version 2.3.2** · 2026-09-28 · 88.2 MB
 
-- [Direct download](https://audion.dev/get/setup-tools-by-max.mov/2.1.0/Audion_Setup_Tools_by_Max.mov_v2.1.0_Full.zip) — unmetered, no rate limits
-- [Project page](https://audion.dev/downloads/setup-tools-by-max.mov) — every version and how to install
+- [Direct download](https://dl.audion.dev/setup-tools/2.3.2/Audion_Setup_Tools_v2.3.2_Full.zip) — unmetered, no rate limits
+- [Project page](https://audion.dev/downloads/setup-tools) — every version and how to install
+- [GitHub release](https://github.com/Tensionix/setup-tools/releases/tag/v2.3.2)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: ae5f32aab26d6eb825cdcc94f33ee851701716937fa7397e95cbaa620857e901`
+`SHA-256: 24eb08ec277f21c9dd9dec650695175262aaa587c32577e5bc8f5055a9091779`
 
 ---
 
