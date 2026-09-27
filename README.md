@@ -10,13 +10,13 @@
 
 **Version 2.3.2** · 2026-09-28 · 88.2 MB
 
-- [Direct download](https://dl.audion.dev/setup-tools/2.3.2/Audion_Setup_Tools_v2.3.2_Full.zip) — unmetered, no rate limits
+- [Direct download](https://dl.audion.dev/setup-tools/2.3.2/Audion_Setup_Tools_v2.3.2.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/setup-tools) — every version and how to install
 - [GitHub release](https://github.com/Tensionix/setup-tools/releases/tag/v2.3.2)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: 24eb08ec277f21c9dd9dec650695175262aaa587c32577e5bc8f5055a9091779`
+`SHA-256: 9c69a3f82351ea2e5ef4cd5822aaab853b9763f7fc2e5705b80158c7345a55a4`
 
 ---
 
