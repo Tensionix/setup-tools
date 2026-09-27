@@ -1,4 +1,4 @@
-# Audion Setup Tools by Max.mov
+# Audion Setup Tools
 
 [English README](README_EN.md) · [User Guide](USER_GUIDE_EN.md) | [Русский README](README_RU.md) · [Руководство](USER_GUIDE_RU.md)
 
@@ -24,6 +24,10 @@
   - [12 · Мышь и Клавиатура](#12--мышь-и-клавиатура)
   - [13 · Max.mov Tweaks](#13--maxmov-tweaks)
 - [Дальше](#дальше)
+
+*inspired by Max.mov*
+
+[English](README_EN.md) · [Руководство](USER_GUIDE_RU.md)
 
 Интерактивный спутник большого руководства по настройке Windows — и
 самостоятельный помощник по подготовке рабочей станции.
@@ -70,12 +74,12 @@ PowerShell 7 и .NET внутри программы.
 * Программа работает от администратора, но страницы и сайты открываются от
   вашего имени — в вашем браузере, с вашими расширениями и аккаунтами.
 
-Раньше называлась Audion Windows Tools by Max.mov (1.x).
+Раньше называлась Audion Setup Tools (2.0-2.1) и Audion Windows Tools by Max.mov (1.x).
 
 <!-- section-map -->
 ## Карта разделов
 
-Разделов 14, подразделов 71, карточек 333 — в том порядке, в каком их показывает программа. Подробно о каждой карточке — в [руководстве](USER_GUIDE_RU.md).
+Разделов 14, подразделов 90, карточек 333 — в том порядке, в каком их показывает программа. Подробно о каждой карточке — в [руководстве](USER_GUIDE_RU.md).
 
 ### 00 · Установка Windows
 
@@ -84,7 +88,7 @@ PowerShell 7 и .NET внутри программы.
 - **Чипсетный и сетевой драйверы** — Примечание Intel VMD / RST: диски могут не отображаться при установке · Скачать чипсетный драйвер AMD · Скачать Intel chipset INF driver (только для старых чипсетов, доступность сайта зависит от региона) · Скачать драйвер Intel RST · Скачать драйверы с сайта производителя материнской платы · Сетевые драйверы Broadcom / Realtek / Intel Killer (другие производители)
 - **Создание установочного носителя** — Скачать установочный носитель Windows 11 (Media Creation Tool, доступность зависит от региона) · Скачать официальный ISO-образ Windows 11 (доступность зависит от региона) · Скачать Windows 11 через UUP Dump (доступно там, где загрузка Microsoft закрыта) · Скачать Rufus (создание загрузочного USB) · Создать загрузочный USB-носитель для установки
 - **Установка без USB (опционально)** — Примечание: не рекомендуется при переходе с Legacy на UEFI · Открыть Управление дисками для создания установочного раздела · Устранение проблем: невозможно сжать том (журнал USN / файл подкачки) · Проверить Просмотр событий если сжатие не удаётся · Установка без USB: метод CMD (копирование файлов ISO на раздел Win11) · Скачать EasyBCD (метод без USB 2) · Установка без USB: метод EasyBCD
-- **Перенести архив Max.mov на USB / другой диск** — Перенести архив Audion Setup Tools by Max.mov и драйверы на USB или отдельный диск
+- **Перенести архив Max.mov на USB / другой диск** — Перенести архив Audion Setup Tools и драйверы на USB или отдельный диск
 - **Настройки BIOS** — Примечание AMD: виртуализация может называться SVM или AMD-V · Отключить предустановленное ПО производителя (MSI Center, ASUS Armoury Crate и др.) · Отключить поддержку CSM и включить Secure Boot · Включить TPM 2.0 (Intel PTT, AMD fTPM или физический модуль TPM) · Отключить неиспользуемые устройства (аудио, iGPU если не нужен) — только для десктопа · Отключить виртуализацию (если не нужна) — отключает VBS · Отключить неиспользуемые диски в BIOS (если поддерживается) · Включить режим PWM для 4-контактных вентиляторов
 - **Важные примечания перед установкой** — ПК снова запускает установщик вместо OOBE — прочитайте это
 - **Новый метод установки драйверов и обход аккаунта Microsoft** — Посмотреть видеогайд: новый метод установки драйверов во время OOBE · Установить драйверы во время OOBE (до интернета, без аккаунта Microsoft)
@@ -93,12 +97,31 @@ PowerShell 7 и .NET внутри программы.
 ### 01 · Установка драйверов
 
 - **Примечания по установке** — Примечание v0.4 — пропустите этот раздел, если драйверы установлены при OOBE · Открыть Диспетчер устройств
-- **Драйверы NVIDIA** — Скачать драйвер NVIDIA Game Ready · Скачать драйвер NVIDIA Studio · NVIDIA App — обновления драйверов и оптимизация игр · NVCleanstall — минималистичный установщик драйвера NVIDIA · Установить драйвер GPU NVIDIA (чисто, без лишнего ПО) · DDU — полное удаление драйвера дисплея · Удалить старый драйвер GPU через DDU
-- **Драйверы AMD** — Скачать официальный графический драйвер AMD · Скачать официальный чипсетный драйвер AMD · Установить графический и чипсетный драйверы AMD
-- **Драйверы Intel** — Установить Intel Driver & Support Assistant через winget · Intel Driver & Support Assistant — официальная страница · Скачать драйвер Intel Arc / встроенной графики · Скачать Intel Chipset INF (Chipset Device Software) · Скачать драйвер Intel Management Engine · Скачать Intel RST driver
-- **Драйверы Qualcomm Snapdragon** — Скачать графический драйвер Qualcomm Snapdragon X
-- **Wi-Fi и сетевые драйверы** — Открыть страницу поддержки материнской платы / ноутбука · Установить чипсетный и сетевой драйверы · Драйверы Wi-Fi адаптеров Realtek · Драйверы сетевых карт Realtek (PCIe GbE / 2.5GbE) · Драйверы Bluetooth Realtek · Драйверы Intel Wireless Wi-Fi · Драйверы Intel Wireless Bluetooth · Сетевые драйверы Intel Ethernet · MediaTek / MTK Wi-Fi — где искать драйвер · MediaTek Wi-Fi драйверы — Microsoft Update Catalog · Драйверы Bluetooth MediaTek · Драйверы Wi-Fi Qualcomm (FastConnect, Atheros, Killer) · Драйверы Bluetooth Qualcomm · Драйверы Wi-Fi Broadcom · Драйверы Bluetooth Broadcom · Драйверы сетевых карт Broadcom (NetXtreme) · Драйверы сетевых карт Marvell AQtion (Aquantia 5G / 10G) · Драйверы сетевых карт Killer (E2xxx, E3xxx) · Драйверы Wi-Fi Killer · Включить Wi-Fi или подключить кабель Ethernet
-- **Аудиодрайверы** — Скачать аудиодрайвер Realtek
+- **Подключение к сети · Windows** — Включить Wi-Fi или подключить кабель Ethernet
+- **Видеокарты · NVIDIA** — Скачать драйвер NVIDIA Game Ready · Скачать драйвер NVIDIA Studio · NVIDIA App — обновления драйверов и оптимизация игр · NVCleanstall — минималистичный установщик драйвера NVIDIA · Установить драйвер GPU NVIDIA (чисто, без лишнего ПО) · DDU — полное удаление драйвера дисплея · Удалить старый драйвер GPU через DDU
+- **Видеокарты · AMD** — Скачать официальный графический драйвер AMD · Установить графический и чипсетный драйверы AMD
+- **Видеокарты · Intel** — Скачать драйвер Intel Arc / встроенной графики
+- **Видеокарты · Qualcomm Snapdragon** — Скачать графический драйвер Qualcomm Snapdragon X
+- **Чипсет · Плата или ноутбук** — Открыть страницу поддержки материнской платы / ноутбука · Установить чипсетный и сетевой драйверы
+- **Чипсет · Intel** — Скачать Intel Chipset INF (Chipset Device Software) · Скачать драйвер Intel Management Engine · Скачать Intel RST driver · Установить Intel Driver & Support Assistant через winget · Intel Driver & Support Assistant — официальная страница
+- **Чипсет · AMD** — Скачать официальный чипсетный драйвер AMD
+- **Сетевые карты (LAN) · Intel** — Сетевые драйверы Intel Ethernet
+- **Сетевые карты (LAN) · Realtek** — Драйверы сетевых карт Realtek (от 1G до 10G, USB-адаптеры)
+- **Сетевые карты (LAN) · Killer** — Драйверы сетевых карт Killer (E2xxx, E3xxx)
+- **Сетевые карты (LAN) · Broadcom** — Драйверы сетевых карт Broadcom (NetXtreme)
+- **Сетевые карты (LAN) · Marvell AQtion** — Драйверы сетевых карт Marvell AQtion (Aquantia 5G / 10G)
+- **Wi-Fi · Intel** — Драйверы Intel Wireless Wi-Fi
+- **Wi-Fi · Realtek** — Драйверы Wi-Fi адаптеров Realtek
+- **Wi-Fi · MediaTek** — MediaTek Wi-Fi драйверы — Microsoft Update Catalog · MediaTek / MTK Wi-Fi — где искать драйвер
+- **Wi-Fi · Qualcomm** — Драйверы Wi-Fi Qualcomm (FastConnect, Atheros, Killer)
+- **Wi-Fi · Broadcom** — Драйверы Wi-Fi Broadcom
+- **Wi-Fi · Killer** — Драйверы Wi-Fi Killer
+- **Bluetooth · Intel** — Драйверы Intel Wireless Bluetooth
+- **Bluetooth · Realtek** — Драйверы Bluetooth Realtek
+- **Bluetooth · MediaTek** — Драйверы Bluetooth MediaTek
+- **Bluetooth · Qualcomm** — Драйверы Bluetooth Qualcomm
+- **Bluetooth · Broadcom** — Драйверы Bluetooth Broadcom
+- **Звук · Realtek** — Скачать аудиодрайвер Realtek
 
 ### 02 · Обновление системы
 

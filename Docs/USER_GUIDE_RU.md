@@ -1,4 +1,4 @@
-# Audion Setup Tools by Max.mov
+# Audion Setup Tools
 
 **Содержание**
 
@@ -60,7 +60,7 @@
 |---|---|
 | ПРИМЕНИТЬ / УСТАНОВИТЬ / ЗАПУСТИТЬ | Основное действие: применить настройку, поставить программу через winget, запустить скрипт |
 | ОТКРЫТЬ В WINDOWS | Страница «Параметров», Проводник или оснастка Windows |
-| ВЕРСИИ | У драйверов NVIDIA и всего, что берётся с TechPowerUp: под кнопками карточки раскрывается список версий, которые есть у источника — дата, размер, установщик или портативная. Обычный выбор уже отмечен: у NVIDIA новейшая золотая версия (★ — стабильные LTS-версии по оценкам пользователей, список `NvidiaGolden` в `Manifests\Downloads.psd1`, как в Audion Get Tools) для серии этой видеокарты, у TechPowerUp — новейший выпуск. Отметьте нужное и нажмите СКАЧАТЬ: список закроется, скачивание идёт в журнале, файлы TechPowerUp сверяются по SHA256. Беты не показываются: кому нужна бета, тот берёт её на сайте. У чипсета Intel отмечен пакет, в котором есть INF устройств Intel этого ПК (метка ДЛЯ ЭТОГО ПК); у каждого установщика Intel проверяется подпись Intel Corporation. Intel ME и RST, сеть, Wi-Fi, Bluetooth и звук Realtek, Wi-Fi и Bluetooth MediaTek и Qualcomm берутся из каталога обновлений Microsoft по коду устройства этого ПК; отмечается только версия новее установленной: драйверы WHQL без программ Intel, установленная версия помечена (УСТАНОВЛЕНА), скачанное распаковывается в папку с INF, а в журнале — команда установки |
+| ВЕРСИИ | У драйверов NVIDIA и всего, что берётся с TechPowerUp: под кнопками карточки раскрывается список версий, которые есть у источника — дата, размер, установщик или портативная. Обычный выбор уже отмечен: у NVIDIA новейшая золотая версия (★ — стабильные LTS-версии по оценкам пользователей, список `NvidiaGolden` в `Manifests\Downloads.psd1`, как в Audion Get Tools) для серии этой видеокарты, у TechPowerUp — новейший выпуск. Над списком NVIDIA — чипы поколений, на которых NVIDIA обрывала поддержку: RTX · GTX 16 (поддерживаются сейчас), GTX 10 · 900 (последняя ветка 580), GTX 700 · 600 (ветка 470), GTX 500 · 400 (391.35, Windows 10); у Studio — только первые два, Studio-драйверы начались с Pascal. Чип видеокарты этого ПК помечен точкой; в чужом поколении и без карты NVIDIA ничего не отмечается. Отметьте нужное и нажмите СКАЧАТЬ: список закроется, скачивание идёт в журнале, файлы TechPowerUp сверяются по SHA256. Беты не показываются: кому нужна бета, тот берёт её на сайте. Справа в заголовке такой карточки — бейдж версий: «установлена 101.7085 · последняя 101.8991» (последняя янтарём — есть новее), «установлена последняя» зелёным или просто «последняя», если такого устройства на ПК нет. Программа спрашивает источники в фоне, сначала для открытого раздела, и помнит ответы шесть часов; после скачивания или установки карточка спрашивается снова. У чипсета Intel отмечен пакет, в котором есть INF устройств Intel этого ПК (метка ДЛЯ ЭТОГО ПК); у каждого установщика Intel проверяется подпись Intel Corporation. Intel ME и RST, сеть, Wi-Fi, Bluetooth и звук Realtek, Wi-Fi и Bluetooth MediaTek и Qualcomm берутся из каталога обновлений Microsoft по коду устройства этого ПК; отмечается только версия новее установленной: драйверы WHQL без программ Intel, установленная версия помечена (УСТАНОВЛЕНА), скачанное распаковывается в папку с INF, а в журнале — команда установки |
 | УСТАНОВЩИК | Скачивает последний выпуск программы в `Загрузки\Audion Setup Tools\<программа>` и показывает его в Проводнике |
 | ПОРТАТИВНАЯ | Скачивает портативную версию и распаковывает в `Загрузки\Audion Setup Tools\<программа>\Portable` — без установки |
 | УСТАНОВИТЬ (у программ для скачивания) | Скачивает установщик и ставит программу без вопросов |
@@ -96,7 +96,7 @@
 ## Структура проекта
 
 ```text
-Audion Setup Tools by Max.mov/
+Audion Setup Tools/
 ├── Start.exe                     # запуск: спрашивает UAC и открывает программу
 ├── Bin/                          # программа AudionSetupTools.exe со встроенными PowerShell 7 и .NET
 ├── Engine/
@@ -136,7 +136,7 @@ Audion Setup Tools by Max.mov/
 ## Полная карта разделов и функций
 
 <!-- card-map:start -->
-Карта собрана из манифестов программой `Docs\tools\Build-GuideMap.ps1` — руками её не правят. Разделов 14, подразделов 71, карточек 333. Типы: deeplink=59, docs=1, feature=1, link=137, manual=74, powerscheme=9, registry=17, script=34, service=1.
+Карта собрана из манифестов программой `Docs\tools\Build-GuideMap.ps1` — руками её не правят. Разделов 14, подразделов 90, карточек 333. Типы: deeplink=59, docs=1, feature=1, link=137, manual=74, powerscheme=9, registry=17, script=34, service=1.
 
 ### 0. Установка Windows
 
@@ -285,10 +285,10 @@ Audion Setup Tools by Max.mov/
 
 #### 0.5 Перенести архив Max.mov на USB / другой диск
 
-- **Перенести архив Audion Setup Tools by Max.mov и драйверы на USB или отдельный диск** (`move-archive-reminder` · ручной шаг · из гайда Max.mov)
-  - Описание: Перед переустановкой Windows убедитесь, что папка «Audion Setup Tools by Max.mov» и все скачанные установщики драйверов сохранены на USB-накопитель или несистемный раздел (например, D:). При нахождении на диске C: они будут уничтожены.
+- **Перенести архив Audion Setup Tools и драйверы на USB или отдельный диск** (`move-archive-reminder` · ручной шаг · из гайда Max.mov)
+  - Описание: Перед переустановкой Windows убедитесь, что папка «Audion Setup Tools» и все скачанные установщики драйверов сохранены на USB-накопитель или несистемный раздел (например, D:). При нахождении на диске C: они будут уничтожены.
   - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
-  - Инструкция: Скопируйте всю папку «Audion Setup Tools by Max.mov» и все установщики драйверов на USB-флешку или раздел второго диска (НЕ C:). Убедитесь, что они доступны перед началом установки Windows.
+  - Инструкция: Скопируйте всю папку «Audion Setup Tools» и все установщики драйверов на USB-флешку или раздел второго диска (НЕ C:). Убедитесь, что они доступны перед началом установки Windows.
 
 #### 0.6 Настройки BIOS
 
@@ -392,7 +392,17 @@ Audion Setup Tools by Max.mov/
   - Кнопки: ОТКРЫТЬ В WINDOWS
   - Инструкция: Проверьте «Видеоадаптеры», «Сетевые адаптеры», Bluetooth, «Контроллеры запоминающих устройств» и «Другие устройства». Неизвестные устройства обычно означают отсутствующий драйвер чипсета, Wi-Fi, Bluetooth или накопителя.
 
-#### 1.2 Драйверы NVIDIA
+#### 1.1 Подключение к сети · Windows
+
+Подраздел из гайда Max.mov.
+
+- **Включить Wi-Fi или подключить кабель Ethernet** (`enable-network` · страница Windows · из гайда Max.mov)
+  - Описание: Откройте расширенные параметры сети для проверки и настройки сетевого адаптера после установки драйверов.
+  - Что делает: Открывает в Windows: `ms-settings:network-advancedsettings`
+  - Кнопки: ОТКРЫТЬ В WINDOWS
+  - Инструкция: Убедитесь, что сетевой адаптер отображается и активен. Подключитесь через Ethernet или включите Wi-Fi.
+
+#### 1.2 Видеокарты · NVIDIA
 
 Подраздел из гайда Max.mov.
 
@@ -425,7 +435,7 @@ Audion Setup Tools by Max.mov/
   - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
   - Инструкция: 1. Скачайте DDU. 2. Загрузитесь в безопасном режиме (Shift → Перезагрузка → Диагностика → Дополнительные параметры → Параметры запуска → Безопасный режим с сетевыми драйверами). 3. Запустите DDU, выберите тип GPU (NVIDIA/AMD/Intel), нажмите «Clean and restart». 4. После перезагрузки установите новый драйвер из раздела нужного вендора.
 
-#### 1.3 Драйверы AMD
+#### 1.3 Видеокарты · AMD
 
 Подраздел из гайда Max.mov.
 
@@ -433,32 +443,44 @@ Audion Setup Tools by Max.mov/
   - Описание: Официальная страница AMD Drivers and Support. Используйте её для Radeon, Ryzen с графикой и AMD auto-detect tool.
   - Что делает: Открывает сайт в вашем браузере: `https://www.amd.com/en/support/download/drivers.html`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Скачать официальный чипсетный драйвер AMD** (`download-amd-chipset-driver` · ссылка)
-  - Описание: Официальная страница AMD Drivers and Support. Здесь доступны чипсетные драйверы для desktop и laptop платформ AMD.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.amd.com/en/support/download/drivers.html`
-  - Кнопки: ВЕРСИИ, САЙТ
 - **Установить графический и чипсетный драйверы AMD** (`install-amd-drivers` · ручной шаг · нужны права администратора · нужна перезагрузка · **НЕОБХОДИМО**)
   - Описание: Установите графические и чипсетные пакеты AMD с официальной страницы AMD или со страницы поддержки материнской платы/ноутбука.
   - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
   - Инструкция: Для Radeon используйте AMD Drivers and Support или AMD Auto-Detect. Для чипсета AMD выберите Chipsets на странице AMD или используйте страницу поддержки платы/ноутбука. После установки перезагрузитесь.
 
-#### 1.4 Драйверы Intel
+#### 1.4 Видеокарты · Intel
 
 Подраздел из гайда Max.mov.
 
-- **Установить Intel Driver & Support Assistant через winget** (`install-intel-dsa-winget` · скрипт · нужны права администратора)
-  - Описание: Устанавливает Intel Driver & Support Assistant через winget для поиска обновлений Intel graphics, Wi-Fi, Bluetooth, chipset и storage.
-  - Что делает: Ставит или обновляет через winget: `Intel.IntelDriverAndSupportAssistant`.
-  - Кнопки: УСТАНОВИТЬ / ОБНОВИТЬ
-  - Примечание: Устанавливает или обновляет Intel DSA через winget.
-- **Intel Driver & Support Assistant — официальная страница** (`download-intel-dsa` · ссылка)
-  - Описание: Официальная утилита Intel auto-detect. Показывает список доступных обновлений для найденных продуктов Intel.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/support/detect.html`
-  - Кнопки: УСТАНОВЩИК, САЙТ
 - **Скачать драйвер Intel Arc / встроенной графики** (`download-intel-graphics-driver` · ссылка)
   - Описание: Официальная страница драйвера Intel Arc и встроенной графики Intel для Windows.
   - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html`
   - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.5 Видеокарты · Qualcomm Snapdragon
+
+- **Скачать графический драйвер Qualcomm Snapdragon X** (`download-snapdragon-graphics-driver` · ссылка)
+  - Описание: Графический драйвер Adreno для ноутбуков на Snapdragon X, все выпуски с TechPowerUp; отмечается только на ПК со Snapdragon.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.techpowerup.com/download/qualcomm-snapdragon-x-graphics-drivers/`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.6 Чипсет · Плата или ноутбук
+
+Подраздел из гайда Max.mov.
+
+- **Открыть страницу поддержки материнской платы / ноутбука** (`motherboard-laptop-support-page` · ручной шаг)
+  - Описание: Скачайте чипсетные, LAN, Wi-Fi, Bluetooth и storage-драйверы со страницы поддержки точной модели платы или ноутбука.
+  - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
+  - Инструкция: Найдите точную модель платы или ноутбука на сайте ASUS/MSI/Gigabyte/ASRock/Lenovo/HP/Dell. Скачайте chipset, LAN/Wi-Fi, Bluetooth, audio и storage драйверы под вашу версию Windows.
+- **Установить чипсетный и сетевой драйверы** (`install-chipset-network-driver` · ручной шаг · нужны права администратора · нужна перезагрузка · **НЕОБХОДИМО**)
+  - Описание: Скачайте и установите чипсетный драйвер материнской платы и оставшиеся сетевые/LAN драйверы с сайта производителя платы.
+  - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
+  - Инструкция: Зайдите на сайт производителя вашей материнской платы (ASUS, MSI, Gigabyte, ASRock), найдите свою модель, скачайте чипсетный и сетевой драйверы, установите их по порядку. Ссылки ниже — дополнительные shortcuts для популярных производителей Wi-Fi адаптеров.
+
+#### 1.7 Чипсет · Intel
+
+Подраздел из гайда Max.mov.
+
 - **Скачать Intel Chipset INF (Chipset Device Software)** (`download-intel-chipset-inf-driver` · ссылка)
   - Описание: Все пакеты чипсета Intel начиная с 10.0.13. Устройства Intel этого ПК сами выбирают пакет, в котором есть их INF: старые платформы (от Sandy Bridge до Broadwell, X79/X99) есть только в 10.1.18981.6008, ранние Xeon Scalable — в серверном пакете. INF в основном даёт устройствам имена в Диспетчере; современные чипсеты получают его и через Windows Update.
   - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/19347/chipset-inf-utility.html`
@@ -471,101 +493,142 @@ Audion Setup Tools by Max.mov/
   - Описание: Драйвер Intel Rapid Storage Technology. Нужен только если SSD не определяется при установке Windows или система использует VMD/RST.
   - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/15667/intel-rapid-storage-technology-intel-rst-driver-installation-software-with-intel-optane-memory.html`
   - Кнопки: ВЕРСИИ, САЙТ
+- **Установить Intel Driver & Support Assistant через winget** (`install-intel-dsa-winget` · скрипт · нужны права администратора)
+  - Описание: Устанавливает Intel Driver & Support Assistant через winget для поиска обновлений Intel graphics, Wi-Fi, Bluetooth, chipset и storage.
+  - Что делает: Ставит или обновляет через winget: `Intel.IntelDriverAndSupportAssistant`.
+  - Кнопки: УСТАНОВИТЬ / ОБНОВИТЬ
+  - Примечание: Устанавливает или обновляет Intel DSA через winget.
+- **Intel Driver & Support Assistant — официальная страница** (`download-intel-dsa` · ссылка)
+  - Описание: Официальная утилита Intel auto-detect. Показывает список доступных обновлений для найденных продуктов Intel.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/support/detect.html`
+  - Кнопки: УСТАНОВЩИК, САЙТ
 
-#### 1.5 Драйверы Qualcomm Snapdragon
-
-- **Скачать графический драйвер Qualcomm Snapdragon X** (`download-snapdragon-graphics-driver` · ссылка)
-  - Описание: Графический драйвер Adreno для ноутбуков на Snapdragon X, все выпуски с TechPowerUp; отмечается только на ПК со Snapdragon.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.techpowerup.com/download/qualcomm-snapdragon-x-graphics-drivers/`
-  - Кнопки: ВЕРСИИ, САЙТ
-
-#### 1.6 Wi-Fi и сетевые драйверы
+#### 1.8 Чипсет · AMD
 
 Подраздел из гайда Max.mov.
 
-- **Открыть страницу поддержки материнской платы / ноутбука** (`motherboard-laptop-support-page` · ручной шаг)
-  - Описание: Скачайте чипсетные, LAN, Wi-Fi, Bluetooth и storage-драйверы со страницы поддержки точной модели платы или ноутбука.
-  - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
-  - Инструкция: Найдите точную модель платы или ноутбука на сайте ASUS/MSI/Gigabyte/ASRock/Lenovo/HP/Dell. Скачайте chipset, LAN/Wi-Fi, Bluetooth, audio и storage драйверы под вашу версию Windows.
-- **Установить чипсетный и сетевой драйверы** (`install-chipset-network-driver` · ручной шаг · нужны права администратора · нужна перезагрузка · **НЕОБХОДИМО**)
-  - Описание: Скачайте и установите чипсетный драйвер материнской платы и оставшиеся сетевые/LAN драйверы с сайта производителя платы.
-  - Что делает: Ручной шаг: программа ничего не меняет, выполните его сами.
-  - Инструкция: Зайдите на сайт производителя вашей материнской платы (ASUS, MSI, Gigabyte, ASRock), найдите свою модель, скачайте чипсетный и сетевой драйверы, установите их по порядку. Ссылки ниже — дополнительные shortcuts для популярных производителей Wi-Fi адаптеров.
-- **Драйверы Wi-Fi адаптеров Realtek** (`download-realtek-wifi-drivers` · ссылка)
-  - Описание: Официальная страница загрузок Realtek Wireless LAN IC. Используйте её, если адаптер Realtek, а Windows Update/страница OEM не дали более новый драйвер.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.realtek.com/Download/Index?cate_id=203&menu_id=297`
+- **Скачать официальный чипсетный драйвер AMD** (`download-amd-chipset-driver` · ссылка)
+  - Описание: Официальная страница AMD Drivers and Support. Здесь доступны чипсетные драйверы для desktop и laptop платформ AMD.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.amd.com/en/support/download/drivers.html`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы сетевых карт Realtek (PCIe GbE / 2.5GbE)** (`download-realtek-lan-drivers` · ссылка)
-  - Описание: Драйвер сетевой карты Realtek. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+
+#### 1.9 Сетевые карты (LAN) · Intel
+
+- **Сетевые драйверы Intel Ethernet** (`download-intel-ethernet-drivers` · ссылка)
+  - Описание: Драйверы проводной сети Intel (I219, I225, I226 и другие) для Windows 10 и Windows 11. Пакет приходит в zip и распаковывается рядом.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/18293/intel-network-adapter-driver-for-windows-10.html`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.10 Сетевые карты (LAN) · Realtek
+
+- **Драйверы сетевых карт Realtek (от 1G до 10G, USB-адаптеры)** (`download-realtek-lan-drivers` · ссылка)
+  - Описание: Драйвер сетевой карты Realtek — RTL8111/8168 1G, RTL8125 2.5G, RTL8126 5G, RTL8127 10G, USB RTL8153 и RTL8156. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена. Без карты Realtek у каждой линейки в списке подписан чип.
   - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20PCIe%20GbE%20Family%20Controller`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы Bluetooth Realtek** (`download-realtek-bluetooth-drivers` · ссылка)
-  - Описание: Драйвер Bluetooth-адаптера Realtek. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20Bluetooth`
+
+#### 1.11 Сетевые карты (LAN) · Killer
+
+- **Драйверы сетевых карт Killer (E2xxx, E3xxx)** (`download-killer-ethernet-drivers` · ссылка)
+  - Описание: Драйвер сетевой карты Killer: E2xxx — чипы Qualcomm Atheros, E3000/E3100 — Realtek 2.5G. Голый драйвер, без Killer Control Center. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Ethernet`
   - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.12 Сетевые карты (LAN) · Broadcom
+
+- **Драйверы сетевых карт Broadcom (NetXtreme)** (`download-broadcom-lan-drivers` · ссылка)
+  - Описание: Драйвер сетевой карты Broadcom NetXtreme (десктопы, рабочие станции, серверы). Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20NetXtreme`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.13 Сетевые карты (LAN) · Marvell AQtion
+
+- **Драйверы сетевых карт Marvell AQtion (Aquantia 5G / 10G)** (`download-aqtion-lan-drivers` · ссылка)
+  - Описание: Драйвер сетевой карты Marvell AQtion — чипы Aquantia AQC107/AQC113 на 5 и 10 Гбит на платах ASUS, Gigabyte, MSI и в картах на 10G. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Marvell%20AQtion`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.14 Wi-Fi · Intel
+
 - **Драйверы Intel Wireless Wi-Fi** (`download-intel-wifi-drivers` · ссылка)
   - Описание: Официальный пакет драйверов Intel Wi-Fi для беспроводных адаптеров Windows 10 и Windows 11.
   - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/19351/intel-wireless-wi-fi-drivers-for-windows-10-and-windows-11.html`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы Intel Wireless Bluetooth** (`download-intel-bluetooth-drivers` · ссылка)
-  - Описание: Пакет драйверов Intel Bluetooth для Windows 10 и Windows 11 — пара драйвера Intel Wi-Fi на той же комбо-карте.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html`
+
+#### 1.15 Wi-Fi · Realtek
+
+- **Драйверы Wi-Fi адаптеров Realtek** (`download-realtek-wifi-drivers` · ссылка)
+  - Описание: Драйвер Wi-Fi адаптера Realtek — PCIe Wi-Fi 7 и 6 (RTL8922AE, RTL8852BE), USB- и SDIO-адаптеры. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена. Без адаптера Realtek у каждой линейки в списке подписан чип. САЙТ — страница самой Realtek.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.realtek.com/Download/Index?cate_id=203&menu_id=297`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Сетевые драйверы Intel Ethernet** (`download-intel-ethernet-drivers` · ссылка)
-  - Описание: Драйверы проводной сети Intel (I219, I225, I226 и другие) для Windows 10 и Windows 11. Пакет приходит в zip и распаковывается рядом.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/18293/intel-network-adapter-driver-for-windows-10.html`
+
+#### 1.16 Wi-Fi · MediaTek
+
+- **MediaTek Wi-Fi драйверы — Microsoft Update Catalog** (`download-mediatek-wifi-catalog` · ссылка)
+  - Описание: Поиск драйверов MediaTek MT7921/MT7922 Wi-Fi в Microsoft Update Catalog. Полезно, если страница OEM устарела или недоступна.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Wi-Fi%206%20MT7921%20Wireless%20LAN%20Card`
   - Кнопки: ВЕРСИИ, САЙТ
 - **MediaTek / MTK Wi-Fi — где искать драйвер** (`download-mediatek-wifi-info` · ссылка)
   - Описание: Официальная страница MediaTek networking. Для большинства современных Wi-Fi адаптеров ноутбуков MediaTek направляет пользователей на сайт производителя устройства или в Windows Update.
   - Что делает: Открывает сайт в вашем браузере: `https://www.mediatek.com/products/networking-and-connectivity`
   - Кнопки: ОТКРЫТЬ
-- **MediaTek Wi-Fi драйверы — Microsoft Update Catalog** (`download-mediatek-wifi-catalog` · ссылка)
-  - Описание: Поиск драйверов MediaTek MT7921/MT7922 Wi-Fi в Microsoft Update Catalog. Полезно, если страница OEM устарела или недоступна.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Wi-Fi%206%20MT7921%20Wireless%20LAN%20Card`
-  - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы Bluetooth MediaTek** (`download-mediatek-bluetooth-drivers` · ссылка)
-  - Описание: Драйвер Bluetooth-адаптера MediaTek (пара к Wi-Fi MT7921/MT7922). Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Bluetooth`
-  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.17 Wi-Fi · Qualcomm
+
 - **Драйверы Wi-Fi Qualcomm (FastConnect, Atheros, Killer)** (`download-qualcomm-wifi-drivers` · ссылка)
   - Описание: Драйвер Wi-Fi адаптера Qualcomm. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
   - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Wi-Fi`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы Bluetooth Qualcomm** (`download-qualcomm-bluetooth-drivers` · ссылка)
-  - Описание: Драйвер Bluetooth-адаптера Qualcomm. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Bluetooth`
-  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.18 Wi-Fi · Broadcom
+
 - **Драйверы Wi-Fi Broadcom** (`download-broadcom-wifi-drivers` · ссылка)
   - Описание: Драйвер Wi-Fi адаптера Broadcom (BCM43xx, в старых ноутбуках и Mac). Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
   - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Wireless`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы Bluetooth Broadcom** (`download-broadcom-bluetooth-drivers` · ссылка)
-  - Описание: Драйвер Bluetooth-адаптера Broadcom; в каталоге только старый, обычно хватает драйвера Windows. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Bluetooth`
-  - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы сетевых карт Broadcom (NetXtreme)** (`download-broadcom-lan-drivers` · ссылка)
-  - Описание: Драйвер сетевой карты Broadcom NetXtreme (десктопы, рабочие станции, серверы). Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20NetXtreme`
-  - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы сетевых карт Marvell AQtion (Aquantia 5G / 10G)** (`download-aqtion-lan-drivers` · ссылка)
-  - Описание: Драйвер сетевой карты Marvell AQtion — чипы Aquantia AQC107/AQC113 на 5 и 10 Гбит на платах ASUS, Gigabyte, MSI и в картах на 10G. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Marvell%20AQtion`
-  - Кнопки: ВЕРСИИ, САЙТ
-- **Драйверы сетевых карт Killer (E2xxx, E3xxx)** (`download-killer-ethernet-drivers` · ссылка)
-  - Описание: Драйвер сетевой карты Killer: E2xxx — чипы Qualcomm Atheros, E3000/E3100 — Realtek 2.5G. Голый драйвер, без Killer Control Center. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
-  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Ethernet`
-  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.19 Wi-Fi · Killer
+
 - **Драйверы Wi-Fi Killer** (`download-killer-wifi-drivers` · ссылка)
   - Описание: Драйвер Wi-Fi адаптера Killer: AX1650/1675/1690 и новее — чипы Intel (подходит и карточка Intel Wi-Fi), 1435/1535 — Qualcomm Atheros. Bluetooth у Killer — это Bluetooth Intel. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
   - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Wi-Fi`
   - Кнопки: ВЕРСИИ, САЙТ
-- **Включить Wi-Fi или подключить кабель Ethernet** (`enable-network` · страница Windows · из гайда Max.mov)
-  - Описание: Откройте расширенные параметры сети для проверки и настройки сетевого адаптера после установки драйверов.
-  - Что делает: Открывает в Windows: `ms-settings:network-advancedsettings`
-  - Кнопки: ОТКРЫТЬ В WINDOWS
-  - Инструкция: Убедитесь, что сетевой адаптер отображается и активен. Подключитесь через Ethernet или включите Wi-Fi.
 
-#### 1.7 Аудиодрайверы
+#### 1.20 Bluetooth · Intel
+
+- **Драйверы Intel Wireless Bluetooth** (`download-intel-bluetooth-drivers` · ссылка)
+  - Описание: Пакет драйверов Intel Bluetooth для Windows 10 и Windows 11 — пара драйвера Intel Wi-Fi на той же комбо-карте.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.intel.com/content/www/us/en/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.21 Bluetooth · Realtek
+
+- **Драйверы Bluetooth Realtek** (`download-realtek-bluetooth-drivers` · ссылка)
+  - Описание: Драйвер Bluetooth-адаптера Realtek. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20Bluetooth`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.22 Bluetooth · MediaTek
+
+- **Драйверы Bluetooth MediaTek** (`download-mediatek-bluetooth-drivers` · ссылка)
+  - Описание: Драйвер Bluetooth-адаптера MediaTek (пара к Wi-Fi MT7921/MT7922). Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Bluetooth`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.23 Bluetooth · Qualcomm
+
+- **Драйверы Bluetooth Qualcomm** (`download-qualcomm-bluetooth-drivers` · ссылка)
+  - Описание: Драйвер Bluetooth-адаптера Qualcomm. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Bluetooth`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.24 Bluetooth · Broadcom
+
+- **Драйверы Bluetooth Broadcom** (`download-broadcom-bluetooth-drivers` · ссылка)
+  - Описание: Драйвер Bluetooth-адаптера Broadcom; в каталоге только старый, обычно хватает драйвера Windows. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена.
+  - Что делает: Открывает сайт в вашем браузере: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Bluetooth`
+  - Кнопки: ВЕРСИИ, САЙТ
+
+#### 1.25 Звук · Realtek
 
 - **Скачать аудиодрайвер Realtek** (`download-realtek-audio-driver` · ссылка)
   - Описание: Драйвер аудиокодека Realtek в том виде, в каком его даёт Windows Update: сначала драйвер именно этого ПК (по SUBSYS), затем кодека в целом. Из каталога обновлений Microsoft по коду устройства этого ПК: WHQL, без программ производителя; установленная версия помечена. Realtek Audio Console ставится из Microsoft Store.

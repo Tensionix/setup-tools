@@ -1,4 +1,4 @@
-# Audion Setup Tools by Max.mov
+# Audion Setup Tools
 
 <!-- audion:release -->
 <p align="center">
@@ -10,13 +10,12 @@
 
 **Version 2.3.2** · 2026-09-28 · 88.2 MB
 
-- [Direct download](https://dl.audion.dev/setup-tools/2.3.2/Audion_Setup_Tools_v2.3.2.zip) — unmetered, no rate limits
+- [Direct download](https://audion.dev/get/setup-tools/2.3.2/Audion_Setup_Tools_v2.3.2_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/setup-tools) — every version and how to install
-- [GitHub release](https://github.com/Tensionix/setup-tools/releases/tag/v2.3.2)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: 9c69a3f82351ea2e5ef4cd5822aaab853b9763f7fc2e5705b80158c7345a55a4`
+`SHA-256: 24eb08ec277f21c9dd9dec650695175262aaa587c32577e5bc8f5055a9091779`
 
 ---
 
@@ -48,6 +47,10 @@ An **Audion** tool, published by [Tensionix](https://github.com/Tensionix).
   - [12 · Mouse & Keyboard Settings](#12--mouse--keyboard-settings)
   - [13 · Max.mov Tweaks](#13--maxmov-tweaks)
 - [Next](#next)
+
+*inspired by Max.mov*
+
+[Русский](Docs/README_RU.md) · [User Guide](Docs/USER_GUIDE_EN.md)
 
 An interactive companion to a large Windows configuration guide — and a
 standalone assistant for preparing a workstation.
@@ -95,12 +98,12 @@ and .NET are inside the program.
 * The program runs as administrator, but pages and sites open as you - in your
   browser, with your extensions and accounts.
 
-Formerly Audion Windows Tools by Max.mov (1.x).
+Formerly Audion Setup Tools by Max.mov (2.0-2.1) and Audion Windows Tools by Max.mov (1.x).
 
 <!-- section-map -->
 ## Section Map
 
-14 sections, 71 subsections, 333 cards - in the order the program shows them. Every card in detail is in the [User Guide](Docs/USER_GUIDE_EN.md).
+14 sections, 90 subsections, 333 cards - in the order the program shows them. Every card in detail is in the [User Guide](Docs/USER_GUIDE_EN.md).
 
 ### 00 · Windows Installation
 
@@ -109,7 +112,7 @@ Formerly Audion Windows Tools by Max.mov (1.x).
 - **Chipset & Network Drivers** — Intel VMD / RST note: disks may not appear during install · Download AMD chipset driver · Download Intel chipset INF driver (older chipsets only, site availability varies by region) · Download Intel RST driver · Download drivers from motherboard manufacturer website · Broadcom / Realtek / Intel Killer network drivers (other manufacturers)
 - **Create Installation Media** — Download Windows 11 Installation Media (Media Creation Tool, availability varies by region) · Download official Windows 11 ISO image (availability varies by region) · Download Windows 11 images via UUP Dump (available where Microsoft's download is not) · Download Rufus (bootable USB creator) · Create bootable USB installation drive
 - **Install Without USB (Optional)** — Note: not recommended if switching from Legacy to UEFI · Open Disk Management to create the install partition · Troubleshoot: cannot shrink volume (USN journal / pagefile) · Check Event Viewer if shrink fails · No-USB install: CMD method (copy ISO files to Win11 partition) · Download EasyBCD (no-USB method 2) · No-USB install: EasyBCD method
-- **Move Max.mov Archive to USB / Other Drive** — Move the Audion Setup Tools by Max.mov archive and drivers to a USB or separate drive
+- **Move Max.mov Archive to USB / Other Drive** — Move the Audion Setup Tools archive and drivers to a USB or separate drive
 - **BIOS Settings** — AMD note: virtualization may be called SVM or AMD-V · Disable manufacturer preinstalled software (MSI Center, ASUS Armoury Crate, etc.) · Disable CSM Support and enable Secure Boot · Enable TPM 2.0 (Intel PTT, AMD fTPM, or physical TPM module) · Disable unused devices (audio, iGPU if not needed) — desktop only · Disable virtualization (if not needed) — disables VBS · Disable unused drives in BIOS (if supported) · Enable PWM mode for 4-pin fans
 - **Important Notes Before Installation** — If PC reboots back to setup instead of OOBE — read this
 - **New Driver Install Method & MS Account Bypass** — Watch video guide: new driver installation method during OOBE · Install drivers during OOBE (before internet, without MS account)
@@ -118,12 +121,31 @@ Formerly Audion Windows Tools by Max.mov (1.x).
 ### 01 · Driver Installation
 
 - **Setup Notes** — v0.4 setup note — skip this section if drivers were installed during OOBE · Open Device Manager
-- **NVIDIA Drivers** — Download NVIDIA Game Ready driver · Download NVIDIA Studio driver · NVIDIA App — driver updates and game optimization · NVCleanstall — minimal NVIDIA driver installer · Install NVIDIA GPU driver (clean, no bloatware) · DDU — Display Driver Uninstaller · Remove old GPU driver with DDU
-- **AMD Drivers** — Download official AMD graphics driver · Download official AMD chipset driver · Install AMD graphics/chipset drivers
-- **Intel Drivers** — Install Intel Driver & Support Assistant via winget · Intel Driver & Support Assistant — official page · Download Intel Arc / integrated graphics driver · Download Intel Chipset INF (Chipset Device Software) · Download Intel Management Engine driver · Download Intel RST driver
-- **Qualcomm Snapdragon Drivers** — Download Qualcomm Snapdragon X graphics driver
-- **Wi-Fi & Network Drivers** — Open motherboard / laptop support page · Install chipset and network drivers · Realtek Wi-Fi adapter drivers · Realtek LAN drivers (PCIe GbE / 2.5GbE) · Realtek Bluetooth drivers · Intel Wireless Wi-Fi drivers · Intel Wireless Bluetooth drivers · Intel Ethernet network drivers · MediaTek / MTK Wi-Fi driver guidance · MediaTek Wi-Fi drivers — Microsoft Update Catalog · MediaTek Bluetooth drivers · Qualcomm Wi-Fi drivers (FastConnect, Atheros, Killer) · Qualcomm Bluetooth drivers · Broadcom Wi-Fi drivers · Broadcom Bluetooth drivers · Broadcom LAN drivers (NetXtreme) · Marvell AQtion LAN drivers (Aquantia 5G / 10G) · Killer Ethernet drivers (E2xxx, E3xxx) · Killer Wi-Fi drivers · Enable Wi-Fi or connect Ethernet cable
-- **Audio Drivers** — Download Realtek audio driver
+- **Connecting to the network · Windows** — Enable Wi-Fi or connect Ethernet cable
+- **Graphics cards · NVIDIA** — Download NVIDIA Game Ready driver · Download NVIDIA Studio driver · NVIDIA App — driver updates and game optimization · NVCleanstall — minimal NVIDIA driver installer · Install NVIDIA GPU driver (clean, no bloatware) · DDU — Display Driver Uninstaller · Remove old GPU driver with DDU
+- **Graphics cards · AMD** — Download official AMD graphics driver · Install AMD graphics/chipset drivers
+- **Graphics cards · Intel** — Download Intel Arc / integrated graphics driver
+- **Graphics cards · Qualcomm Snapdragon** — Download Qualcomm Snapdragon X graphics driver
+- **Chipset · Motherboard or laptop** — Open motherboard / laptop support page · Install chipset and network drivers
+- **Chipset · Intel** — Download Intel Chipset INF (Chipset Device Software) · Download Intel Management Engine driver · Download Intel RST driver · Install Intel Driver & Support Assistant via winget · Intel Driver & Support Assistant — official page
+- **Chipset · AMD** — Download official AMD chipset driver
+- **Network cards (LAN) · Intel** — Intel Ethernet network drivers
+- **Network cards (LAN) · Realtek** — Realtek LAN drivers (1G to 10G, USB adapters)
+- **Network cards (LAN) · Killer** — Killer Ethernet drivers (E2xxx, E3xxx)
+- **Network cards (LAN) · Broadcom** — Broadcom LAN drivers (NetXtreme)
+- **Network cards (LAN) · Marvell AQtion** — Marvell AQtion LAN drivers (Aquantia 5G / 10G)
+- **Wi-Fi · Intel** — Intel Wireless Wi-Fi drivers
+- **Wi-Fi · Realtek** — Realtek Wi-Fi adapter drivers
+- **Wi-Fi · MediaTek** — MediaTek Wi-Fi drivers — Microsoft Update Catalog · MediaTek / MTK Wi-Fi driver guidance
+- **Wi-Fi · Qualcomm** — Qualcomm Wi-Fi drivers (FastConnect, Atheros, Killer)
+- **Wi-Fi · Broadcom** — Broadcom Wi-Fi drivers
+- **Wi-Fi · Killer** — Killer Wi-Fi drivers
+- **Bluetooth · Intel** — Intel Wireless Bluetooth drivers
+- **Bluetooth · Realtek** — Realtek Bluetooth drivers
+- **Bluetooth · MediaTek** — MediaTek Bluetooth drivers
+- **Bluetooth · Qualcomm** — Qualcomm Bluetooth drivers
+- **Bluetooth · Broadcom** — Broadcom Bluetooth drivers
+- **Sound · Realtek** — Download Realtek audio driver
 
 ### 02 · System Update
 

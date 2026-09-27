@@ -1,9 +1,9 @@
 {
   "schema": "audion.build_licenses.components.v1",
-  "generated_utc": "2026-09-27T12:10:31Z",
-  "project_id": "audion-setup-tools-by-max-mov",
-  "project_name": "Audion Setup Tools by Max.mov",
-  "scan_root": "E:\\Release Plus\\Audion Setup Tools by Max.mov",
+  "generated_utc": "2026-09-27T19:43:36Z",
+  "project_id": "audion-setup-tools",
+  "project_name": "Audion Setup Tools",
+  "scan_root": ".",
   "components": [
     {
       "id": "audion-launcher",
@@ -15,7 +15,7 @@
       "bundled": true,
       "optional_runtime": false,
       "provider": "",
-      "artifact_sha256": "4bba4b8dc80b7ab595e8bba8aaafe5df750f20d6fc484a7111592221e7aaf659",
+      "artifact_sha256": "e399860ca20743d959f636155eb4d19fdae08915b3622b86d54676e2beb05ee2",
       "artifact_path": "Start.exe",
       "obligation_class": "permissive",
       "redistributable": true,
@@ -24,7 +24,7 @@
         {
           "sha256": "f9aa24d322c0d39ff478dbcd0b3df9fa5514a44419e33fde66421029ec02a985",
           "display_name": "NOTICE-Audion-Launcher.md",
-          "source_path": "E:\\TOOLS\\Audion Build Licenses\\workspace\\runs\\20260927T121030Z_audion-setup-tools-by-max-mov_6ca451ec\\collector_legal_files\\audion-launcher-bundled\\NOTICE-Audion-Launcher.md",
+          "source_path": "audion-launcher-bundled/NOTICE-Audion-Launcher.md",
           "raw_size": 419
         }
       ],
@@ -84,6 +84,45 @@
         "embedding": "Icon outlines from lucide-static 1.48.0, redrawn or generated into the program's code. Icons derived from Feather are MIT (Cole Bemis), listed in the licence file."
       },
       "license_fingerprint": "47d3d9ed3e61dda526c5a2461991b39e9030ee993060079af76c65677eb8801b"
+    },
+    {
+      "id": "embedded-simple-icons",
+      "name": "Simple Icons",
+      "normalized_name": "simple-icons",
+      "version": "16.32.0",
+      "license_summary": "CC0-1.0 (Vivaldi icon: CC-BY-4.0); logos are trademarks of their owners",
+      "source_kind": "embedded-asset",
+      "bundled": true,
+      "optional_runtime": false,
+      "provider": "Simple Icons Collaborators",
+      "artifact_sha256": "",
+      "artifact_path": "",
+      "obligation_class": "notice",
+      "redistributable": true,
+      "source_reference": {
+        "type": "upstream",
+        "url": "https://github.com/simple-icons/simple-icons",
+        "version": "16.32.0",
+        "package": "simple-icons"
+      },
+      "legal_documents": [
+        {
+          "sha256": "c4f8eec82e69499389178a0e6e430e96ac48dd50fac8f2efa8d4c1a7c423ec0b",
+          "display_name": "Simple Icons notice: trademarks, per-icon licences, CC0 1.0, disclaimer",
+          "source_path": "Simple Icons 16.32.0 package: LICENSE.md and DISCLAIMER.md, with the Audion trademark note",
+          "raw_size": 12578
+        }
+      ],
+      "metadata": {
+        "embedded_in": [
+          "builder_main.cmd",
+          "Source/MainWindow.cs",
+          "Source/Engine/BrandIcons.cs",
+          "Source/Engine/Model.cs"
+        ],
+        "embedding": "Brand icon outlines from Simple Icons 16.32.0, generated into the program's code. The logos remain trademarks of their owners; see the notice."
+      },
+      "license_fingerprint": "7c3be354c8bc85d00d1a1fb1c18eb52d0e4077552dadc1205885ed83026e36be"
     }
   ]
 }

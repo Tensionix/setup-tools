@@ -1,4 +1,4 @@
-# Audion Setup Tools by Max.mov
+# Audion Setup Tools
 
 **Contents**
 
@@ -60,7 +60,7 @@ It needs 64-bit Windows 10 or 11. Everything else is inside: there is no PowerSh
 |---|---|
 | APPLY / INSTALL / RUN | The main action: apply a setting, install a program with winget, run a script |
 | OPEN IN WINDOWS | A page of Settings, Explorer or a Windows console |
-| VERSIONS | On NVIDIA drivers and everything taken from TechPowerUp: the list of versions the source has opens under the card's buttons - date, size, installer or portable. The usual choice is ticked already: on NVIDIA the newest golden version (★ - stable LTS versions by users' ratings, `NvidiaGolden` in `Manifests\Downloads.psd1`, as in Audion Get Tools) for this card's series, on TechPowerUp the newest release. Tick what you need and press DOWNLOAD: the list closes, the download runs in the journal, TechPowerUp files are checked by SHA256. Betas are not listed: whoever wants a beta takes it from the site. On the Intel chipset card the package with the INF of this PC's Intel devices is ticked (the FOR THIS PC mark); every Intel installer is checked for Intel Corporation's signature. Intel ME and RST, Realtek network, Wi-Fi, Bluetooth and audio, MediaTek and Qualcomm Wi-Fi and Bluetooth come from the Microsoft Update Catalog by this PC's device id; only a version newer than the installed one is ticked: WHQL drivers without Intel's programs, the installed version marked (INSTALLED), unpacked into a folder of INF files, the journal gives the install command |
+| VERSIONS | On NVIDIA drivers and everything taken from TechPowerUp: the list of versions the source has opens under the card's buttons - date, size, installer or portable. The usual choice is ticked already: on NVIDIA the newest golden version (★ - stable LTS versions by users' ratings, `NvidiaGolden` in `Manifests\Downloads.psd1`, as in Audion Get Tools) for this card's series (over the NVIDIA list stand chips of the generations where NVIDIA cut the support: RTX · GTX 16 - supported now, GTX 10 · 900 - the last branch 580, GTX 700 · 600 - 470, GTX 500 · 400 - 391.35, Windows 10; Studio has the first two only, its drivers began with Pascal; the chip of this PC's card wears a dot, another generation or no NVIDIA card ticks nothing), on TechPowerUp the newest release. Tick what you need and press DOWNLOAD: the list closes, the download runs in the journal, TechPowerUp files are checked by SHA256. Betas are not listed: whoever wants a beta takes it from the site. At the right of the title of such a card is its badge of versions: "installed 101.7085 · latest 101.8991" (the latest in amber - there is a newer one), "latest installed" in green, or "latest" alone where the PC has no such device. The program asks the sources in the background, the open section first, and keeps the answers six hours; after a download or an install the card is asked again. On the Intel chipset card the package with the INF of this PC's Intel devices is ticked (the FOR THIS PC mark); every Intel installer is checked for Intel Corporation's signature. Intel ME and RST, Realtek network, Wi-Fi, Bluetooth and audio, MediaTek and Qualcomm Wi-Fi and Bluetooth come from the Microsoft Update Catalog by this PC's device id; only a version newer than the installed one is ticked: WHQL drivers without Intel's programs, the installed version marked (INSTALLED), unpacked into a folder of INF files, the journal gives the install command |
 | INSTALLER | Downloads the latest release of the program into `Downloads\Audion Setup Tools\<program>` and shows it in Explorer |
 | PORTABLE | Downloads the portable build and unpacks it into `Downloads\Audion Setup Tools\<program>\Portable` - nothing to install |
 | INSTALL (on programs to download) | Downloads the installer and installs the program without questions |
@@ -96,7 +96,7 @@ Everything stays in the program's folder, in `Data\`: nothing goes into the user
 ## Project Layout
 
 ```text
-Audion Setup Tools by Max.mov/
+Audion Setup Tools/
 ├── Start.exe                     # start: asks UAC and opens the program
 ├── Bin/                          # the program AudionSetupTools.exe with PowerShell 7 and .NET inside
 ├── Engine/
@@ -136,7 +136,7 @@ Audion Setup Tools by Max.mov/
 ## Complete Section And Function Map
 
 <!-- card-map:start -->
-Built from the manifests by `Docs\tools\Build-GuideMap.ps1` - not edited by hand. Sections 14, subsections 71, cards 333. Kinds: deeplink=59, docs=1, feature=1, link=137, manual=74, powerscheme=9, registry=17, script=34, service=1.
+Built from the manifests by `Docs\tools\Build-GuideMap.ps1` - not edited by hand. Sections 14, subsections 90, cards 333. Kinds: deeplink=59, docs=1, feature=1, link=137, manual=74, powerscheme=9, registry=17, script=34, service=1.
 
 ### 0. Windows Installation
 
@@ -285,10 +285,10 @@ Optional. A subsection of Max.mov's guide.
 
 #### 0.5 Move Max.mov Archive to USB / Other Drive
 
-- **Move the Audion Setup Tools by Max.mov archive and drivers to a USB or separate drive** (`move-archive-reminder` · manual step · from Max.mov's guide)
-  - Description: Before reinstalling Windows, ensure the Audion Setup Tools by Max.mov folder and all downloaded driver installers are saved on a USB drive or a non-system partition (e.g. D:). They will be wiped if left on C:.
+- **Move the Audion Setup Tools archive and drivers to a USB or separate drive** (`move-archive-reminder` · manual step · from Max.mov's guide)
+  - Description: Before reinstalling Windows, ensure the Audion Setup Tools folder and all downloaded driver installers are saved on a USB drive or a non-system partition (e.g. D:). They will be wiped if left on C:.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Copy the entire "Audion Setup Tools by Max.mov" folder and all driver installers to a USB flash drive or a secondary disk partition (NOT C:). Confirm they are accessible before proceeding with the Windows installation.
+  - Instruction: Copy the entire "Audion Setup Tools" folder and all driver installers to a USB flash drive or a secondary disk partition (NOT C:). Confirm they are accessible before proceeding with the Windows installation.
 
 #### 0.6 BIOS Settings
 
@@ -392,7 +392,17 @@ A subsection of Max.mov's guide.
   - Buttons: OPEN IN WINDOWS
   - Instruction: Check Display adapters, Network adapters, Bluetooth, Storage controllers, and Other devices. Unknown devices usually mean a missing chipset, Wi-Fi, Bluetooth, or storage driver.
 
-#### 1.2 NVIDIA Drivers
+#### 1.1 Connecting to the network · Windows
+
+A subsection of Max.mov's guide.
+
+- **Enable Wi-Fi or connect Ethernet cable** (`enable-network` · Windows page · from Max.mov's guide)
+  - Description: Open advanced network settings to verify and configure your network adapter after driver installation.
+  - What it does: Opens in Windows: `ms-settings:network-advancedsettings`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Ensure your network adapter is listed and enabled. Connect via Ethernet or toggle Wi-Fi on.
+
+#### 1.2 Graphics cards · NVIDIA
 
 A subsection of Max.mov's guide.
 
@@ -425,7 +435,7 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: 1. Download DDU. 2. Boot into Safe Mode (hold Shift → Restart → Troubleshoot → Advanced → Startup Settings → Safe Mode with Networking). 3. Run DDU, select GPU type (NVIDIA/AMD/Intel), click "Clean and restart". 4. After reboot install the new driver from the vendor section.
 
-#### 1.3 AMD Drivers
+#### 1.3 Graphics cards · AMD
 
 A subsection of Max.mov's guide.
 
@@ -433,32 +443,44 @@ A subsection of Max.mov's guide.
   - Description: Official AMD Drivers and Support page. Use it for Radeon graphics, Ryzen processors with graphics, and the AMD auto-detect tool.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
   - Buttons: VERSIONS, SITE
-- **Download official AMD chipset driver** (`download-amd-chipset-driver` · link)
-  - Description: Official AMD Drivers and Support page. Chipset drivers for AMD desktop and laptop platforms are available here.
-  - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
-  - Buttons: VERSIONS, SITE
 - **Install AMD graphics/chipset drivers** (`install-amd-drivers` · manual step · administrator · restart · **ESSENTIAL**)
   - Description: Install AMD graphics and chipset packages from the official AMD page or from your motherboard/laptop support page.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: For Radeon graphics: use AMD Drivers and Support or AMD Auto-Detect. For AMD chipset: select Chipsets on the AMD page or use the motherboard/laptop support page. Reboot after installation.
 
-#### 1.4 Intel Drivers
+#### 1.4 Graphics cards · Intel
 
 A subsection of Max.mov's guide.
 
-- **Install Intel Driver & Support Assistant via winget** (`install-intel-dsa-winget` · script · administrator)
-  - Description: Installs Intel Driver & Support Assistant through winget to detect Intel graphics, Wi-Fi, Bluetooth, chipset, and storage updates.
-  - What it does: Installs or updates via winget: `Intel.IntelDriverAndSupportAssistant`.
-  - Buttons: INSTALL / UPDATE
-  - Note: Installs or updates Intel DSA via winget.
-- **Intel Driver & Support Assistant — official page** (`download-intel-dsa` · link)
-  - Description: Official Intel auto-detect utility. It provides a curated list of available updates for identified Intel products.
-  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/support/detect.html`
-  - Buttons: INSTALLER, SITE
 - **Download Intel Arc / integrated graphics driver** (`download-intel-graphics-driver` · link)
   - Description: Official Intel Arc and Intel integrated graphics driver page for Windows.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html`
   - Buttons: VERSIONS, SITE
+
+#### 1.5 Graphics cards · Qualcomm Snapdragon
+
+- **Download Qualcomm Snapdragon X graphics driver** (`download-snapdragon-graphics-driver` · link)
+  - Description: The Adreno graphics driver of Snapdragon X laptops, every released version from TechPowerUp; ticked only on a Snapdragon PC.
+  - What it does: Opens the site in your browser: `https://www.techpowerup.com/download/qualcomm-snapdragon-x-graphics-drivers/`
+  - Buttons: VERSIONS, SITE
+
+#### 1.6 Chipset · Motherboard or laptop
+
+A subsection of Max.mov's guide.
+
+- **Open motherboard / laptop support page** (`motherboard-laptop-support-page` · manual step)
+  - Description: Download chipset, LAN, Wi-Fi, Bluetooth, and storage drivers from the exact motherboard or laptop manufacturer support page.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Instruction: Search your exact motherboard or laptop model on ASUS/MSI/Gigabyte/ASRock/Lenovo/HP/Dell support. Download chipset, LAN/Wi-Fi, Bluetooth, audio, and storage drivers matching your Windows version.
+- **Install chipset and network drivers** (`install-chipset-network-driver` · manual step · administrator · restart · **ESSENTIAL**)
+  - Description: Download and install the motherboard chipset driver and any remaining network/LAN drivers from the motherboard manufacturer website.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Instruction: Visit your motherboard manufacturer website (e.g. ASUS, MSI, Gigabyte, ASRock), locate your board model, download the chipset and network drivers, install them in order. Vendor links below are additional shortcuts for common Wi-Fi adapter makers.
+
+#### 1.7 Chipset · Intel
+
+A subsection of Max.mov's guide.
+
 - **Download Intel Chipset INF (Chipset Device Software)** (`download-intel-chipset-inf-driver` · link)
   - Description: Every Intel chipset package from 10.0.13 on. The Intel devices of this PC pick the one that carries their INF - old platforms (Sandy Bridge to Broadwell, X79/X99) are only in 10.1.18981.6008, older Xeon Scalable in the Server package. The INF mostly names the devices in Device Manager; modern chipsets also get it from Windows Update.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/19347/chipset-inf-utility.html`
@@ -471,101 +493,142 @@ A subsection of Max.mov's guide.
   - Description: Intel Rapid Storage Technology driver. Required only if your SSD is not detected during Windows setup or your system uses VMD/RST.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/15667/intel-rapid-storage-technology-intel-rst-driver-installation-software-with-intel-optane-memory.html`
   - Buttons: VERSIONS, SITE
+- **Install Intel Driver & Support Assistant via winget** (`install-intel-dsa-winget` · script · administrator)
+  - Description: Installs Intel Driver & Support Assistant through winget to detect Intel graphics, Wi-Fi, Bluetooth, chipset, and storage updates.
+  - What it does: Installs or updates via winget: `Intel.IntelDriverAndSupportAssistant`.
+  - Buttons: INSTALL / UPDATE
+  - Note: Installs or updates Intel DSA via winget.
+- **Intel Driver & Support Assistant — official page** (`download-intel-dsa` · link)
+  - Description: Official Intel auto-detect utility. It provides a curated list of available updates for identified Intel products.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/support/detect.html`
+  - Buttons: INSTALLER, SITE
 
-#### 1.5 Qualcomm Snapdragon Drivers
-
-- **Download Qualcomm Snapdragon X graphics driver** (`download-snapdragon-graphics-driver` · link)
-  - Description: The Adreno graphics driver of Snapdragon X laptops, every released version from TechPowerUp; ticked only on a Snapdragon PC.
-  - What it does: Opens the site in your browser: `https://www.techpowerup.com/download/qualcomm-snapdragon-x-graphics-drivers/`
-  - Buttons: VERSIONS, SITE
-
-#### 1.6 Wi-Fi & Network Drivers
+#### 1.8 Chipset · AMD
 
 A subsection of Max.mov's guide.
 
-- **Open motherboard / laptop support page** (`motherboard-laptop-support-page` · manual step)
-  - Description: Download chipset, LAN, Wi-Fi, Bluetooth, and storage drivers from the exact motherboard or laptop manufacturer support page.
-  - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Search your exact motherboard or laptop model on ASUS/MSI/Gigabyte/ASRock/Lenovo/HP/Dell support. Download chipset, LAN/Wi-Fi, Bluetooth, audio, and storage drivers matching your Windows version.
-- **Install chipset and network drivers** (`install-chipset-network-driver` · manual step · administrator · restart · **ESSENTIAL**)
-  - Description: Download and install the motherboard chipset driver and any remaining network/LAN drivers from the motherboard manufacturer website.
-  - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Visit your motherboard manufacturer website (e.g. ASUS, MSI, Gigabyte, ASRock), locate your board model, download the chipset and network drivers, install them in order. Vendor links below are additional shortcuts for common Wi-Fi adapter makers.
-- **Realtek Wi-Fi adapter drivers** (`download-realtek-wifi-drivers` · link)
-  - Description: Official Realtek Wireless LAN IC downloads page. Use it when the adapter model is Realtek and Windows Update/OEM support page did not provide a newer driver.
-  - What it does: Opens the site in your browser: `https://www.realtek.com/Download/Index?cate_id=203&menu_id=297`
+- **Download official AMD chipset driver** (`download-amd-chipset-driver` · link)
+  - Description: Official AMD Drivers and Support page. Chipset drivers for AMD desktop and laptop platforms are available here.
+  - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
   - Buttons: VERSIONS, SITE
-- **Realtek LAN drivers (PCIe GbE / 2.5GbE)** (`download-realtek-lan-drivers` · link)
-  - Description: The driver of a Realtek network card. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+
+#### 1.9 Network cards (LAN) · Intel
+
+- **Intel Ethernet network drivers** (`download-intel-ethernet-drivers` · link)
+  - Description: Intel wired network drivers (I219, I225, I226 and others) for Windows 10 and Windows 11. The package comes zipped and is unpacked beside it.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/18293/intel-network-adapter-driver-for-windows-10.html`
+  - Buttons: VERSIONS, SITE
+
+#### 1.10 Network cards (LAN) · Realtek
+
+- **Realtek LAN drivers (1G to 10G, USB adapters)** (`download-realtek-lan-drivers` · link)
+  - Description: The driver of a Realtek network card - RTL8111/8168 1G, RTL8125 2.5G, RTL8126 5G, RTL8127 10G, the USB RTL8153 and RTL8156. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked. Without a Realtek card the list names the chip of every line.
   - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20PCIe%20GbE%20Family%20Controller`
   - Buttons: VERSIONS, SITE
-- **Realtek Bluetooth drivers** (`download-realtek-bluetooth-drivers` · link)
-  - Description: The driver of a Realtek Bluetooth adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20Bluetooth`
+
+#### 1.11 Network cards (LAN) · Killer
+
+- **Killer Ethernet drivers (E2xxx, E3xxx)** (`download-killer-ethernet-drivers` · link)
+  - Description: The driver of a Killer network card: E2xxx are Qualcomm Atheros chips, E3000/E3100 are Realtek 2.5G. Bare driver, without Killer Control Center. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Ethernet`
   - Buttons: VERSIONS, SITE
+
+#### 1.12 Network cards (LAN) · Broadcom
+
+- **Broadcom LAN drivers (NetXtreme)** (`download-broadcom-lan-drivers` · link)
+  - Description: The driver of a Broadcom NetXtreme network card (desktops, workstations, servers). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20NetXtreme`
+  - Buttons: VERSIONS, SITE
+
+#### 1.13 Network cards (LAN) · Marvell AQtion
+
+- **Marvell AQtion LAN drivers (Aquantia 5G / 10G)** (`download-aqtion-lan-drivers` · link)
+  - Description: The driver of a Marvell AQtion network card - the Aquantia AQC107/AQC113 5 and 10 Gbit chips on ASUS, Gigabyte and MSI boards and 10G cards. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Marvell%20AQtion`
+  - Buttons: VERSIONS, SITE
+
+#### 1.14 Wi-Fi · Intel
+
 - **Intel Wireless Wi-Fi drivers** (`download-intel-wifi-drivers` · link)
   - Description: Official Intel Wi-Fi driver package for Windows 10 and Windows 11 wireless adapters.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/19351/intel-wireless-wi-fi-drivers-for-windows-10-and-windows-11.html`
   - Buttons: VERSIONS, SITE
-- **Intel Wireless Bluetooth drivers** (`download-intel-bluetooth-drivers` · link)
-  - Description: Intel Bluetooth driver package for Windows 10 and Windows 11 - the companion of the Intel Wi-Fi driver on the same combo card.
-  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html`
+
+#### 1.15 Wi-Fi · Realtek
+
+- **Realtek Wi-Fi adapter drivers** (`download-realtek-wifi-drivers` · link)
+  - Description: The driver of a Realtek Wi-Fi adapter - PCIe Wi-Fi 7 and 6 (RTL8922AE, RTL8852BE), USB and SDIO adapters. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked. Without a Realtek adapter the list names the chip of every line. SITE - Realtek's own page.
+  - What it does: Opens the site in your browser: `https://www.realtek.com/Download/Index?cate_id=203&menu_id=297`
   - Buttons: VERSIONS, SITE
-- **Intel Ethernet network drivers** (`download-intel-ethernet-drivers` · link)
-  - Description: Intel wired network drivers (I219, I225, I226 and others) for Windows 10 and Windows 11. The package comes zipped and is unpacked beside it.
-  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/18293/intel-network-adapter-driver-for-windows-10.html`
+
+#### 1.16 Wi-Fi · MediaTek
+
+- **MediaTek Wi-Fi drivers — Microsoft Update Catalog** (`download-mediatek-wifi-catalog` · link)
+  - Description: Microsoft Update Catalog search for MediaTek MT7921/MT7922 Wi-Fi drivers. Useful when the OEM page is outdated or unavailable.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Wi-Fi%206%20MT7921%20Wireless%20LAN%20Card`
   - Buttons: VERSIONS, SITE
 - **MediaTek / MTK Wi-Fi driver guidance** (`download-mediatek-wifi-info` · link)
   - Description: Official MediaTek networking page. For most modern laptop Wi-Fi adapters, MediaTek directs end users to the device manufacturer support page or Windows Update.
   - What it does: Opens the site in your browser: `https://www.mediatek.com/products/networking-and-connectivity`
   - Buttons: OPEN
-- **MediaTek Wi-Fi drivers — Microsoft Update Catalog** (`download-mediatek-wifi-catalog` · link)
-  - Description: Microsoft Update Catalog search for MediaTek MT7921/MT7922 Wi-Fi drivers. Useful when the OEM page is outdated or unavailable.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Wi-Fi%206%20MT7921%20Wireless%20LAN%20Card`
-  - Buttons: VERSIONS, SITE
-- **MediaTek Bluetooth drivers** (`download-mediatek-bluetooth-drivers` · link)
-  - Description: The driver of a MediaTek Bluetooth adapter (the pair of MT7921/MT7922 Wi-Fi). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Bluetooth`
-  - Buttons: VERSIONS, SITE
+
+#### 1.17 Wi-Fi · Qualcomm
+
 - **Qualcomm Wi-Fi drivers (FastConnect, Atheros, Killer)** (`download-qualcomm-wifi-drivers` · link)
   - Description: The driver of a Qualcomm Wi-Fi adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
   - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Wi-Fi`
   - Buttons: VERSIONS, SITE
-- **Qualcomm Bluetooth drivers** (`download-qualcomm-bluetooth-drivers` · link)
-  - Description: The driver of a Qualcomm Bluetooth adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Bluetooth`
-  - Buttons: VERSIONS, SITE
+
+#### 1.18 Wi-Fi · Broadcom
+
 - **Broadcom Wi-Fi drivers** (`download-broadcom-wifi-drivers` · link)
   - Description: The driver of a Broadcom Wi-Fi adapter (BCM43xx, in older laptops and Macs). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
   - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Wireless`
   - Buttons: VERSIONS, SITE
-- **Broadcom Bluetooth drivers** (`download-broadcom-bluetooth-drivers` · link)
-  - Description: The driver of a Broadcom Bluetooth adapter; the catalog has only an old one, Windows's own driver usually does. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Bluetooth`
-  - Buttons: VERSIONS, SITE
-- **Broadcom LAN drivers (NetXtreme)** (`download-broadcom-lan-drivers` · link)
-  - Description: The driver of a Broadcom NetXtreme network card (desktops, workstations, servers). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20NetXtreme`
-  - Buttons: VERSIONS, SITE
-- **Marvell AQtion LAN drivers (Aquantia 5G / 10G)** (`download-aqtion-lan-drivers` · link)
-  - Description: The driver of a Marvell AQtion network card - the Aquantia AQC107/AQC113 5 and 10 Gbit chips on ASUS, Gigabyte and MSI boards and 10G cards. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Marvell%20AQtion`
-  - Buttons: VERSIONS, SITE
-- **Killer Ethernet drivers (E2xxx, E3xxx)** (`download-killer-ethernet-drivers` · link)
-  - Description: The driver of a Killer network card: E2xxx are Qualcomm Atheros chips, E3000/E3100 are Realtek 2.5G. Bare driver, without Killer Control Center. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
-  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Ethernet`
-  - Buttons: VERSIONS, SITE
+
+#### 1.19 Wi-Fi · Killer
+
 - **Killer Wi-Fi drivers** (`download-killer-wifi-drivers` · link)
   - Description: The driver of a Killer Wi-Fi adapter: AX1650/1675/1690 and newer are Intel chips (the Intel Wi-Fi card fits them too), 1435/1535 are Qualcomm Atheros. Killer Bluetooth is Intel Bluetooth. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
   - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Wi-Fi`
   - Buttons: VERSIONS, SITE
-- **Enable Wi-Fi or connect Ethernet cable** (`enable-network` · Windows page · from Max.mov's guide)
-  - Description: Open advanced network settings to verify and configure your network adapter after driver installation.
-  - What it does: Opens in Windows: `ms-settings:network-advancedsettings`
-  - Buttons: OPEN IN WINDOWS
-  - Instruction: Ensure your network adapter is listed and enabled. Connect via Ethernet or toggle Wi-Fi on.
 
-#### 1.7 Audio Drivers
+#### 1.20 Bluetooth · Intel
+
+- **Intel Wireless Bluetooth drivers** (`download-intel-bluetooth-drivers` · link)
+  - Description: Intel Bluetooth driver package for Windows 10 and Windows 11 - the companion of the Intel Wi-Fi driver on the same combo card.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html`
+  - Buttons: VERSIONS, SITE
+
+#### 1.21 Bluetooth · Realtek
+
+- **Realtek Bluetooth drivers** (`download-realtek-bluetooth-drivers` · link)
+  - Description: The driver of a Realtek Bluetooth adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+
+#### 1.22 Bluetooth · MediaTek
+
+- **MediaTek Bluetooth drivers** (`download-mediatek-bluetooth-drivers` · link)
+  - Description: The driver of a MediaTek Bluetooth adapter (the pair of MT7921/MT7922 Wi-Fi). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+
+#### 1.23 Bluetooth · Qualcomm
+
+- **Qualcomm Bluetooth drivers** (`download-qualcomm-bluetooth-drivers` · link)
+  - Description: The driver of a Qualcomm Bluetooth adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+
+#### 1.24 Bluetooth · Broadcom
+
+- **Broadcom Bluetooth drivers** (`download-broadcom-bluetooth-drivers` · link)
+  - Description: The driver of a Broadcom Bluetooth adapter; the catalog has only an old one, Windows's own driver usually does. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+
+#### 1.25 Sound · Realtek
 
 - **Download Realtek audio driver** (`download-realtek-audio-driver` · link)
   - Description: The driver of the Realtek audio codec, as Windows Update gives it: the exact driver of this PC (its SUBSYS) first, then the codec's. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked. The Realtek Audio Console comes from the Microsoft Store.

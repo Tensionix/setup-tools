@@ -24,5 +24,18 @@
     "legal_document_hashes": [
       "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
     ]
+  },
+  {
+    "name": "Simple Icons",
+    "version": "16.32.0",
+    "license": "CC0-1.0 (Vivaldi icon: CC-BY-4.0); logos are trademarks of their owners",
+    "source": "embedded-asset",
+    "license_files": [
+      "licenses/THIRD_PARTY_NOTICES.txt"
+    ],
+    "license_fingerprint": "7c3be354c8bc85d00d1a1fb1c18eb52d0e4077552dadc1205885ed83026e36be",
+    "legal_document_hashes": [
+      "c4f8eec82e69499389178a0e6e430e96ac48dd50fac8f2efa8d4c1a7c423ec0b"
+    ]
   }
 ]
