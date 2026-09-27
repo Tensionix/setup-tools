@@ -1,9 +1,9 @@
 {
   "schema": "audion.build_licenses.components.v1",
-  "generated_utc": "2026-09-26T19:49:25Z",
+  "generated_utc": "2026-09-27T12:10:31Z",
   "project_id": "audion-setup-tools-by-max-mov",
   "project_name": "Audion Setup Tools by Max.mov",
-  "scan_root": "E:\\Release\\Audion Setup Tools by Max.mov",
+  "scan_root": "E:\\Release Plus\\Audion Setup Tools by Max.mov",
   "components": [
     {
       "id": "audion-launcher",
@@ -15,7 +15,7 @@
       "bundled": true,
       "optional_runtime": false,
       "provider": "",
-      "artifact_sha256": "fec6518109375f4460c6a464023afcd9ee1ac8d40698aef3fd9bcde448ccc47f",
+      "artifact_sha256": "4bba4b8dc80b7ab595e8bba8aaafe5df750f20d6fc484a7111592221e7aaf659",
       "artifact_path": "Start.exe",
       "obligation_class": "permissive",
       "redistributable": true,
@@ -24,7 +24,7 @@
         {
           "sha256": "f9aa24d322c0d39ff478dbcd0b3df9fa5514a44419e33fde66421029ec02a985",
           "display_name": "NOTICE-Audion-Launcher.md",
-          "source_path": "E:\\TOOLS\\Audion Build Licenses\\workspace\\runs\\20260926T194925Z_audion-setup-tools-by-max-mov_95bf1feb\\collector_legal_files\\audion-launcher-bundled\\NOTICE-Audion-Launcher.md",
+          "source_path": "E:\\TOOLS\\Audion Build Licenses\\workspace\\runs\\20260927T121030Z_audion-setup-tools-by-max-mov_6ca451ec\\collector_legal_files\\audion-launcher-bundled\\NOTICE-Audion-Launcher.md",
           "raw_size": 419
         }
       ],
@@ -45,6 +45,45 @@
         }
       },
       "license_fingerprint": "3d34b48b986e72171636407e8241394892758ca2f4b323dd5023b828569cea85"
+    },
+    {
+      "id": "embedded-lucide",
+      "name": "Lucide",
+      "normalized_name": "lucide",
+      "version": "1.48.0",
+      "license_summary": "ISC AND MIT",
+      "source_kind": "embedded-asset",
+      "bundled": true,
+      "optional_runtime": false,
+      "provider": "Lucide Icons and Contributors",
+      "artifact_sha256": "",
+      "artifact_path": "",
+      "obligation_class": "notice",
+      "redistributable": true,
+      "source_reference": {
+        "type": "upstream",
+        "url": "https://github.com/lucide-icons/lucide",
+        "version": "1.48.0",
+        "package": "lucide-static"
+      },
+      "legal_documents": [
+        {
+          "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57",
+          "display_name": "Lucide LICENSE (ISC; MIT for icons derived from Feather)",
+          "source_path": "lucide-static 1.48.0 package, file LICENSE",
+          "raw_size": 3208
+        }
+      ],
+      "metadata": {
+        "embedded_in": [
+          "builder_main.cmd",
+          "Source/MainWindow.cs",
+          "Source/Engine/MeaningIcons.cs",
+          "Source/Engine/Model.cs"
+        ],
+        "embedding": "Icon outlines from lucide-static 1.48.0, redrawn or generated into the program's code. Icons derived from Feather are MIT (Cole Bemis), listed in the licence file."
+      },
+      "license_fingerprint": "47d3d9ed3e61dda526c5a2461991b39e9030ee993060079af76c65677eb8801b"
     }
   ]
 }

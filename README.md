@@ -10,13 +10,12 @@
 
 **Version 2.1.0** · 2026-09-27 · 88.2 MB
 
-- [Direct download](https://dl.audion.dev/setup-tools-by-max.mov/2.1.0/Audion_Setup_Tools_by_Max.mov_v2.1.0.zip) — unmetered, no rate limits
+- [Direct download](https://audion.dev/get/setup-tools-by-max.mov/2.1.0/Audion_Setup_Tools_by_Max.mov_v2.1.0_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/setup-tools-by-max.mov) — every version and how to install
-- [GitHub release](https://github.com/Tensionix/setup-tools-by-max.mov/releases/tag/v2.1.0)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: e6005546a1b58071e1aa54d612c063fbde1c7f687cf5190df25f2a81ac0e6ac5`
+`SHA-256: ae5f32aab26d6eb825cdcc94f33ee851701716937fa7397e95cbaa620857e901`
 
 ---
 
@@ -34,18 +33,19 @@ An **Audion** tool, published by [Tensionix](https://github.com/Tensionix).
 - [What The Window Does](#what-the-window-does)
 - [Section Map](#section-map)
   - [00 · Windows Installation](#00--windows-installation)
-  - [01 · Driver Installation & System Update](#01--driver-installation--system-update)
-  - [02 · Disk Preparation](#02--disk-preparation)
-  - [03 · Browser Setup](#03--browser-setup)
-  - [04 · Windows Settings](#04--windows-settings)
-  - [05 · GPU & Monitor Settings](#05--gpu--monitor-settings)
-  - [06 · Cooling Setup](#06--cooling-setup)
-  - [07 · Steam & Game Launchers](#07--steam--game-launchers)
-  - [08 · Global Timer Resolution (Optional)](#08--global-timer-resolution-optional)
-  - [09 · FPS & Latency Testing](#09--fps--latency-testing)
-  - [10 · Recommended Programs](#10--recommended-programs)
-  - [11 · Mouse & Keyboard Settings](#11--mouse--keyboard-settings)
-  - [12 · Max.mov Tweaks](#12--maxmov-tweaks)
+  - [01 · Driver Installation](#01--driver-installation)
+  - [02 · System Update](#02--system-update)
+  - [03 · Disk Preparation](#03--disk-preparation)
+  - [04 · Browser Setup](#04--browser-setup)
+  - [05 · Windows Settings](#05--windows-settings)
+  - [06 · GPU & Monitor Settings](#06--gpu--monitor-settings)
+  - [07 · Cooling Setup](#07--cooling-setup)
+  - [08 · Steam & Game Launchers](#08--steam--game-launchers)
+  - [09 · Global Timer Resolution (Optional)](#09--global-timer-resolution-optional)
+  - [10 · FPS & Latency Testing](#10--fps--latency-testing)
+  - [11 · Recommended Programs](#11--recommended-programs)
+  - [12 · Mouse & Keyboard Settings](#12--mouse--keyboard-settings)
+  - [13 · Max.mov Tweaks](#13--maxmov-tweaks)
 - [Next](#next)
 
 An interactive companion to a large Windows configuration guide — and a
@@ -99,14 +99,14 @@ Formerly Audion Windows Tools by Max.mov (1.x).
 <!-- section-map -->
 ## Section Map
 
-13 sections, 69 subsections, 307 cards - in the order the program shows them. Every card in detail is in the [User Guide](Docs/USER_GUIDE_EN.md).
+14 sections, 71 subsections, 333 cards - in the order the program shows them. Every card in detail is in the [User Guide](Docs/USER_GUIDE_EN.md).
 
 ### 00 · Windows Installation
 
 - **Data & Passwords** — Project documentation · Rename disks to their drive letters · Back up your data · Export browser passwords · Verify account access (Microsoft, Steam, etc.)
-- **GPU Driver Preparation** — Laptop note: download drivers for BOTH GPU and iGPU · Find your GPU model · Download Nvidia GPU driver · Download AMD GPU driver · Download Intel GPU / Arc driver (unavailable from Russian IPs) · Move driver installers to a USB drive or separate partition
-- **Chipset & Network Drivers** — Intel VMD / RST note: disks may not appear during install · Download AMD chipset driver · Download Intel chipset INF driver (older chipsets only, unavailable from Russian IPs) · Download Intel RST driver (unavailable from Russian IPs) · Download drivers from motherboard manufacturer website · Broadcom / Realtek / Intel Killer network drivers (other manufacturers)
-- **Create Installation Media** — Download Windows 11 Installation Media (Media Creation Tool, unavailable from Russian IPs) · Download official Windows 11 ISO image (unavailable from Russian IPs) · Download Windows 11 images via UUP Dump (available from Russia) · Download Rufus (bootable USB creator) · Create bootable USB installation drive
+- **GPU Driver Preparation** — Laptop note: download drivers for BOTH GPU and iGPU · Find your GPU model · Download Nvidia GPU driver · Download AMD GPU driver · Download Intel GPU / Arc driver (site availability varies by region) · Move driver installers to a USB drive or separate partition
+- **Chipset & Network Drivers** — Intel VMD / RST note: disks may not appear during install · Download AMD chipset driver · Download Intel chipset INF driver (older chipsets only, site availability varies by region) · Download Intel RST driver · Download drivers from motherboard manufacturer website · Broadcom / Realtek / Intel Killer network drivers (other manufacturers)
+- **Create Installation Media** — Download Windows 11 Installation Media (Media Creation Tool, availability varies by region) · Download official Windows 11 ISO image (availability varies by region) · Download Windows 11 images via UUP Dump (available where Microsoft's download is not) · Download Rufus (bootable USB creator) · Create bootable USB installation drive
 - **Install Without USB (Optional)** — Note: not recommended if switching from Legacy to UEFI · Open Disk Management to create the install partition · Troubleshoot: cannot shrink volume (USN journal / pagefile) · Check Event Viewer if shrink fails · No-USB install: CMD method (copy ISO files to Win11 partition) · Download EasyBCD (no-USB method 2) · No-USB install: EasyBCD method
 - **Move Max.mov Archive to USB / Other Drive** — Move the Audion Setup Tools by Max.mov archive and drivers to a USB or separate drive
 - **BIOS Settings** — AMD note: virtualization may be called SVM or AMD-V · Disable manufacturer preinstalled software (MSI Center, ASUS Armoury Crate, etc.) · Disable CSM Support and enable Secure Boot · Enable TPM 2.0 (Intel PTT, AMD fTPM, or physical TPM module) · Disable unused devices (audio, iGPU if not needed) — desktop only · Disable virtualization (if not needed) — disables VBS · Disable unused drives in BIOS (if supported) · Enable PWM mode for 4-pin fans
@@ -114,33 +114,38 @@ Formerly Audion Windows Tools by Max.mov (1.x).
 - **New Driver Install Method & MS Account Bypass** — Watch video guide: new driver installation method during OOBE · Install drivers during OOBE (before internet, without MS account)
 - **Start Installation** — Reboot and boot from USB installation drive · Boot into installation: no-USB CMD method (reboot into recovery mode) · Boot into installation: no-USB EasyBCD method (select NST entry on reboot)
 
-### 01 · Driver Installation & System Update
+### 01 · Driver Installation
 
-- **Setup Notes** — v0.4 setup note — skip steps 2-4 if drivers installed during OOBE
-- **System, Runtime & Reboot** — Set PC name · Open Device Manager · Enable Wi-Fi or connect Ethernet cable · Check for Windows Updates · Check optional driver updates · Install Visual C++ Redistributables (official) · Install / Update Visual C++ 2015-2022 Redistributables via winget · Install Visual C++ Redistributables 2005-2022 (all-in-one pack) · Visual C++ Redistributable AIO — GitHub releases (abbodi1406) · ⚠ Restart Windows now (60 second timer) · Cancel scheduled restart · Restart after all updates are installed
-- **NVIDIA Drivers** — Download official NVIDIA GPU driver · NVIDIA App — driver updates and game optimization · NVCleanstall — minimal NVIDIA driver installer · Install NVIDIA GPU driver (clean, no bloatware) · DDU — Display Driver Uninstaller · Remove old GPU driver with DDU
+- **Setup Notes** — v0.4 setup note — skip this section if drivers were installed during OOBE · Open Device Manager
+- **NVIDIA Drivers** — Download NVIDIA Game Ready driver · Download NVIDIA Studio driver · NVIDIA App — driver updates and game optimization · NVCleanstall — minimal NVIDIA driver installer · Install NVIDIA GPU driver (clean, no bloatware) · DDU — Display Driver Uninstaller · Remove old GPU driver with DDU
 - **AMD Drivers** — Download official AMD graphics driver · Download official AMD chipset driver · Install AMD graphics/chipset drivers
-- **Intel Drivers** — Install Intel Driver & Support Assistant via winget · Intel Driver & Support Assistant — official page · Download Intel Arc / integrated graphics driver · Download Intel chipset INF driver (older chipsets only) · Download Intel RST driver
-- **Wi-Fi & Network Drivers** — Open motherboard / laptop support page · Install chipset and network drivers · Realtek Wi-Fi adapter drivers · Intel Wireless Wi-Fi drivers · MediaTek / MTK Wi-Fi driver guidance · MediaTek Wi-Fi drivers — Microsoft Update Catalog
+- **Intel Drivers** — Install Intel Driver & Support Assistant via winget · Intel Driver & Support Assistant — official page · Download Intel Arc / integrated graphics driver · Download Intel Chipset INF (Chipset Device Software) · Download Intel Management Engine driver · Download Intel RST driver
+- **Qualcomm Snapdragon Drivers** — Download Qualcomm Snapdragon X graphics driver
+- **Wi-Fi & Network Drivers** — Open motherboard / laptop support page · Install chipset and network drivers · Realtek Wi-Fi adapter drivers · Realtek LAN drivers (PCIe GbE / 2.5GbE) · Realtek Bluetooth drivers · Intel Wireless Wi-Fi drivers · Intel Wireless Bluetooth drivers · Intel Ethernet network drivers · MediaTek / MTK Wi-Fi driver guidance · MediaTek Wi-Fi drivers — Microsoft Update Catalog · MediaTek Bluetooth drivers · Qualcomm Wi-Fi drivers (FastConnect, Atheros, Killer) · Qualcomm Bluetooth drivers · Broadcom Wi-Fi drivers · Broadcom Bluetooth drivers · Broadcom LAN drivers (NetXtreme) · Marvell AQtion LAN drivers (Aquantia 5G / 10G) · Killer Ethernet drivers (E2xxx, E3xxx) · Killer Wi-Fi drivers · Enable Wi-Fi or connect Ethernet cable
+- **Audio Drivers** — Download Realtek audio driver
 
-### 02 · Disk Preparation
+### 02 · System Update
+
+- **System, Runtime & Reboot** — Set PC name · Check for Windows Updates · Check optional driver updates · Install Visual C++ Redistributables (official) · Install / Update Visual C++ 2015-2022 Redistributables via winget · Install Visual C++ Redistributables 2005-2022 (all-in-one pack) · Visual C++ Redistributable AIO — GitHub releases (abbodi1406) · ⚠ Restart Windows now (60 second timer) · Cancel scheduled restart · Restart after all updates are installed
+
+### 03 · Disk Preparation
 
 - **Partition Cleanup** — Delete Windows installation files partition (no-USB method) · MiniTool Partition Wizard — advanced partition manager · Reconnect previously disconnected drives
 - **Drive Letters & Explorer** — Verify all drives are visible in Explorer · Assign drive letters (if drives are missing or mixed up)
 - **User Folder Relocation** — Copy User folder to a second partition or drive · Redirect user shell folders to the new location · Relocate user folders to C:\<username>\ (script)
 - **Apps & Gaming Folders** — Set up Apps folder for portable applications · Set up Gaming folder for games and launchers (optional)
 
-### 03 · Browser Setup
+### 04 · Browser Setup
 
 - **Install Browser** — Google Chrome · Brave Browser · Mozilla Firefox · Vivaldi · Opera · WebView2 Runtime (standalone — required if removing Edge) · Set default browser
 - **Edge Configuration** — Configure Microsoft Edge settings · Configure sound devices & default playback · Browser setup guide (YouTube)
 - **Edge — Tame It** — Disable startup boost & background running · Disable background mode when Edge is closed · Disable news feed on new tab page · Disable telemetry & diagnostic data collection · Disable Shopping Assistant (price comparison popups) · Disable Microsoft Rewards in Edge · Disable first-run experience & import prompts
 - **Remove Edge (Optional)** — Read before proceeding — WebView2 dependency · Step 1 — Check if Uninstall is already available · Step 2 — Grant write access to region policy file · Step 3 — Open policy file in Notepad · Step 4 — Find the Edge entry and enable uninstall · Step 5 — Click Repair on Edge (reloads policy) · Step 6 — Uninstall Edge
 
-### 04 · Windows Settings
+### 05 · Windows Settings
 
 - **Explorer Settings** — Remove item-selection checkboxes & clear history · Configure Explorer view options · PowerToys — keyboard shortcut remapping · Auto-size columns (CTRL + Numpad *)
-- **System** — Display — resolution, scale, refresh rate · Notifications — configure & enable startup alerts · Disable automatic Storage Sense · Enable Clipboard History (Win+V) · Disable Remote Desktop (if not needed) · Multitasking — configure Snap windows · Disable Recall AI feature (24H2+) · Review optional Windows features
+- **System** — Display — resolution, scale, refresh rate · Notifications — configure & enable startup alerts · Disable automatic Storage Sense · Enable Clipboard History (Win+V) · Disable Remote Desktop (if not needed) · Multitasking — configure Snap windows · Disable Recall AI feature (24H2+) · Review optional Windows features · Turn off Smart App Control · Guide: presentation models (how a frame reaches the screen)
 - **Maintenance (Optional)** — Disable automatic Windows Maintenance
 - **Power Scheme (Optional)** — How to import a power scheme · Khorvie Power Scheme · KhorvieOS Power Scheme · Ultimate Performance Scheme · High Performance Scheme · AdamX Power Scheme · Xilly Power Scheme · TJxTweaks Power Scheme · Core Power Scheme · Bitsium Power Scheme
 - **CTT Tweaker (Optional)** — CTT WinUtil — GitHub (source + releases) · Chris Titus Tech Win11 Tweaker · Chris Titus Tech YouTube channel
@@ -149,41 +154,41 @@ Formerly Audion Windows Tools by Max.mov (1.x).
 - **SoundSwitch (Optional)** — SoundSwitch — hotkey audio device switcher
 - **Phone Link (Optional)** — Connect Android phone to Windows (Link to Windows) · MS Store package download (region bypass) · Phone Link — MS Store page · Cross Device Experience Host — MS Store page · Mobile devices settings
 - **Disk Indexing (Optional)** — Disable Windows Search indexing service · Remove drive indexing flag (per-drive) · Configure Search index locations
-- **Network & Internet** — Mark Ethernet as metered connection · Mark Wi-Fi as metered connection · Configure network adapter properties · DNS Benchmark — find fastest DNS for your ISP · Disable Cross-Device sync (if not needed)
+- **Network & Internet** — Mark Ethernet as metered connection · Mark Wi-Fi as metered connection · Allow device downloads over metered connections · Configure network adapter properties · DNS Benchmark — find fastest DNS for your ISP · Disable Cross-Device sync (if not needed) · Network settings for advanced users (Telegram)
 - **Personalization** — Wallpaper · Colors & accent · Lock screen · Start menu layout · Taskbar configuration · Disable all Device Usage suggestions
 - **More Personalization** — Classic right-click context menu (Win10 style) · Remove Gallery from File Explorer navigation pane · Remove Home from File Explorer navigation pane · Hide Start menu Recommended section (24H2) · Restore Windows Photo Viewer · ViVeTool — download (GitHub releases) · Enable 25H2 feature flags (ViVeTool) · Compact (Tablet) Taskbar mode · Auto Dark/Light theme switching (PowerToys) · Everything — fast file search with own index · Everything plugin for PowerToys Run · DisplaySwitch — quick monitor mode shortcuts
-- **Apps** — Disable background app activity · Disable transfer between devices & backup · Set default apps for file extensions · Disable unnecessary startup apps · Install all Microsoft Store app updates
+- **Apps** — Disable background app activity · Disable transfer between devices & backup · Set default apps for file extensions · Disable unnecessary startup apps · Install all Microsoft Store app updates · Game Bar: keep it on a Ryzen with two CCDs · After removing Game Bar: silence its leftovers
 - **Other Startup Settings (Optional)** — Open User Startup folder · Open System Startup folder · Sysinternals Autoruns — comprehensive startup manager
 - **Language & Time** — Clock on taskbar — format & display · Disable unnecessary input features · Language keyboard shortcut · Open Input Language Hotkeys dialog · Switch language hotkey: Alt+Shift → Ctrl+Shift
 - **Privacy** — Disable all General privacy options · Disable online speech recognition · Disable inking & typing personalization · Set diagnostics to Required only, delete data · Disable all Search permissions · Location services · Disable app diagnostic data access · Disable custom device data sharing
 - **Windows Update** — Check for Windows Updates · Check optional & driver updates · Disable Delivery Optimization (P2P updates) · Disable Find My Device (if not needed)
 
-### 05 · GPU & Monitor Settings
+### 06 · GPU & Monitor Settings
 
 - **Important Notes** — v0.4 update notes — VRR and Nvidia settings
 - **Monitor Setup** — Monitor setup guide — fixed refresh rate (no VRR) · Monitor setup guide — VRR (G-Sync / FreeSync)
-- **Nvidia Settings** — Open Nvidia Control Panel · Configure Nvidia driver settings (3D, DLSS, display) · Show Nvidia DLSS indicator overlay · Disable Nvidia HDCP
+- **Nvidia Settings** — Open Nvidia Control Panel · Configure Nvidia driver settings (3D, DLSS, display) · Download Nvidia Profile Inspector · DLSS: choose the model and preset (NVPI) · Turn off Ansel (the Nvidia App filters go too) · Show Nvidia DLSS indicator overlay · Disable Nvidia HDCP
 - **Official Nvidia Recommendations** — NVIDIA App — download · Apply NVIDIA App optimal game settings · Configure NVIDIA App DLSS Overrides · Official G-SYNC / VRR and V-Sync baseline · NVIDIA Reflex and Ultra Low Latency · Max Frame Rate and Power Management · NVIDIA Image Scaling · RTX Video Super Resolution / HDR · NVIDIA performance and DLSS status overlay
 
-### 06 · Cooling Setup
+### 07 · Cooling Setup
 
 - **Cooling Setup** — Enable PWM (Smart) fan mode in BIOS · Download Fan Control
 
-### 07 · Steam & Game Launchers
+### 08 · Steam & Game Launchers
 
 - **Game Launchers** — Download Steam · Download Epic Games Store · Download EA App · Install EA App to a custom drive · Download Blizzard Battle.net · Download Rockstar Games Launcher · Download Xbox app · Download Valorant / League of Legends · Download TcNo Account Switcher
 - **Minecraft** — Minecraft launcher notes (v0.4) · Download Minecraft (Bedrock Edition — official, requires license) · Download Minecraft Preview (Bedrock early access — official, requires license) · Download Minecraft Launcher (Bedrock + Java — official, requires license) · Download Minecraft Launcher without Microsoft Store (Java Edition — official) · Download Prism Launcher (unofficial, requires license) · Download Freesm Launcher (unofficial, no license required) · Download MultiMC Launcher (outdated, unofficial, requires license) · Browse Java Edition mods on Modrinth · Browse Java Edition mods on CurseForge · Download Modrinth app (mod manager) · Download CurseForge app (mod manager) · Download Minecraft server (Java or Bedrock — official)
 
-### 08 · Global Timer Resolution (Optional)
+### 09 · Global Timer Resolution (Optional)
 
 - **Global Timer Resolution** — Timer Resolution — important notes (v0.3) · What is Global Timer Resolution?
 
-### 09 · FPS & Latency Testing
+### 10 · FPS & Latency Testing
 
 - **Testing Notes** — v0.4 testing notes — Intel PresentMon & PCLatency
 - **Testing Tools** — Download CapFrameX · Download Intel PresentMon · Download Nvidia FrameView · Download PCLatency · Nvidia article — Understanding and measuring PC latency
 
-### 10 · Recommended Programs
+### 11 · Recommended Programs
 
 - **Community Resources** — Viewer-recommended software (Telegram chat topic)
 - **Browsers** — Google Chrome · Brave Browser · Mozilla Firefox · Vivaldi · Zen Browser
@@ -197,12 +202,12 @@ Formerly Audion Windows Tools by Max.mov (1.x).
 - **Gaming & Account Switching** — Download TcNo Account Switcher · Download Fan Control (cooling management) · Download qBittorrent (torrent client)
 - **Smartphone + PC Ecosystem** — Phone Link — Microsoft ecosystem for Android · Download KDE Connect (cross-platform phone/PC integration) · Download Plain App (self-hosted phone/PC bridge)
 
-### 11 · Mouse & Keyboard Settings
+### 12 · Mouse & Keyboard Settings
 
 - **Mouse Settings** — Gaming mouse myths — 8000 Hz polling, high DPI, mouse acceleration (YouTube) · Mouse settings guide — DPI, Angle Snap, Ripple Control, polling rate, etc. (Telegram)
 - **Keyboard Settings** — Magnetic keyboard setup guide — Rapid Trigger, actuation point, Snap Tap, etc. (YouTube)
 
-### 12 · Max.mov Tweaks
+### 13 · Max.mov Tweaks
 
 - **Max.mov Hub** — What belongs in Max.mov Tweaks · Open current Audion Setup Tools folder · Open local Max.mov resources
 - **Profiles & Presets** — Open local personalization pack · Open local Nvidia profiles/settings · Profiles are review-first · Legacy scripts are not shipped here

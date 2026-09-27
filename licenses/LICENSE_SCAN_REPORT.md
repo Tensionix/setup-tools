@@ -1,13 +1,13 @@
 # Audion Build Licenses Scan Report
 
 - Project: **Audion Setup Tools by Max.mov** (`audion-setup-tools-by-max-mov`)
-- Run: `20260926T194925Z_audion-setup-tools-by-max-mov_95bf1feb`
-- Project root: `E:\Release\Audion Setup Tools by Max.mov`
-- Scan root: `E:\Release\Audion Setup Tools by Max.mov`
-- Output: `E:\Release\Audion Setup Tools by Max.mov\licenses`
+- Run: `20260927T121030Z_audion-setup-tools-by-max-mov_6ca451ec`
+- Project root: `E:\Release Plus\Audion Setup Tools by Max.mov`
+- Scan root: `E:\Release Plus\Audion Setup Tools by Max.mov`
+- Output: `E:\Release Plus\Audion Setup Tools by Max.mov\licenses`
 - Status: **PASS**
-- Components: 1
-- Bundled: 1
+- Components: 2
+- Bundled: 2
 - Optional runtime: 0
 
 ## Issues
@@ -19,6 +19,7 @@ No issues detected.
 | Component | Change | Old | New |
 |---|---|---:|---:|
 | Audion launcher | `VERSION_OR_ARTIFACT_CHANGED_LICENSE_SAME` | bundled | bundled |
+| Lucide | `NEW_COMPONENT_APPROVED_PROFILE` | - | 1.48.0 |
 
 ## Scope
 

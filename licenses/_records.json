@@ -11,5 +11,18 @@
     "legal_document_hashes": [
       "f9aa24d322c0d39ff478dbcd0b3df9fa5514a44419e33fde66421029ec02a985"
     ]
+  },
+  {
+    "name": "Lucide",
+    "version": "1.48.0",
+    "license": "ISC AND MIT",
+    "source": "embedded-asset",
+    "license_files": [
+      "licenses/THIRD_PARTY_NOTICES.txt"
+    ],
+    "license_fingerprint": "47d3d9ed3e61dda526c5a2461991b39e9030ee993060079af76c65677eb8801b",
+    "legal_document_hashes": [
+      "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+    ]
   }
 ]

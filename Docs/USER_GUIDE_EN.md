@@ -36,7 +36,7 @@ It needs 64-bit Windows 10 or 11. Everything else is inside: there is no PowerSh
 
 ## The Window
 
-**Title strip.** The program's name, the RU/EN switch and the theme switch (sun - light, moon - dark). At the right, the machine: Windows and its build, the processor, the video card, the amount and type of memory, the system drive and its free space.
+**Title strip.** The program's name, the RU/EN switch and the theme switch (sun - light, moon - dark). Then the screens, as Win+P: first only, second only, duplicate, extend (in 5 seconds), and the restart (in 15 seconds); while a countdown runs, the strip shows it with NOW and CANCEL. At the right, the machine: Windows and its build, the processor, the video card, the amount and type of memory, the system drive and its free space.
 
 **Left panel.** Search over the cards, the list of sections and, at the bottom, Max.mov's YouTube and Telegram. Every section has its number, a colour rule of its theme and its number of cards. The panel is dark in both themes.
 
@@ -60,7 +60,12 @@ It needs 64-bit Windows 10 or 11. Everything else is inside: there is no PowerSh
 |---|---|
 | APPLY / INSTALL / RUN | The main action: apply a setting, install a program with winget, run a script |
 | OPEN IN WINDOWS | A page of Settings, Explorer or a Windows console |
-| OPEN SITE / OPEN | A site in your default browser |
+| VERSIONS | On NVIDIA drivers and everything taken from TechPowerUp: the list of versions the source has opens under the card's buttons - date, size, installer or portable. The usual choice is ticked already: on NVIDIA the newest golden version (★ - stable LTS versions by users' ratings, `NvidiaGolden` in `Manifests\Downloads.psd1`, as in Audion Get Tools) for this card's series, on TechPowerUp the newest release. Tick what you need and press DOWNLOAD: the list closes, the download runs in the journal, TechPowerUp files are checked by SHA256. Betas are not listed: whoever wants a beta takes it from the site. On the Intel chipset card the package with the INF of this PC's Intel devices is ticked (the FOR THIS PC mark); every Intel installer is checked for Intel Corporation's signature. Intel ME and RST, Realtek network, Wi-Fi, Bluetooth and audio, MediaTek and Qualcomm Wi-Fi and Bluetooth come from the Microsoft Update Catalog by this PC's device id; only a version newer than the installed one is ticked: WHQL drivers without Intel's programs, the installed version marked (INSTALLED), unpacked into a folder of INF files, the journal gives the install command |
+| INSTALLER | Downloads the latest release of the program into `Downloads\Audion Setup Tools\<program>` and shows it in Explorer |
+| PORTABLE | Downloads the portable build and unpacks it into `Downloads\Audion Setup Tools\<program>\Portable` - nothing to install |
+| INSTALL (on programs to download) | Downloads the installer and installs the program without questions |
+| OPEN SITE / OPEN / SITE | The site in your default browser |
+| Button colours | Bottle green - install, installers and versions; dark orange - portable builds; sea blue - a site or a page of Windows; mint - apply; burnt orange - revert or remove |
 | REVERT / REMOVE | Put the previous value back, uninstall. For switches it appears once the program itself changed the value: the previous one is kept in `Data\backups` |
 | WINDOWS DEFAULT | Put back the value Windows has out of the box. Works even when the setting was changed long before this program. Shown when the value is not the default now |
 
@@ -131,7 +136,7 @@ Audion Setup Tools by Max.mov/
 ## Complete Section And Function Map
 
 <!-- card-map:start -->
-Built from the manifests by `Docs\tools\Build-GuideMap.ps1` - not edited by hand. Sections 13, subsections 69, cards 307. Kinds: deeplink=57, docs=1, feature=1, link=117, manual=71, powerscheme=9, registry=17, script=33, service=1.
+Built from the manifests by `Docs\tools\Build-GuideMap.ps1` - not edited by hand. Sections 14, subsections 71, cards 333. Kinds: deeplink=59, docs=1, feature=1, link=137, manual=74, powerscheme=9, registry=17, script=34, service=1.
 
 ### 0. Windows Installation
 
@@ -177,15 +182,15 @@ A subsection of Max.mov's guide.
 - **Download Nvidia GPU driver** (`download-nvidia-driver-prep` · link · from Max.mov's guide)
   - Description: Official Nvidia driver download page. Download the latest Game Ready Driver for your GPU model.
   - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/drivers/`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
 - **Download AMD GPU driver** (`download-amd-driver-prep` · link · from Max.mov's guide)
   - Description: Official AMD driver download page. Download the latest Adrenalin driver for your GPU.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
-  - Buttons: OPEN
-- **Download Intel GPU / Arc driver (unavailable from Russian IPs)** (`download-intel-gpu-driver-prep` · link)
+  - Buttons: VERSIONS, SITE
+- **Download Intel GPU / Arc driver (site availability varies by region)** (`download-intel-gpu-driver-prep` · link)
   - Description: Official Intel driver download center. Download the Intel graphics driver for your iGPU or Arc GPU.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download-center/home.html`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
 - **Move driver installers to a USB drive or separate partition** (`move-drivers-to-usb` · manual step · **ESSENTIAL** · from Max.mov's guide)
   - Description: After downloading GPU drivers, copy the installer files to a USB drive or a non-system partition so they are accessible immediately after Windows reinstall, before connecting to the internet.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -202,15 +207,15 @@ A subsection of Max.mov's guide.
 - **Download AMD chipset driver** (`download-amd-chipset` · link)
   - Description: Official AMD driver page. Chipset drivers for AMD platforms are available here.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
-  - Buttons: OPEN
-- **Download Intel chipset INF driver (older chipsets only, unavailable from Russian IPs)** (`download-intel-chipset-old` · link)
+  - Buttons: VERSIONS, SITE
+- **Download Intel chipset INF driver (older chipsets only, site availability varies by region)** (`download-intel-chipset-old` · link)
   - Description: Intel chipset INF utility for older Intel platforms. Modern Intel chipsets receive updates exclusively via Windows Update.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/19347/chipset-inf-utility.html`
-  - Buttons: OPEN
-- **Download Intel RST driver (unavailable from Russian IPs)** (`download-intel-rst` · link)
+  - Buttons: VERSIONS, SITE
+- **Download Intel RST driver** (`download-intel-rst` · link)
   - Description: Intel Rapid Storage Technology driver. Required only if your SSD is not detected during Windows setup and you need VMD/RST support.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/search.html?ws=text#sort=relevancy&layout=table&f:downloadtype=[Drivers]&f:@operatingsystem_en=[Windows%2011%20Family*]&f:@tabfilter=[Downloads]&f:@stm_10385_en=[Memory%20and%20Storage]`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
 - **Download drivers from motherboard manufacturer website** (`motherboard-support-page` · manual step)
   - Description: Visit your motherboard manufacturer support page (ASUS, MSI, Gigabyte, ASRock) to download the latest chipset and LAN drivers for your specific board model.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -222,22 +227,22 @@ A subsection of Max.mov's guide.
 
 #### 0.3 Create Installation Media
 
-- **Download Windows 11 Installation Media (Media Creation Tool, unavailable from Russian IPs)** (`download-win11-mct` · link · from Max.mov's guide)
+- **Download Windows 11 Installation Media (Media Creation Tool, availability varies by region)** (`download-win11-mct` · link · from Max.mov's guide)
   - Description: Official Microsoft page to download the Windows 11 Media Creation Tool, which creates a bootable USB installation drive automatically.
   - What it does: Opens the site in your browser: `https://www.microsoft.com/en-us/software-download/windows11`
-  - Buttons: OPEN
-- **Download official Windows 11 ISO image (unavailable from Russian IPs)** (`download-win11-iso-official` · link · from Max.mov's guide)
-  - Description: Direct ISO download from Microsoft for use with Rufus or manual installation without a USB drive. May be unavailable from Russian IP addresses.
+  - Buttons: INSTALLER, SITE
+- **Download official Windows 11 ISO image (availability varies by region)** (`download-win11-iso-official` · link · from Max.mov's guide)
+  - Description: Direct ISO download from Microsoft for use with Rufus or manual installation without a USB drive. Microsoft does not offer it in every region.
   - What it does: Opens the site in your browser: `https://www.microsoft.com/en-us/software-download/windows11`
   - Buttons: OPEN
-- **Download Windows 11 images via UUP Dump (available from Russia)** (`download-win11-uup-dump` · link · side road)
-  - Description: Alternative source for Windows 11 ISO images including those built via UUP Dump. Available from Russian IP addresses.
+- **Download Windows 11 images via UUP Dump (available where Microsoft's download is not)** (`download-win11-uup-dump` · link · side road)
+  - Description: Alternative source for Windows 11 ISO images including those built via UUP Dump. Works in regions where Microsoft does not offer the download.
   - What it does: Opens the site in your browser: `https://www.comss.ru/list.php?c=windows10_update`
   - Buttons: OPEN
 - **Download Rufus (bootable USB creator)** (`download-rufus` · link · from Max.mov's guide · side road)
   - Description: Rufus creates bootable USB installation drives from ISO images. Use it to write the Windows 11 ISO onto a USB flash drive (8GB+ recommended).
   - What it does: Opens the site in your browser: `https://github.com/pbatard/rufus/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Create bootable USB installation drive** (`create-usb-drive` · manual step · **ESSENTIAL** · from Max.mov's guide)
   - Description: Use Rufus to write the Windows 11 ISO to a USB flash drive. In Rufus, select the ISO file, choose the target USB drive, and click Start. Use GPT partition scheme for UEFI systems.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -346,7 +351,7 @@ A subsection of Max.mov's guide.
 - **Install drivers during OOBE (before internet, without MS account)** (`new-driver-method-steps` · manual step · from Max.mov's guide)
   - Description: During the Windows 11 initial setup screen (OOBE), press Shift+F10, type explorer.exe to open File Explorer, install chipset and GPU drivers from USB, then reboot back into OOBE. Connect to the internet when asked, but skip the Microsoft account using one of the methods below.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: 1. At the OOBE screen, press Shift+F10. 2. Type: explorer.exe and press Enter. 3. File Explorer opens — install chipset driver and GPU driver from your USB drive. 4. In CMD, type: shutdown.exe /r /t 00 to reboot back into OOBE. 5. Continue setup and connect to the internet when prompted. 6. To skip Microsoft account:
+  - Instruction: 0. Stay offline until the drivers are in. 1. At the OOBE screen, press Shift+F10. 2. Type: explorer.exe and press Enter. 3. File Explorer opens — install the chipset driver and the GPU driver from your USB drive (the GPU driver as the guide does it: see the NVIDIA driver card); drives switched off in BIOS may need turning back on. 4. In CMD, type: shutdown.exe /r /t 00 to reboot back into OOBE. 5. Continue setup and connect to the internet when prompted. 6. To skip Microsoft account:
    — Method IV (Pro only): choose "work/school" → "Join domain" instead.
    — Method V+: enter aaa@gmail.com with a wrong password — after repeated failures, Windows offers a local account.
    — Method V: log into MS account, then go to Settings → Accounts → Your info → "Sign in with a local account instead".
@@ -371,100 +376,50 @@ A subsection of Max.mov's guide.
   - Buttons: OPEN IN WINDOWS
   - Instruction: Restart the PC. At the Windows Boot Manager screen, select the NST (NeoSmart Technologies) entry. This boots into the WinPE installer you configured with EasyBCD. Proceed with the normal Windows 11 installation from there.
 
-### 1. Driver Installation & System Update
+### 1. Driver Installation
 
 #### 1.0 Setup Notes
 
 A subsection of Max.mov's guide.
 
-- **v0.4 setup note — skip steps 2-4 if drivers installed during OOBE** (`setup-notes-v04` · manual step)
-  - Description: If you used the new driver installation method via Explorer during OOBE (Section 0), skip steps 2, 3, and 4 in this section — drivers and internet are already set up.
+- **v0.4 setup note — skip this section if drivers were installed during OOBE** (`setup-notes-v04` · manual step)
+  - Description: If you used the new driver installation method via Explorer during OOBE (Section 0), skip this section — drivers and internet are already set up.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: If you installed drivers via the Explorer trick during Windows setup (Section 0 → Step 8), you may skip steps 2, 3, and 4 in this section.
-
-#### 1.1 System, Runtime & Reboot
-
-- **Set PC name** (`set-pc-name` · Windows page · administrator · restart · from Max.mov's guide)
-  - Description: Open About settings to rename this PC. A restart is required for the name to take effect.
-  - What it does: Opens in Windows: `ms-settings:about`
-  - Buttons: OPEN IN WINDOWS
-  - Instruction: Click "Rename this PC", enter your preferred name, and restart when prompted.
+  - Instruction: If you installed drivers via the Explorer trick during Windows setup (Section 0 → Step 8), you may skip this section.
 - **Open Device Manager** (`open-device-manager-drivers` · Windows page · from Max.mov's guide)
   - Description: Open Device Manager to verify GPU, chipset, storage, Wi-Fi, Bluetooth, and unknown devices after installing Windows.
   - What it does: Opens in Windows: `devmgmt.msc`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Check Display adapters, Network adapters, Bluetooth, Storage controllers, and Other devices. Unknown devices usually mean a missing chipset, Wi-Fi, Bluetooth, or storage driver.
-- **Enable Wi-Fi or connect Ethernet cable** (`enable-network` · Windows page · from Max.mov's guide)
-  - Description: Open advanced network settings to verify and configure your network adapter after driver installation.
-  - What it does: Opens in Windows: `ms-settings:network-advancedsettings`
-  - Buttons: OPEN IN WINDOWS
-  - Instruction: Ensure your network adapter is listed and enabled. Connect via Ethernet or toggle Wi-Fi on.
-- **Check for Windows Updates** (`windows-update` · Windows page · **ESSENTIAL** · from Max.mov's guide)
-  - Description: Install all available Windows Updates before proceeding with further configuration.
-  - What it does: Opens in Windows: `ms-settings:windowsupdate`
-  - Buttons: OPEN IN WINDOWS
-  - Instruction: Click "Check for updates" and install everything available. Restart when prompted.
-- **Check optional driver updates** (`windows-optional-driver-updates` · Windows page · from Max.mov's guide)
-  - Description: Open Windows optional updates to review driver updates that are not delivered through the main Windows Update flow.
-  - What it does: Opens in Windows: `ms-settings:windowsupdate-optionalupdates`
-  - Buttons: OPEN IN WINDOWS
-  - Instruction: Open Driver updates, review every item, and install only drivers that match your current hardware.
-- **Install Visual C++ Redistributables (official)** (`install-vcr-official` · link · from Max.mov's guide)
-  - Description: Download the latest Visual C++ Redistributable packages from Microsoft. Required by many applications and games.
-  - What it does: Opens the site in your browser: `https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist`
-  - Buttons: OPEN
-- **Install / Update Visual C++ 2015-2022 Redistributables via winget** (`install-vcr-winget` · script · administrator · **ESSENTIAL**)
-  - Description: Installs or updates the official Microsoft Visual C++ 2015-2022 Redistributable packages (x64 + x86) sequentially through winget.
-  - What it does: Installs or updates via winget: `Microsoft.VCRedist.2015+.x64`, `Microsoft.VCRedist.2015+.x86`.
-  - Buttons: INSTALL / UPDATE
-  - Note: Installs or updates both x64 and x86 packages sequentially via winget.
-- **Install Visual C++ Redistributables 2005-2022 (all-in-one pack)** (`install-vcr-all-in-one` · link · from Max.mov's guide · side road)
-  - Description: Alternative all-in-one pack covering VCR versions 2005 through 2022. Convenient single-installer option.
-  - What it does: Opens the site in your browser: `https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/`
-  - Buttons: OPEN
-- **Visual C++ Redistributable AIO — GitHub releases (abbodi1406)** (`install-vcr-aio-github` · link · side road)
-  - Description: Another route to the same full package: the abbodi1406/vcredist releases page. Community-maintained, published openly on GitHub with checksums and a visible release history, so it is easy to verify what you are downloading. Use it when the TechPowerUp mirror is unavailable or you prefer the original source.
-  - What it does: Opens the site in your browser: `https://github.com/abbodi1406/vcredist/releases`
-  - Buttons: OPEN
-- **⚠ Restart Windows now (60 second timer)** (`reboot-now-warning` · script · restart · **CAREFUL**)
-  - Description: Schedules a Windows restart in 60 seconds after drivers and updates are installed. Use the cancel button if clicked by mistake.
-  - What it does: A script from the manifest. Its state is checked.
-  - Buttons: RESTART
-  - Note: Alternative direct action: schedules an actual Windows restart, not just a checklist mark.
-- **Cancel scheduled restart** (`cancel-scheduled-restart` · script)
-  - Description: Cancels a pending shutdown.exe restart timer if one was scheduled from this tool or manually.
-  - What it does: A script from the manifest. Its state is checked.
-  - Buttons: CANCEL
-  - Note: Alternative direct action: aborts a pending shutdown.exe restart timer.
-- **Restart after all updates are installed** (`reboot-after-updates` · manual step · restart · from Max.mov's guide)
-  - Description: Perform a clean restart after all drivers and Windows Updates have been applied.
-  - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Once all updates and drivers are installed, restart the PC: Start → Power → Restart. The sand restart button above is an optional direct shortcut.
 
 #### 1.2 NVIDIA Drivers
 
 A subsection of Max.mov's guide.
 
-- **Download official NVIDIA GPU driver** (`download-nvidia-driver` · link)
-  - Description: Official NVIDIA driver download page. Download the latest Game Ready Driver, Studio Driver, or workstation driver for your exact GPU model.
+- **Download NVIDIA Game Ready driver** (`download-nvidia-driver` · link)
+  - Description: The Game Ready branch for games: the latest one for this machine's card - desktop or notebook - from NVIDIA's driver service. The Studio driver is the next card; the site has every other driver.
   - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/drivers/`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
+- **Download NVIDIA Studio driver** (`download-nvidia-studio-driver` · link)
+  - Description: The Studio branch: the same GeForce cards, releases tested longer with creative apps (DaVinci Resolve, Adobe, Blender). The latest one for this machine's card - desktop or notebook - from NVIDIA's driver service.
+  - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/drivers/`
+  - Buttons: VERSIONS, SITE
 - **NVIDIA App — driver updates and game optimization** (`download-nvidia-app-drivers` · link)
   - Description: Official NVIDIA App page. Use it for driver updates, game optimization, overlays, DLSS Overrides, and GPU tuning.
   - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/software/nvidia-app/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **NVCleanstall — minimal NVIDIA driver installer** (`download-nvcleanstall` · link · side road)
   - Description: GUI wrapper that lets you install only the Display Driver component and optional PhysX/Audio. Cleaner than the official custom install. NVIDIA only.
   - What it does: Opens the site in your browser: `https://www.techpowerup.com/download/techpowerup-nvcleanstall/`
-  - Buttons: OPEN
-- **Install NVIDIA GPU driver (clean, no bloatware)** (`install-nvidia-driver` · manual step · administrator · restart · **ESSENTIAL**)
-  - Description: Run the NVIDIA driver installer selecting only the Display Driver component. Use NVCleanstall for the easiest clean install experience.
+  - Buttons: PORTABLE, SITE
+- **Install NVIDIA GPU driver (clean, no bloatware)** (`install-nvidia-driver` · manual step · administrator · restart · **ESSENTIAL** · from Max.mov's guide)
+  - Description: Only the display driver, the way the guide does it: a shortcut to the NVIDIA installer with -passive Display.Driver - no NVIDIA App, no telemetry services.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Option A (recommended): open NVCleanstall, it auto-detects your GPU and the latest driver, tick only "Display Driver", click Next → Install. Option B (manual): download from nvidia.com/drivers, run installer → Custom → uncheck everything except Display Driver. Restart when complete.
+  - Instruction: 1. Download the driver from nvidia.com/drivers, do not run it. 2. Make a shortcut to the downloaded .exe and add to its Target: -passive Display.Driver (first install and updates) or -passive -clean Display.Driver (also resets the driver settings). 3. Run the shortcut as administrator - the installer shows only a progress bar. 4. Restart. Then HDCP and Ansel off (GPU section). Alternative: NVCleanstall with only "Display Driver" ticked.
 - **DDU — Display Driver Uninstaller** (`download-ddu` · link · side road)
   - Description: Completely removes NVIDIA/AMD/Intel GPU drivers and leftover registry entries. Use before switching GPU vendors or when a driver is corrupted. Run in Safe Mode.
-  - What it does: Opens the site in your browser: `https://www.wagnardsoft.com/`
-  - Buttons: OPEN
+  - What it does: Opens the site in your browser: `https://www.wagnardsoft.com/display-driver-uninstaller-DDU-`
+  - Buttons: VERSIONS, SITE
 - **Remove old GPU driver with DDU** (`remove-old-gpu-driver` · manual step · administrator · restart · **CAREFUL** · side road)
   - Description: Only needed when switching GPU vendor, fixing a corrupted driver, or cleaning persistent issues after an update. Not required on a clean Windows install.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -477,11 +432,11 @@ A subsection of Max.mov's guide.
 - **Download official AMD graphics driver** (`download-amd-driver` · link)
   - Description: Official AMD Drivers and Support page. Use it for Radeon graphics, Ryzen processors with graphics, and the AMD auto-detect tool.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
 - **Download official AMD chipset driver** (`download-amd-chipset-driver` · link)
   - Description: Official AMD Drivers and Support page. Chipset drivers for AMD desktop and laptop platforms are available here.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
 - **Install AMD graphics/chipset drivers** (`install-amd-drivers` · manual step · administrator · restart · **ESSENTIAL**)
   - Description: Install AMD graphics and chipset packages from the official AMD page or from your motherboard/laptop support page.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -499,21 +454,32 @@ A subsection of Max.mov's guide.
 - **Intel Driver & Support Assistant — official page** (`download-intel-dsa` · link)
   - Description: Official Intel auto-detect utility. It provides a curated list of available updates for identified Intel products.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/support/detect.html`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download Intel Arc / integrated graphics driver** (`download-intel-graphics-driver` · link)
   - Description: Official Intel Arc and Intel integrated graphics driver page for Windows.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html`
-  - Buttons: OPEN
-- **Download Intel chipset INF driver (older chipsets only)** (`download-intel-chipset-inf-driver` · link)
-  - Description: Intel chipset INF utility for older Intel platforms. Modern Intel chipsets usually receive updates via Windows Update and Intel DSA.
+  - Buttons: VERSIONS, SITE
+- **Download Intel Chipset INF (Chipset Device Software)** (`download-intel-chipset-inf-driver` · link)
+  - Description: Every Intel chipset package from 10.0.13 on. The Intel devices of this PC pick the one that carries their INF - old platforms (Sandy Bridge to Broadwell, X79/X99) are only in 10.1.18981.6008, older Xeon Scalable in the Server package. The INF mostly names the devices in Device Manager; modern chipsets also get it from Windows Update.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/19347/chipset-inf-utility.html`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
+- **Download Intel Management Engine driver** (`download-intel-me-driver` · link)
+  - Description: The driver of the Intel ME interface (HECI) as Windows Update gives it: from the Microsoft Update Catalog by this PC's device id, WHQL, without Intel's programs. The installed version is marked; usually Windows Update has put it already.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Intel%20Management%20Engine%20Interface`
+  - Buttons: VERSIONS, SITE
 - **Download Intel RST driver** (`download-intel-rst-driver` · link)
   - Description: Intel Rapid Storage Technology driver. Required only if your SSD is not detected during Windows setup or your system uses VMD/RST.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/15667/intel-rapid-storage-technology-intel-rst-driver-installation-software-with-intel-optane-memory.html`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
 
-#### 1.5 Wi-Fi & Network Drivers
+#### 1.5 Qualcomm Snapdragon Drivers
+
+- **Download Qualcomm Snapdragon X graphics driver** (`download-snapdragon-graphics-driver` · link)
+  - Description: The Adreno graphics driver of Snapdragon X laptops, every released version from TechPowerUp; ticked only on a Snapdragon PC.
+  - What it does: Opens the site in your browser: `https://www.techpowerup.com/download/qualcomm-snapdragon-x-graphics-drivers/`
+  - Buttons: VERSIONS, SITE
+
+#### 1.6 Wi-Fi & Network Drivers
 
 A subsection of Max.mov's guide.
 
@@ -528,11 +494,27 @@ A subsection of Max.mov's guide.
 - **Realtek Wi-Fi adapter drivers** (`download-realtek-wifi-drivers` · link)
   - Description: Official Realtek Wireless LAN IC downloads page. Use it when the adapter model is Realtek and Windows Update/OEM support page did not provide a newer driver.
   - What it does: Opens the site in your browser: `https://www.realtek.com/Download/Index?cate_id=203&menu_id=297`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
+- **Realtek LAN drivers (PCIe GbE / 2.5GbE)** (`download-realtek-lan-drivers` · link)
+  - Description: The driver of a Realtek network card. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20PCIe%20GbE%20Family%20Controller`
+  - Buttons: VERSIONS, SITE
+- **Realtek Bluetooth drivers** (`download-realtek-bluetooth-drivers` · link)
+  - Description: The driver of a Realtek Bluetooth adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20Bluetooth`
+  - Buttons: VERSIONS, SITE
 - **Intel Wireless Wi-Fi drivers** (`download-intel-wifi-drivers` · link)
   - Description: Official Intel Wi-Fi driver package for Windows 10 and Windows 11 wireless adapters.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/19351/intel-wireless-wi-fi-drivers-for-windows-10-and-windows-11.html`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
+- **Intel Wireless Bluetooth drivers** (`download-intel-bluetooth-drivers` · link)
+  - Description: Intel Bluetooth driver package for Windows 10 and Windows 11 - the companion of the Intel Wi-Fi driver on the same combo card.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html`
+  - Buttons: VERSIONS, SITE
+- **Intel Ethernet network drivers** (`download-intel-ethernet-drivers` · link)
+  - Description: Intel wired network drivers (I219, I225, I226 and others) for Windows 10 and Windows 11. The package comes zipped and is unpacked beside it.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/18293/intel-network-adapter-driver-for-windows-10.html`
+  - Buttons: VERSIONS, SITE
 - **MediaTek / MTK Wi-Fi driver guidance** (`download-mediatek-wifi-info` · link)
   - Description: Official MediaTek networking page. For most modern laptop Wi-Fi adapters, MediaTek directs end users to the device manufacturer support page or Windows Update.
   - What it does: Opens the site in your browser: `https://www.mediatek.com/products/networking-and-connectivity`
@@ -540,11 +522,110 @@ A subsection of Max.mov's guide.
 - **MediaTek Wi-Fi drivers — Microsoft Update Catalog** (`download-mediatek-wifi-catalog` · link)
   - Description: Microsoft Update Catalog search for MediaTek MT7921/MT7922 Wi-Fi drivers. Useful when the OEM page is outdated or unavailable.
   - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Wi-Fi%206%20MT7921%20Wireless%20LAN%20Card`
-  - Buttons: OPEN
+  - Buttons: VERSIONS, SITE
+- **MediaTek Bluetooth drivers** (`download-mediatek-bluetooth-drivers` · link)
+  - Description: The driver of a MediaTek Bluetooth adapter (the pair of MT7921/MT7922 Wi-Fi). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=MediaTek%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+- **Qualcomm Wi-Fi drivers (FastConnect, Atheros, Killer)** (`download-qualcomm-wifi-drivers` · link)
+  - Description: The driver of a Qualcomm Wi-Fi adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Wi-Fi`
+  - Buttons: VERSIONS, SITE
+- **Qualcomm Bluetooth drivers** (`download-qualcomm-bluetooth-drivers` · link)
+  - Description: The driver of a Qualcomm Bluetooth adapter. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Qualcomm%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+- **Broadcom Wi-Fi drivers** (`download-broadcom-wifi-drivers` · link)
+  - Description: The driver of a Broadcom Wi-Fi adapter (BCM43xx, in older laptops and Macs). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Wireless`
+  - Buttons: VERSIONS, SITE
+- **Broadcom Bluetooth drivers** (`download-broadcom-bluetooth-drivers` · link)
+  - Description: The driver of a Broadcom Bluetooth adapter; the catalog has only an old one, Windows's own driver usually does. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20Bluetooth`
+  - Buttons: VERSIONS, SITE
+- **Broadcom LAN drivers (NetXtreme)** (`download-broadcom-lan-drivers` · link)
+  - Description: The driver of a Broadcom NetXtreme network card (desktops, workstations, servers). From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom%20NetXtreme`
+  - Buttons: VERSIONS, SITE
+- **Marvell AQtion LAN drivers (Aquantia 5G / 10G)** (`download-aqtion-lan-drivers` · link)
+  - Description: The driver of a Marvell AQtion network card - the Aquantia AQC107/AQC113 5 and 10 Gbit chips on ASUS, Gigabyte and MSI boards and 10G cards. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Marvell%20AQtion`
+  - Buttons: VERSIONS, SITE
+- **Killer Ethernet drivers (E2xxx, E3xxx)** (`download-killer-ethernet-drivers` · link)
+  - Description: The driver of a Killer network card: E2xxx are Qualcomm Atheros chips, E3000/E3100 are Realtek 2.5G. Bare driver, without Killer Control Center. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Ethernet`
+  - Buttons: VERSIONS, SITE
+- **Killer Wi-Fi drivers** (`download-killer-wifi-drivers` · link)
+  - Description: The driver of a Killer Wi-Fi adapter: AX1650/1675/1690 and newer are Intel chips (the Intel Wi-Fi card fits them too), 1435/1535 are Qualcomm Atheros. Killer Bluetooth is Intel Bluetooth. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Killer%20Wi-Fi`
+  - Buttons: VERSIONS, SITE
+- **Enable Wi-Fi or connect Ethernet cable** (`enable-network` · Windows page · from Max.mov's guide)
+  - Description: Open advanced network settings to verify and configure your network adapter after driver installation.
+  - What it does: Opens in Windows: `ms-settings:network-advancedsettings`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Ensure your network adapter is listed and enabled. Connect via Ethernet or toggle Wi-Fi on.
 
-### 2. Disk Preparation
+#### 1.7 Audio Drivers
 
-#### 2.0 Partition Cleanup
+- **Download Realtek audio driver** (`download-realtek-audio-driver` · link)
+  - Description: The driver of the Realtek audio codec, as Windows Update gives it: the exact driver of this PC (its SUBSYS) first, then the codec's. From the Microsoft Update Catalog by this PC's device id: WHQL, without the vendor's programs; the installed version is marked. The Realtek Audio Console comes from the Microsoft Store.
+  - What it does: Opens the site in your browser: `https://www.catalog.update.microsoft.com/Search.aspx?q=Realtek%20High%20Definition%20Audio`
+  - Buttons: VERSIONS, SITE
+
+### 2. System Update
+
+#### 2.1 System, Runtime & Reboot
+
+- **Set PC name** (`set-pc-name` · Windows page · administrator · restart · from Max.mov's guide)
+  - Description: Open About settings to rename this PC. A restart is required for the name to take effect.
+  - What it does: Opens in Windows: `ms-settings:about`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Click "Rename this PC", enter your preferred name, and restart when prompted.
+- **Check for Windows Updates** (`windows-update` · Windows page · **ESSENTIAL** · from Max.mov's guide)
+  - Description: Install all available Windows Updates before proceeding with further configuration.
+  - What it does: Opens in Windows: `ms-settings:windowsupdate`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Click "Check for updates" and install everything available. Restart when prompted.
+- **Check optional driver updates** (`windows-optional-driver-updates` · Windows page · from Max.mov's guide)
+  - Description: Open Windows optional updates to review driver updates that are not delivered through the main Windows Update flow.
+  - What it does: Opens in Windows: `ms-settings:windowsupdate-optionalupdates`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Open Driver updates, review every item, and install only drivers that match your current hardware.
+- **Install Visual C++ Redistributables (official)** (`install-vcr-official` · link · from Max.mov's guide)
+  - Description: Download the latest Visual C++ Redistributable packages from Microsoft. Required by many applications and games.
+  - What it does: Opens the site in your browser: `https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist`
+  - Buttons: INSTALL, INSTALLER, SITE
+- **Install / Update Visual C++ 2015-2022 Redistributables via winget** (`install-vcr-winget` · script · administrator · **ESSENTIAL**)
+  - Description: Installs or updates the official Microsoft Visual C++ 2015-2022 Redistributable packages (x64 + x86) sequentially through winget.
+  - What it does: Installs or updates via winget: `Microsoft.VCRedist.2015+.x64`, `Microsoft.VCRedist.2015+.x86`.
+  - Buttons: INSTALL / UPDATE
+  - Note: Installs or updates both x64 and x86 packages sequentially via winget.
+- **Install Visual C++ Redistributables 2005-2022 (all-in-one pack)** (`install-vcr-all-in-one` · link · from Max.mov's guide · side road)
+  - Description: Alternative all-in-one pack covering VCR versions 2005 through 2022. Convenient single-installer option.
+  - What it does: Opens the site in your browser: `https://www.techpowerup.com/download/visual-c-redistributable-runtime-package-all-in-one/`
+  - Buttons: VERSIONS, SITE
+- **Visual C++ Redistributable AIO — GitHub releases (abbodi1406)** (`install-vcr-aio-github` · link · side road)
+  - Description: Another route to the same full package: the abbodi1406/vcredist releases page. Community-maintained, published openly on GitHub with checksums and a visible release history, so it is easy to verify what you are downloading. Use it when the TechPowerUp mirror is unavailable or you prefer the original source.
+  - What it does: Opens the site in your browser: `https://github.com/abbodi1406/vcredist/releases`
+  - Buttons: INSTALL, INSTALLER, SITE
+- **⚠ Restart Windows now (60 second timer)** (`reboot-now-warning` · script · restart · **CAREFUL**)
+  - Description: Schedules a Windows restart in 60 seconds after drivers and updates are installed. Use the cancel button if clicked by mistake.
+  - What it does: A script from the manifest. Its state is checked.
+  - Buttons: RESTART
+  - Note: Alternative direct action: schedules an actual Windows restart, not just a checklist mark.
+- **Cancel scheduled restart** (`cancel-scheduled-restart` · script)
+  - Description: Cancels a pending shutdown.exe restart timer if one was scheduled from this tool or manually.
+  - What it does: A script from the manifest. Its state is checked.
+  - Buttons: CANCEL
+  - Note: Alternative direct action: aborts a pending shutdown.exe restart timer.
+- **Restart after all updates are installed** (`reboot-after-updates` · manual step · restart · from Max.mov's guide)
+  - Description: Perform a clean restart after all drivers and Windows Updates have been applied.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Instruction: Once all updates and drivers are installed, restart the PC: Start → Power → Restart. The sand restart button above is an optional direct shortcut.
+
+### 3. Disk Preparation
+
+#### 3.0 Partition Cleanup
 
 A subsection of Max.mov's guide.
 
@@ -561,7 +642,7 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Power off the PC, reconnect any drives you disconnected before installation, then power on.
 
-#### 2.1 Drive Letters & Explorer
+#### 3.1 Drive Letters & Explorer
 
 A subsection of Max.mov's guide.
 
@@ -574,7 +655,7 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Open Disk Management (diskmgmt.msc), right-click the volume, choose "Change Drive Letter and Paths", and assign the desired letter.
 
-#### 2.2 User Folder Relocation
+#### 3.2 User Folder Relocation
 
 A subsection of Max.mov's guide.
 
@@ -592,7 +673,7 @@ A subsection of Max.mov's guide.
   - Buttons: APPLY, REVERT
   - Instruction: Click Apply to create C:\<username>\ subfolders and redirect Desktop, Documents, Music, Pictures, Videos. A sign-out or Explorer restart is needed for all apps to pick up the new paths. Click Revert to restore default %USERPROFILE%\ paths.
 
-#### 2.3 Apps & Gaming Folders
+#### 3.3 Apps & Gaming Folders
 
 A subsection of Max.mov's guide.
 
@@ -605,15 +686,15 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Create D:\Gaming on your secondary drive. In Steam: Settings → Storage → Add Drive → select D:\Gaming. Configure other launchers similarly.
 
-### 3. Browser Setup
+### 4. Browser Setup
 
-#### 3.0 Install Browser
+#### 4.0 Install Browser
 
-- **Google Chrome** (`install-chrome` · script · from Max.mov's guide)
+- **Google Chrome** (`install-chrome` · script)
   - Description: The most widely used browser. Best compatibility, V8 engine, sync across devices. Installs via winget.
   - What it does: Installs or updates via winget: `Google.Chrome`. REMOVE uninstalls it.
   - Buttons: INSTALL, OPEN SITE, REMOVE
-- **Brave Browser** (`install-brave` · script · from Max.mov's guide)
+- **Brave Browser** (`install-brave` · script)
   - Description: Chromium-based, built-in ad/tracker blocking, no Google telemetry. Good for privacy. Installs via winget.
   - What it does: Installs or updates via winget: `Brave.Brave`. REMOVE uninstalls it.
   - Buttons: INSTALL, OPEN SITE, REMOVE
@@ -632,14 +713,14 @@ A subsection of Max.mov's guide.
 - **WebView2 Runtime (standalone — required if removing Edge)** (`webview2-standalone` · script · **ESSENTIAL** · from Max.mov's guide)
   - Description: Microsoft WebView2 Runtime powers PWAs, Teams, new Outlook, and some Store apps. Install before removing Edge to avoid breaking them. Windows 11 usually ships it already — the card then reports it as present and installs nothing.
   - What it does: Installs or updates via winget: `Microsoft.EdgeWebView2Runtime`. REMOVE uninstalls it.
-  - Buttons: INSTALL, OPEN SITE, REMOVE
+  - Buttons: INSTALL, INSTALLER, SITE, REMOVE
 - **Set default browser** (`set-default-browser` · Windows page · from Max.mov's guide)
   - Description: Open Default Apps settings to choose which browser handles http:// and https:// links.
   - What it does: Opens in Windows: `ms-settings:defaultapps`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Scroll to the browser section or search for your browser. Click it and choose "Set as default". Make sure http and https both point to your chosen browser.
 
-#### 3.1 Edge Configuration
+#### 4.1 Edge Configuration
 
 A subsection of Max.mov's guide.
 
@@ -657,7 +738,7 @@ A subsection of Max.mov's guide.
   - What it does: Opens the site in your browser: `https://www.youtube.com/watch?v=ITdecD6R0Yw`
   - Buttons: OPEN
 
-#### 3.2 Edge — Tame It
+#### 4.2 Edge — Tame It
 
 A subsection of Max.mov's guide. Switches: 7 - the subsection head has APPLY ALL and REVERT ALL.
 
@@ -690,7 +771,7 @@ A subsection of Max.mov's guide. Switches: 7 - the subsection head has APPLY ALL
   - What it does: Writes the registry: `HKLM\SOFTWARE\Policies\Microsoft\Edge` / `HideFirstRunExperience` = `1` (DWord). REVERT puts back the previous value from the backup. WINDOWS DEFAULT removes the value.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
 
-#### 3.3 Remove Edge
+#### 4.3 Remove Edge
 
 Optional. A subsection of Max.mov's guide. Steps in order: do the cards top to bottom.
 
@@ -726,9 +807,9 @@ Optional. A subsection of Max.mov's guide. Steps in order: do the cards top to b
   - Buttons: OPEN IN WINDOWS
   - Instruction: Search for "Microsoft Edge". Click ⋮ → Uninstall. If still greyed out, close and reopen Settings, or restart the PC and try again.
 
-### 4. Windows Settings
+### 5. Windows Settings
 
-#### 4.0 Explorer Settings
+#### 5.0 Explorer Settings
 
 A subsection of Max.mov's guide.
 
@@ -745,13 +826,13 @@ A subsection of Max.mov's guide.
 - **PowerToys — keyboard shortcut remapping** (`explorer-powertoys-keybindings` · link)
   - Description: Download Microsoft PowerToys for advanced keyboard shortcuts and utilities.
   - What it does: Opens the site in your browser: `https://github.com/microsoft/PowerToys/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Auto-size columns (CTRL + Numpad *)** (`explorer-autosize-columns` · manual step)
   - Description: Keyboard shortcut CTRL+(Numpad *) resizes all columns to fit content in Details view.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: In any Explorer window in Details view, press CTRL + * (numpad asterisk) to auto-size all columns.
 
-#### 4.1 System
+#### 5.1 System
 
 A subsection of Max.mov's guide. Switches: 4 - the subsection head has APPLY ALL and REVERT ALL.
 
@@ -787,12 +868,21 @@ A subsection of Max.mov's guide. Switches: 4 - the subsection head has APPLY ALL
   - What it does: Windows feature `Recall`: `Disabled`.
   - Buttons: APPLY, REVERT (after this program applied it)
 - **Review optional Windows features** (`system-optional-features` · Windows page · administrator)
-  - Description: Disable Windows components not needed (Hyper-V, IE mode, Print-to-PDF, etc.).
+  - Description: Disable Windows components not needed (Hyper-V, IE mode, Print-to-PDF, etc.). Keep VBScript if you use Epic Games (installer error 2738) and Windows Media Player (legacy) for streaming to a TV.
   - What it does: Opens in Windows: `ms-settings:optionalfeatures`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Remove unused optional features. Keep only what you actively use.
+- **Turn off Smart App Control** (`system-smart-app-control` · Windows page · from Max.mov's guide)
+  - Description: Opens App and browser control in Windows Security. Smart App Control blocks unsigned programs; once off, turning it back on may need a Windows reset.
+  - What it does: Opens in Windows: `windowsdefender://appbrowser`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Smart App Control settings - Off.
+- **Guide: presentation models (how a frame reaches the screen)** (`system-presentation-model-guide` · link · from Max.mov's guide · side road)
+  - Description: A detailed guide by Andrilazz: how Windows presents a frame and why it matters for VRR, latency and tearing.
+  - What it does: Opens the site in your browser: `https://andrilaz.github.io/presentation-model`
+  - Buttons: OPEN
 
-#### 4.2 Maintenance
+#### 5.2 Maintenance
 
 Optional. A subsection of Max.mov's guide.
 
@@ -801,7 +891,7 @@ Optional. A subsection of Max.mov's guide.
   - What it does: Writes the registry: `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\Maintenance` / `MaintenanceDisabled` = `1` (DWord). REVERT puts back the previous value from the backup. WINDOWS DEFAULT removes the value.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
 
-#### 4.3 Power Scheme
+#### 5.3 Power Scheme
 
 Optional.
 
@@ -846,24 +936,24 @@ Optional.
   - What it does: Imports and activates the power scheme `Assets\PowerSchemes\bitsium.pow`. WINDOWS DEFAULT makes Windows' own Balanced active.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
 
-#### 4.4 CTT Tweaker
+#### 5.4 CTT Tweaker
 
 Optional. A subsection of Max.mov's guide.
 
 - **CTT WinUtil — GitHub (source + releases)** (`ctt-github` · link · side road)
-  - Description: Source code and releases for the Chris Titus Tech WinUtil tweaker. Run directly: irm christitus.com/win | iex
+  - Description: Source code and releases for the Chris Titus Tech WinUtil tweaker. Run directly: irm https://github.com/ChrisTitusTech/winutil/releases/latest/download/winutil.ps1 | iex
   - What it does: Opens the site in your browser: `https://github.com/ChrisTitusTech/winutil`
   - Buttons: OPEN
 - **Chris Titus Tech Win11 Tweaker** (`ctt-launch` · manual step · administrator · side road)
-  - Description: All-in-one tweaker by ChrisTitusTech. Run from admin PowerShell: irm christitus.com/win | iex
+  - Description: All-in-one tweaker by ChrisTitusTech. Run from admin PowerShell: irm https://github.com/ChrisTitusTech/winutil/releases/latest/download/winutil.ps1 | iex
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Open an admin PowerShell and run: irm christitus.com/win | iex — then apply recommended tweaks for desktop PCs or laptops as appropriate.
+  - Instruction: Open an admin PowerShell and run: irm https://github.com/ChrisTitusTech/winutil/releases/latest/download/winutil.ps1 | iex — then apply the recommended tweaks: one set for desktops and laptops now (the screenshot in the guide).
 - **Chris Titus Tech YouTube channel** (`ctt-channel` · link · side road)
   - Description: Reference guide and explanations for the tweaker options.
   - What it does: Opens the site in your browser: `https://www.youtube.com/@ChrisTitusTech`
   - Buttons: OPEN
 
-#### 4.5 Devices
+#### 5.5 Devices
 
 A subsection of Max.mov's guide.
 
@@ -874,9 +964,9 @@ A subsection of Max.mov's guide.
   - Instruction: Toggle Bluetooth off.
 - **Disable Enhanced Pointer Precision** (`devices-pointer-precision` · Windows page)
   - Description: Turn off mouse acceleration for consistent, predictable mouse movement (important for gaming).
-  - What it does: Opens in Windows: `ms-settings:mousetouchpad`
+  - What it does: Opens in Windows: `main.cpl`
   - Buttons: OPEN IN WINDOWS
-  - Instruction: Open Additional mouse settings → Pointer Options → uncheck "Enhance pointer precision".
+  - Instruction: Mouse Properties open: Pointer Options tab → uncheck "Enhance pointer precision" → OK.
 - **Cursor color & size** (`devices-cursor-color` · Windows page)
   - Description: Set cursor size and color scheme in accessibility settings.
   - What it does: Opens in Windows: `ms-settings:easeofaccess-mousepointer`
@@ -890,9 +980,9 @@ A subsection of Max.mov's guide.
 - **Install color profile** (`devices-color-profile` · manual step)
   - Description: Apply an ICC color profile for accurate color reproduction on your monitor.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Download your monitor ICC profile from manufacturer or rtings.com, then open Color Management (colorcpl.exe), select your display, check "Use my settings for this device" and add the profile.
+  - Instruction: Download your monitor ICC profile from the manufacturer, from Windows Update (optional updates) or rtings.com - its reviews are paid now, older ones open through archive.org - then open Color Management (colorcpl.exe), select your display, check "Use my settings for this device" and add the profile.
 
-#### 4.6 USB Power Management
+#### 5.6 USB Power Management
 
 A subsection of Max.mov's guide.
 
@@ -901,16 +991,16 @@ A subsection of Max.mov's guide.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
 
-#### 4.7 SoundSwitch
+#### 5.7 SoundSwitch
 
 Optional. A subsection of Max.mov's guide.
 
 - **SoundSwitch — hotkey audio device switcher** (`soundswitch-download` · link)
   - Description: Lightweight app for switching audio output/input devices with a keyboard shortcut.
   - What it does: Opens the site in your browser: `https://github.com/Belphemur/SoundSwitch/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-#### 4.8 Phone Link
+#### 5.8 Phone Link
 
 Optional. A subsection of Max.mov's guide.
 
@@ -936,7 +1026,7 @@ Optional. A subsection of Max.mov's guide.
   - Buttons: OPEN IN WINDOWS
   - Instruction: Sign in with your Microsoft account and enable shared clipboard, notifications, and other Phone Link features.
 
-#### 4.9 Disk Indexing
+#### 5.9 Disk Indexing
 
 Optional. A subsection of Max.mov's guide.
 
@@ -954,7 +1044,7 @@ Optional. A subsection of Max.mov's guide.
   - Buttons: OPEN IN WINDOWS
   - Instruction: Limit indexed locations to only the folders you actually need to search.
 
-#### 4.10 Network & Internet
+#### 5.10 Network & Internet
 
 A subsection of Max.mov's guide.
 
@@ -968,22 +1058,31 @@ A subsection of Max.mov's guide.
   - What it does: Opens in Windows: `ms-settings:network-wifi`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Select your Wi-Fi network → Properties → toggle "Metered connection" On.
+- **Allow device downloads over metered connections** (`network-metered-allow-device-downloads` · Windows page · from Max.mov's guide)
+  - Description: After making a connection metered, turn this on - otherwise new devices get no drivers from Windows Update.
+  - What it does: Opens in Windows: `ms-settings:connecteddevices`
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Devices - "Download over metered connections" - On.
 - **Configure network adapter properties** (`network-adapter-properties` · Windows page · administrator)
   - Description: Open adapter settings to configure DNS servers, IPv4, and adapter-specific power settings.
   - What it does: Opens in Windows: `ms-settings:network-advancedsettings`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Set preferred DNS server to a fast provider (e.g. 1.1.1.1 / 1.0.0.1 or 8.8.8.8 / 8.8.4.4). Run DNSBench to find fastest DNS for your location.
 - **DNS Benchmark — find fastest DNS for your ISP** (`network-dnsbench` · link)
-  - Description: GRC DNSBench tests all known DNS resolvers and ranks them by speed from your location.
-  - What it does: Opens the site in your browser: `https://www.grc.com/dns/benchmark.htm`
+  - Description: GRC DNSBench tests all known DNS resolvers and ranks them by speed from your location. The free version is on the GRC freeware page.
+  - What it does: Opens the site in your browser: `https://www.grc.com/freepopular.htm`
   - Buttons: OPEN
 - **Disable Cross-Device sync (if not needed)** (`network-cross-device` · Windows page)
   - Description: Turns off phone link and cross-device experience if you do not use them.
   - What it does: Opens in Windows: `ms-settings:crossdevice`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Toggle off Shared experiences and Phone Link if not needed.
+- **Network settings for advanced users (Telegram)** (`network-advanced-telegram` · link · from Max.mov's guide · side road)
+  - Description: The community guide to network settings in the Max.mov chat - the current version lives there.
+  - What it does: Opens the site in your browser: `https://t.me/a11p1ay/6/189373`
+  - Buttons: OPEN
 
-#### 4.11 Personalization
+#### 5.11 Personalization
 
 A subsection of Max.mov's guide.
 
@@ -1018,7 +1117,7 @@ A subsection of Max.mov's guide.
   - Buttons: OPEN IN WINDOWS
   - Instruction: Toggle off all options in Device usage.
 
-#### 4.12 More Personalization
+#### 5.12 More Personalization
 
 Switches: 6 - the subsection head has APPLY ALL and REVERT ALL.
 
@@ -1035,43 +1134,43 @@ Switches: 6 - the subsection head has APPLY ALL and REVERT ALL.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
 - **Hide Start menu Recommended section (24H2)** (`personalization-hide-start-recommendations` · script · administrator · from Max.mov's guide)
-  - Description: Sets policy keys to hide the Recommended section in the Start menu. Requires 24H2 build 26100+. Uses PolicyManager keys (no GPO needed on Home).
+  - Description: Sets policy keys to hide the Recommended section in the Start menu. Requires 24H2 build 26100+. Uses PolicyManager keys (no GPO needed on Home). Not needed on 25H2 with the new Start: turn recommendations off in Settings - Personalization - Start.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
-- **Restore Windows Photo Viewer** (`personalization-photo-viewer` · script · side road)
-  - Description: Re-activates the legacy Photo Viewer (shimgvw.dll) as a registered image handler with better color accuracy than Photos app.
+- **Restore Windows Photo Viewer** (`personalization-photo-viewer` · script · from Max.mov's guide · side road)
+  - Description: Registers the old Photo Viewer (more correct colours than Photos) as an app images can open with, as the guide's .reg does. Then: an image → Open with → Choose another app → Windows Photo Viewer → Always.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
 - **ViVeTool — download (GitHub releases)** (`download-vivetool-personalization` · link · side road)
   - Description: Tool for enabling undocumented Windows feature flags via A/B experiment IDs. Required for unlocking 25H2 and other experimental features.
   - What it does: Opens the site in your browser: `https://github.com/thebookisclosed/ViVe/releases`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Enable 25H2 feature flags (ViVeTool)** (`personalization-25h2-features` · manual step · administrator · restart · **CAREFUL** · side road)
   - Description: Unlock experimental features for Win11 25H2 using ViVeTool. This is an unofficial tool that manipulates undocumented A/B feature flags.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Download and run ViVeTool (link above). Then run ViVeTool.exe with the feature IDs from the archive txt file. Requires a restart to take effect.
+  - Instruction: Codes of the guide, current on 03.05.2026 for build 26200.8328 - they change from build to build. In an admin Command Prompt in the ViVeTool folder: vivetool /enable /id:CODES, then restart; undo - vivetool /disable /id:CODES. Explorer preload 58778013; restore Explorer tabs 54572881; links in tabs of one window 49453572,49143212,48433719; new Start 47205210; Xbox full screen experience 59765208; dark theme base 49453572,48433719,58383338; dark Run (Win+R) 59270880; dark Explorer options 59203365; dark file operation dialogs 57857165,57994323. Taskbar auto-hide animation (41356296,48433719) is broken on 8328.
 - **Compact (Tablet) Taskbar mode** (`personalization-compact-taskbar` · registry switch · from Max.mov's guide · side road)
   - Description: Reduces taskbar icon size and spacing via registry. Restart Explorer (or sign out) to apply.
   - What it does: Writes the registry: `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer` / `TabletPostureTaskbar` = `1` (DWord). REVERT puts back the previous value from the backup. WINDOWS DEFAULT removes the value.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
 - **Auto Dark/Light theme switching (PowerToys)** (`personalization-auto-dark-mode` · link · from Max.mov's guide)
-  - Description: PowerToys includes an Auto Dark Mode module that switches the Windows theme at sunrise/sunset automatically.
+  - Description: PowerToys has the Light Switch module: it switches the Windows theme on a schedule or at sunrise and sunset (it replaced the separate AutoDarkMode app).
   - What it does: Opens the site in your browser: `https://github.com/microsoft/PowerToys/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Everything — fast file search with own index** (`personalization-everything-search` · link · from Max.mov's guide)
   - Description: Everything indexes all drive filenames and delivers sub-second search results. Download the portable version.
   - What it does: Opens the site in your browser: `https://www.voidtools.com/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Everything plugin for PowerToys Run** (`personalization-everything-powertoys-plugin` · link · from Max.mov's guide)
   - Description: Integrates Everything search into PowerToys Run (Alt+Space) for instant file lookup.
   - What it does: Opens the site in your browser: `https://github.com/lin-ycv/EverythingPowerToys/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **DisplaySwitch — quick monitor mode shortcuts** (`personalization-display-switch` · manual step)
   - Description: Windows built-in DisplaySwitch.exe switches display mode: /1=PC screen only, /2=Duplicate, /3=Extend, /4=Second screen only.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Create desktop shortcuts to C:\Windows\System32\DisplaySwitch.exe with argument /1 (single monitor) or /3 (extend). Right-click Desktop → New → Shortcut, enter "DisplaySwitch.exe /3" as the location.
 
-#### 4.13 Apps
+#### 5.13 Apps
 
 A subsection of Max.mov's guide.
 
@@ -1082,7 +1181,7 @@ A subsection of Max.mov's guide.
   - Instruction: For each app, disable background access or set to "Power optimized".
 - **Disable transfer between devices & backup** (`apps-cross-device` · Windows page)
   - Description: Turns off cross-device transfer and app backup to Microsoft account.
-  - What it does: Opens in Windows: `ms-settings:crossdevice`
+  - What it does: Opens in Windows: `ms-settings:advanced-apps`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Disable "Save app state" and "Transfer to new device" options.
 - **Set default apps for file extensions** (`apps-default-file-associations` · Windows page)
@@ -1097,11 +1196,19 @@ A subsection of Max.mov's guide.
   - Instruction: Toggle off any startup apps you do not actively use.
 - **Install all Microsoft Store app updates** (`apps-store-update` · Windows page)
   - Description: Ensure all Store apps are up-to-date before configuring defaults.
-  - What it does: Opens in Windows: `ms-windows-store://updates`
+  - What it does: Opens in Windows: `ms-windows-store://downloadsandupdates/`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Click "Get updates" and wait for all apps to update.
+- **Game Bar: keep it on a Ryzen with two CCDs** (`apps-gamebar-note` · manual step · from Max.mov's guide · side road)
+  - Description: Game Bar tells Windows which apps are games, so they run on the right CCD of a dual-CCD Ryzen (7950X3D and alike). It also has "Remember this is a game" and a handy volume mixer.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Instruction: Dual-CCD Ryzen: do not remove Game Bar; for a game Windows does not recognise, press Win+G and tick "Remember this is a game". Removing it elsewhere: after an uninstaller, the ms-gamebar links still pop up windows when games start - the card below silences them.
+- **After removing Game Bar: silence its leftovers** (`apps-gamebar-leftovers` · script · **CAREFUL** · from Max.mov's guide · side road)
+  - Description: Once Game Bar is uninstalled, games still call the ms-gamebar links and Windows pops up "get an app" windows. This points both links to a silent system program and turns Game DVR capture off. Not on a Ryzen with two CCDs.
+  - What it does: A script from the manifest. Its state is checked. It has a way back.
+  - Buttons: APPLY, REVERT
 
-#### 4.14 Other Startup Settings
+#### 5.14 Other Startup Settings
 
 Optional. A subsection of Max.mov's guide.
 
@@ -1116,20 +1223,20 @@ Optional. A subsection of Max.mov's guide.
 - **Sysinternals Autoruns — comprehensive startup manager** (`startup-autoruns` · link)
   - Description: Shows every auto-start location: registry, drivers, scheduled tasks, services, browser extensions, and more.
   - What it does: Opens the site in your browser: `https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 
-#### 4.15 Language & Time
+#### 5.15 Language & Time
 
 A subsection of Max.mov's guide.
 
 - **Clock on taskbar — format & display** (`language-taskbar-clock` · Windows page)
-  - Description: Open taskbar settings to configure clock format and additional calendars.
-  - What it does: Opens in Windows: `ms-settings:taskbar`
+  - Description: Open Date and time settings: the clock of the system tray and additional calendars.
+  - What it does: Opens in Windows: `ms-settings:dateandtime`
   - Buttons: OPEN IN WINDOWS
-  - Instruction: Scroll to System tray → Clock — enable seconds if desired.
+  - Instruction: Show time and date in the system tray, and seconds in the clock if desired.
 - **Disable unnecessary input features** (`language-input-settings` · Windows page)
   - Description: Remove hardware keyboard suggestions, autocorrect, and other input method features.
-  - What it does: Opens in Windows: `ms-settings:keyboard`
+  - What it does: Opens in Windows: `ms-settings:typing`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Turn off Autocorrect, Spell check, and Text predictions.
 - **Language keyboard shortcut** (`language-keyboard-shortcut` · Windows page)
@@ -1146,7 +1253,7 @@ A subsection of Max.mov's guide.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
 
-#### 4.16 Privacy
+#### 5.16 Privacy
 
 A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL and REVERT ALL.
 
@@ -1189,7 +1296,7 @@ A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL
   - Buttons: OPEN IN WINDOWS
   - Instruction: Toggle off "Communicate with unpaired devices".
 
-#### 4.17 Windows Update
+#### 5.17 Windows Update
 
 A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL and REVERT ALL.
 
@@ -1212,9 +1319,9 @@ A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL
   - What it does: Writes the registry: `HKLM\SOFTWARE\Microsoft\PolicyManager\default\Experience\AllowFindMyDevice` / `value` = `0` (DWord). REVERT puts back the previous value from the backup. WINDOWS DEFAULT = `1`.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
 
-### 5. GPU & Monitor Settings
+### 6. GPU & Monitor Settings
 
-#### 5.0 Important Notes
+#### 6.0 Important Notes
 
 A subsection of Max.mov's guide.
 
@@ -1223,7 +1330,7 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: VRR monitors: use "Enable G-Sync for full screen mode" only — do NOT enable for windowed+fullscreen mode. See the VRR guide link below for details.
 
-#### 5.1 Monitor Setup
+#### 6.1 Monitor Setup
 
 A subsection of Max.mov's guide.
 
@@ -1236,7 +1343,7 @@ A subsection of Max.mov's guide.
   - What it does: Opens the site in your browser: `https://andrilaz.github.io/vrr`
   - Buttons: OPEN
 
-#### 5.2 Nvidia Settings
+#### 6.2 Nvidia Settings
 
 A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL and REVERT ALL.
 
@@ -1248,8 +1355,20 @@ A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL
 - **Configure Nvidia driver settings (3D, DLSS, display)** (`nvidia-settings-guide` · manual step · side road)
   - Description: Apply recommended Nvidia Control Panel settings: power management mode, texture filtering, DLSS model/preset selection, and display configuration.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: In Nvidia Control Panel: 1. Manage 3D settings → Power management mode: Prefer maximum performance. 2. Set texture filtering quality. 3. Configure G-Sync if available. 4. For DLSS: select the appropriate model and preset in supported games. Refer to the Nvidia settings guide in the archive for detailed recommendations.
-- **Show Nvidia DLSS indicator overlay** (`nvidia-dlss-indicator` · registry switch · administrator)
+  - Instruction: In Nvidia Control Panel: 1. Manage 3D settings → Power management mode: Prefer maximum performance. 2. Set texture filtering quality. 3. G-Sync: always "Enable for full screen mode" - never "windowed and full screen mode" (the video had it wrong). 4. DLSS model and preset: in Nvidia Profile Inspector - see the DLSS card below. Refer to the Nvidia settings guide in the archive for detailed recommendations.
+- **Download Nvidia Profile Inspector** (`download-nvidia-profile-inspector` · link · from Max.mov's guide · side road)
+  - Description: NVPI edits the driver profile settings the Control Panel does not show: the DLSS override, the preset letter, Ansel and more.
+  - What it does: Opens the site in your browser: `https://github.com/Orbmu2k/nvidiaProfileInspector/releases`
+  - Buttons: PORTABLE, SITE
+- **DLSS: choose the model and preset (NVPI)** (`nvidia-dlss-models-presets` · manual step · administrator · from Max.mov's guide · side road)
+  - Description: The latest DLSS version in every game and the model that suits your card - set once in Nvidia Profile Inspector.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Instruction: In Nvidia Profile Inspector, global profile: 1. "DLSS - Enable DLSS Override" - "On - DLSS Overridden by Latest Version". 2. "Forced Preset Letter" - the model: M or L (DLSS 4.5) for Performance and Ultra Performance on RTX 40/50; K or J (Transformer) for any quality level; E or F (CNN) for weaker RTX 20/30; A-D are outdated. 3. "Forced Quality Level" - if one level everywhere is wanted. 4. Sharpness - "Sharpening Filter". Apply changes. Which model a game really uses shows the DLSS indicator (card below).
+- **Turn off Ansel (the Nvidia App filters go too)** (`nvidia-disable-ansel` · manual step · administrator · from Max.mov's guide · side road)
+  - Description: Ansel (NvCamera) is the capture and filter layer of the driver. Turning it off also removes the filters of the Nvidia App overlay.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Instruction: In Nvidia Profile Inspector, global profile: "Ansel Enabled" - Off, apply. The filters of the Nvidia App overlay become unavailable: if the filter list shows only "RTX Dynamic Vibrance", Ansel is off. To get the filters back, set "Ansel Enabled" to On again.
+- **Show Nvidia DLSS indicator overlay** (`nvidia-dlss-indicator` · registry switch · administrator · restart)
   - Description: Enables the Nvidia NGXCore DLSS indicator overlay via the driver registry flag.
   - What it does: Writes the registry: `HKLM\SOFTWARE\NVIDIA Corporation\Global\NGXCore` / `ShowDlssIndicator` = `1` (DWord). REVERT puts back the previous value from the backup. WINDOWS DEFAULT removes the value.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
@@ -1258,12 +1377,12 @@ A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
 
-#### 5.3 Official Nvidia Recommendations
+#### 6.3 Official Nvidia Recommendations
 
 - **NVIDIA App — download** (`nvidia-app-download` · link)
   - Description: Official NVIDIA App download page for drivers, game optimization, DLSS Overrides, overlays, GPU tuning, and RTX video features.
   - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/software/nvidia-app/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Apply NVIDIA App optimal game settings** (`nvidia-app-optimal-settings` · manual step)
   - Description: Use NVIDIA App recommendations for supported games and apps. Recommendations are based on GPU, CPU, resolution, RAM, OS, and the latest official game patch.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -1297,9 +1416,9 @@ A subsection of Max.mov's guide. Switches: 2 - the subsection head has APPLY ALL
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Enable In-Game Overlay in NVIDIA App. Press Alt+Z → Statistics → choose DLSS or Custom statistics view. Toggle the overlay with Alt+R while in game.
 
-### 6. Cooling Setup
+### 7. Cooling Setup
 
-#### 6.0 Cooling Setup
+#### 7.0 Cooling Setup
 
 A subsection of Max.mov's guide.
 
@@ -1310,24 +1429,24 @@ A subsection of Max.mov's guide.
 - **Download Fan Control** (`download-fan-control` · link)
   - Description: Fan Control is a free open-source app for detailed fan curve configuration, temperature monitoring, and mixing sensor inputs.
   - What it does: Opens the site in your browser: `https://github.com/Rem0o/FanControl.Releases/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-### 7. Steam & Game Launchers
+### 8. Steam & Game Launchers
 
-#### 7.0 Game Launchers
+#### 8.0 Game Launchers
 
 - **Download Steam** (`download-steam` · link · from Max.mov's guide)
   - Description: Official Steam client download page.
   - What it does: Opens the site in your browser: `https://store.steampowered.com/about/`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Download Epic Games Store** (`download-epic-games` · link)
   - Description: Official Epic Games Store launcher download page.
   - What it does: Opens the site in your browser: `https://store.epicgames.com/download`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Download EA App** (`download-ea-app` · link · from Max.mov's guide)
   - Description: Official EA App launcher download page (replaces Origin).
   - What it does: Opens the site in your browser: `https://www.ea.com/ea-app`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Install EA App to a custom drive** (`ea-install-other-drive` · manual step · administrator · from Max.mov's guide)
   - Description: The EA installer supports a command-line argument to set the default install folder. Use this to install games on a secondary drive.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -1335,11 +1454,11 @@ A subsection of Max.mov's guide.
 - **Download Blizzard Battle.net** (`download-blizzard` · link)
   - Description: Official Battle.net desktop app download page.
   - What it does: Opens the site in your browser: `https://download.battle.net/desktop`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download Rockstar Games Launcher** (`download-rockstar` · link)
   - Description: Official Rockstar Games Launcher download page (required for GTA V, RDR2, etc.).
   - What it does: Opens the site in your browser: `https://socialclub.rockstargames.com/rockstar-games-launcher`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download Xbox app** (`download-xbox` · link)
   - Description: Official Xbox app for PC from the Microsoft Store. Provides access to Game Pass and Xbox games.
   - What it does: Opens the site in your browser: `https://www.microsoft.com/store/productId/9MV0B5HZVK9Z`
@@ -1347,13 +1466,13 @@ A subsection of Max.mov's guide.
 - **Download Valorant / League of Legends** (`download-valorant-lol` · link)
   - Description: Riot Games download page for Valorant and League of Legends (includes the Riot Client).
   - What it does: Opens the site in your browser: `https://playvalorant.com/download/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download TcNo Account Switcher** (`download-account-switcher` · link · from Max.mov's guide · side road)
   - Description: Convenient multi-account switcher for Steam, Epic Games, EA, and other gaming platforms.
   - What it does: Opens the site in your browser: `https://github.com/TCNOco/TcNo-Acc-Switcher/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-#### 7.1 Minecraft
+#### 8.1 Minecraft
 
 A subsection of Max.mov's guide.
 
@@ -1376,15 +1495,15 @@ A subsection of Max.mov's guide.
 - **Download Minecraft Launcher without Microsoft Store (Java Edition — official)** (`minecraft-launcher-no-store` · link)
   - Description: Direct download for the Minecraft Java Edition launcher without using the Microsoft Store.
   - What it does: Opens the site in your browser: `https://www.minecraft.net/download`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Download Prism Launcher (unofficial, requires license)** (`minecraft-prism-launcher` · link · side road)
   - Description: Open-source Minecraft launcher with modpack management. Requires a valid Minecraft license.
   - What it does: Opens the site in your browser: `https://github.com/PrismLauncher/PrismLauncher/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download Freesm Launcher (unofficial, no license required)** (`minecraft-freesm-launcher` · link · side road)
   - Description: Fork of Prism Launcher that supports playing without a Minecraft license.
   - What it does: Opens the site in your browser: `https://github.com/FreesmTeam/FreesmLauncher/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download MultiMC Launcher (outdated, unofficial, requires license)** (`minecraft-multimc` · link · side road)
   - Description: Legacy MultiMC launcher — outdated, superseded by Prism. Requires a valid Minecraft license.
   - What it does: Opens the site in your browser: `https://github.com/MultiMC/Launcher/releases`
@@ -1400,19 +1519,19 @@ A subsection of Max.mov's guide.
 - **Download Modrinth app (mod manager)** (`minecraft-modrinth-app` · link)
   - Description: Modrinth desktop app for convenient mod and modpack installation. Requires a Minecraft license.
   - What it does: Opens the site in your browser: `https://modrinth.com/app`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download CurseForge app (mod manager)** (`minecraft-curseforge-app` · link)
   - Description: CurseForge desktop app for convenient mod and modpack installation.
   - What it does: Opens the site in your browser: `https://www.curseforge.com/download/app`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download Minecraft server (Java or Bedrock — official)** (`minecraft-server` · link)
   - Description: Official Minecraft server software download page for both Java and Bedrock editions.
   - What it does: Opens the site in your browser: `https://www.minecraft.net/download`
   - Buttons: OPEN
 
-### 8. Global Timer Resolution
+### 9. Global Timer Resolution
 
-#### 8.0 Global Timer Resolution
+#### 9.0 Global Timer Resolution
 
 A subsection of Max.mov's guide.
 
@@ -1425,9 +1544,9 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Use this card as background context only. This project does not install or launch Timer Resolution. Only apply a separately sourced utility if you understand the trade-offs; revert by stopping the utility or uninstalling it.
 
-### 9. FPS & Latency Testing
+### 10. FPS & Latency Testing
 
-#### 9.0 Testing Notes
+#### 10.0 Testing Notes
 
 A subsection of Max.mov's guide.
 
@@ -1436,18 +1555,18 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Intel PresentMon: download .msi for the overlay GUI, or x64 .exe for the console version. Console version is lighter and more accurate — display via a second monitor or PowerToys "Always on top". Note: the console version always creates .csv files; delete them when not needed. PCLatency: download from GitHub; add to Defender exclusions if flagged.
 
-#### 9.1 Testing Tools
+#### 10.1 Testing Tools
 
 A subsection of Max.mov's guide.
 
 - **Download CapFrameX** (`download-capframex` · link)
   - Description: CapFrameX is a frame time capture and analysis tool with an in-game overlay. Records and visualises frametimes, FPS statistics, and GPU/CPU sensor data.
   - What it does: Opens the site in your browser: `https://github.com/CXWorld/CapFrameX/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download Intel PresentMon** (`download-intel-presentmon` · link)
   - Description: Intel PresentMon measures frame presentation latency and FPS using ETW. Available as a GUI overlay (.msi) or lightweight console tool (x64 .exe).
   - What it does: Opens the site in your browser: `https://github.com/GameTechDev/PresentMon/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, PORTABLE, SITE
 - **Download Nvidia FrameView** (`download-nvidia-frameview` · link)
   - Description: Nvidia FrameView captures frame times, FPS, and power data. Works with both Nvidia and AMD GPUs.
   - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/geforce/technologies/frameview/`
@@ -1455,58 +1574,58 @@ A subsection of Max.mov's guide.
 - **Download PCLatency** (`download-pclatency` · link · side road)
   - Description: PCLatency measures PC system latency and visualises results from CapFrameX .csv files. May be flagged as false positive by antivirus — add to Defender exclusions if needed.
   - What it does: Opens the site in your browser: `https://github.com/notch4ff4/pc-latency-view/releases`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Nvidia article — Understanding and measuring PC latency** (`nvidia-latency-article` · link)
   - Description: Official Nvidia developer article explaining end-to-end PC latency, how to measure it, and what affects it.
   - What it does: Opens the site in your browser: `https://developer.nvidia.com/blog/understanding-and-measuring-pc-latency/`
   - Buttons: OPEN
 
-### 10. Recommended Programs
+### 11. Recommended Programs
 
-#### 10.0 Community Resources
+#### 11.0 Community Resources
 
 - **Viewer-recommended software (Telegram chat topic)** (`telegram-viewer-software` · link · side road)
   - Description: Telegram topic where viewers share their own recommended software picks.
   - What it does: Opens the site in your browser: `https://t.me/a11p1ay`
   - Buttons: OPEN
 
-#### 10.1 Browsers
+#### 11.1 Browsers
 
-- **Google Chrome** (`download-chrome` · link · from Max.mov's guide)
+- **Google Chrome** (`download-chrome` · link)
   - Description: The most widely used browser. Best site compatibility, V8 engine, sync across devices.
   - What it does: Opens the site in your browser: `https://www.google.com/chrome/`
-  - Buttons: OPEN
-- **Brave Browser** (`download-brave` · link · from Max.mov's guide)
+  - Buttons: INSTALL, INSTALLER, SITE
+- **Brave Browser** (`download-brave` · link)
   - Description: Chromium-based with built-in ad and tracker blocking. No Google telemetry. Good privacy defaults.
   - What it does: Opens the site in your browser: `https://brave.com/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Mozilla Firefox** (`download-firefox` · link)
   - Description: Independent Gecko engine, not Chromium. Strong privacy defaults and excellent extension ecosystem.
   - What it does: Opens the site in your browser: `https://www.mozilla.org/firefox/`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Vivaldi** (`download-vivaldi` · link)
   - Description: Chromium-based. Extreme UI customisation, built-in tab groups, notes, and mail client. For power users.
   - What it does: Opens the site in your browser: `https://vivaldi.com/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Zen Browser** (`download-zen-browser` · link)
   - Description: Firefox-based. Privacy-focused with a clean UI and tab workspaces. Actively developed.
   - What it does: Opens the site in your browser: `https://zen-browser.app/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-#### 10.2 System Utilities
+#### 11.2 System Utilities
 
 - **Download Microsoft PowerToys** (`download-powertoys` · link · from Max.mov's guide)
-  - Description: PowerToys adds useful Windows utilities: PowerToys Run, FancyZones, Keyboard Manager, Color Picker, Image Resizer, Auto Dark Mode, and more.
+  - Description: PowerToys adds useful Windows utilities: PowerToys Run, FancyZones, Keyboard Manager, Color Picker, Image Resizer, Light Switch (automatic dark and light theme), and more.
   - What it does: Opens the site in your browser: `https://github.com/microsoft/PowerToys/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 - **Download Everything (fast file search)** (`download-everything` · link · from Max.mov's guide)
   - Description: Everything indexes all file names on your drives instantly. Sub-second search results across all drives.
   - What it does: Opens the site in your browser: `https://www.voidtools.com/`
-  - Buttons: OPEN
-- **Download ViVeTool (unlock hidden Windows features)** (`download-vivetool` · link · side road)
-  - Description: ViVeTool activates hidden A/B feature flags in Windows. Useful for enabling experimental features before they roll out to your account. Feature IDs are build-specific and change over time.
+  - Buttons: INSTALLER, PORTABLE, SITE
+- **Download ViVeTool (unlock hidden Windows features)** (`download-vivetool` · link · from Max.mov's guide · side road)
+  - Description: ViVeTool activates hidden A/B feature flags in Windows. Useful for enabling experimental features before they roll out to your account. Feature IDs are build-specific and change over time. Setup: unpack into Apps, open Terminal in that folder, make Command Prompt the default profile and run it as administrator.
   - What it does: Opens the site in your browser: `https://github.com/thebookisclosed/ViVe/releases`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Microsoft PC Manager** (`download-pc-manager` · link)
   - Description: Official Microsoft utility for RAM cleanup, temp file removal, and system health overview. Opens directly in the Microsoft Store.
   - What it does: Opens the site in your browser: `https://apps.microsoft.com/detail/9pm860492szd`
@@ -1518,44 +1637,44 @@ A subsection of Max.mov's guide.
 - **Download Ventoy (bootable USB creator)** (`download-ventoy` · link)
   - Description: Ventoy creates a multiboot USB drive — just copy ISO files onto it, no re-flashing needed.
   - What it does: Opens the site in your browser: `https://github.com/ventoy/Ventoy`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Download PathScan (path length viewer)** (`download-pathscan` · link · side road)
   - Description: PathScan displays folder and file path lengths, helping identify paths that exceed the Windows 260-character limit.
   - What it does: Opens the site in your browser: `https://www.softpedia.com/get/System/File-Management/Path-Scan.shtml#download`
   - Buttons: OPEN
 
-#### 10.3 File Management
+#### 11.3 File Management
 
 - **Download ExplorerTabUtility (improved Explorer tabs)** (`download-explorer-tab-utility` · link · from Max.mov's guide · side road)
   - Description: ExplorerTabUtility forces all Explorer windows to open as tabs instead of new windows. Adds browser-like tab shortcuts (Ctrl+D, Ctrl+Shift+T). On Windows 25H2+, the built-in option "open folders in new tab" already covers most cases, but ETU still adds hotkey support.
   - What it does: Opens the site in your browser: `https://github.com/w4po/ExplorerTabUtility/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download Symbolic11 (symlink manager)** (`download-symbolic11` · link · side road)
   - Description: GUI tool for conveniently creating and managing symbolic links on Windows.
   - What it does: Opens the site in your browser: `https://github.com/Benisgo/Symbolic11`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Download Nilesoft Shell (custom context menu)** (`download-nilesoft-shell` · link · side road)
   - Description: Nilesoft Shell lets you build a fully custom right-click context menu, replacing the default Windows 11 context menu.
   - What it does: Opens the site in your browser: `https://nilesoft.org/download`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 
-#### 10.4 Uninstallers
+#### 11.4 Uninstallers
 
 - **Download Bulk Crap Uninstaller (BCUninstaller)** (`download-bulk-crap-uninstaller` · link)
   - Description: Open-source batch uninstaller that removes apps including leftovers, supports silent uninstall, and lists Store/Chocolatey/Scoop packages.
   - What it does: Opens the site in your browser: `https://github.com/Klocman/Bulk-Crap-Uninstaller`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download Revo Uninstaller Free** (`download-revo-uninstaller` · link · from Max.mov's guide · side road)
   - Description: Revo Uninstaller removes programs and then scans for leftover registry entries and files.
   - What it does: Opens the site in your browser: `https://www.revouninstaller.com/products/revo-uninstaller-free/`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 
-#### 10.5 Security & Privacy
+#### 11.5 Security & Privacy
 
 - **Download Microsoft Safety Scanner (on-demand AV scan)** (`download-microsoft-safety-scanner` · link · from Max.mov's guide)
   - Description: Free on-demand malware scanner from Microsoft. Does not replace a real-time antivirus — use for one-time scanning.
   - What it does: Opens the site in your browser: `https://learn.microsoft.com/en-us/defender-endpoint/safety-scanner-download`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Download Kaspersky Virus Removal Tool** (`download-kaspersky-vrt` · link · from Max.mov's guide)
   - Description: Free standalone virus removal tool from Kaspersky. Useful for scanning a system you suspect is infected.
   - What it does: Opens the site in your browser: `https://www.kaspersky.ru/downloads/free-virus-removal-tool`
@@ -1567,7 +1686,7 @@ A subsection of Max.mov's guide.
 - **Download KeePassXC (password manager)** (`download-keepassxc` · link)
   - Description: Open-source offline password manager. Keeps all credentials in an encrypted local database — no cloud sync required.
   - What it does: Opens the site in your browser: `https://github.com/keepassxreboot/keepassxc/releases/tag/2.7.10`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, PORTABLE, SITE
 - **Download KeePass2Android (Android companion app)** (`download-keepass2android` · link)
   - Description: Android app that opens KeePass .kdbx databases. Sync the database file via cloud or LAN to use passwords on mobile.
   - What it does: Opens the site in your browser: `https://github.com/PhilippC/keepass2android/releases`
@@ -1575,18 +1694,18 @@ A subsection of Max.mov's guide.
 - **Download VeraCrypt (disk encryption)** (`download-veracrypt` · link)
   - Description: Open-source full-disk and container encryption. Successor to TrueCrypt, supports AES, Twofish, and Serpent.
   - What it does: Opens the site in your browser: `https://github.com/veracrypt/VeraCrypt/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-#### 10.6 Media & Communication
+#### 11.6 Media & Communication
 
 - **Download Telegram Desktop Portable** (`download-telegram` · link)
   - Description: Portable version of Telegram Desktop — runs without installation, easy to move between PCs.
   - What it does: Opens the site in your browser: `https://desktop.telegram.org/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download OBS Studio (screen recording & streaming)** (`download-obs` · link)
   - Description: Open-source screen recorder and live streaming software. Supports replay buffers, scene switching, and many plugins.
   - What it does: Opens the site in your browser: `https://github.com/obsproject/obs-studio/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download 3D YouTube Downloader** (`download-3d-youtube-downloader` · link · side road)
   - Description: Convenient GUI downloader for YouTube, Vimeo, and many other video sites. Supports playlists and various quality options.
   - What it does: Opens the site in your browser: `https://yd.3dyd.com/download/`
@@ -1594,11 +1713,11 @@ A subsection of Max.mov's guide.
 - **Download MPC-HC (media player)** (`download-mpc-hc` · link · from Max.mov's guide)
   - Description: Lightweight open-source media player with MadVR, LAV Filters, and subtitle support. Successor to the original MPC-HC.
   - What it does: Opens the site in your browser: `https://github.com/clsid2/mpc-hc/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, PORTABLE, SITE
 - **Download LosslessCut (fast video trimmer)** (`download-lossless-cut` · link)
   - Description: FFMPEG-based video trimmer that cuts video without re-encoding. Instant lossless cuts for any format.
   - What it does: Opens the site in your browser: `https://github.com/mifi/lossless-cut/releases`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Download DaVinci Resolve (free professional video editor)** (`download-davinci-resolve` · link)
   - Description: Industry-standard professional video editing suite by Blackmagic Design. Free version has no watermarks or time limits.
   - What it does: Opens the site in your browser: `https://www.blackmagicdesign.com/products/davinciresolve`
@@ -1606,67 +1725,67 @@ A subsection of Max.mov's guide.
 - **Download Obsidian (note-taking app)** (`download-obsidian` · link)
   - Description: Obsidian is a powerful Markdown-based note app with a local-first graph of linked notes. No account required for local use.
   - What it does: Opens the site in your browser: `https://github.com/obsidianmd/obsidian-releases/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 
-#### 10.7 Overclocking & Benchmarking
+#### 11.7 Overclocking & Benchmarking
 
 - **Download MSI Afterburner (GPU overclocking & monitoring)** (`download-msi-afterburner` · link)
   - Description: GPU overclocking, fan control, and in-game overlay tool. Works with all GPU brands despite the MSI name.
   - What it does: Opens the site in your browser: `https://www.msi.com/Landing/afterburner/graphics-cards`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download Superposition Benchmark (GPU stress test)** (`download-superposition` · link)
   - Description: Extreme GPU benchmark by Unigine. Tests GPU stability under heavy load with a visually impressive scene.
   - What it does: Opens the site in your browser: `https://benchmark.unigine.com/superposition`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download TestMem5 (RAM stability tester)** (`download-testmem5` · link · side road)
   - Description: TestMem5 is a fast RAM stress-testing tool popular for validating memory overclocks. Faster than MemTest86 for quick validation.
   - What it does: Opens the site in your browser: `https://github.com/CoolCmd/TestMem5/releases`
-  - Buttons: OPEN
+  - Buttons: PORTABLE, SITE
 - **Download CapFrameX (frame capture & analysis)** (`download-capframex-bench` · link · from Max.mov's guide)
   - Description: CapFrameX captures frametimes with an in-game overlay and provides detailed FPS/frametime analysis and sensor logging.
   - What it does: Opens the site in your browser: `https://github.com/CXWorld/CapFrameX/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-#### 10.8 Audio
+#### 11.8 Audio
 
 - **Download SoundSwitch (hotkey audio device switcher)** (`download-soundswitch` · link · from Max.mov's guide)
   - Description: SoundSwitch lets you switch between audio output and input devices with a configurable keyboard shortcut.
   - What it does: Opens the site in your browser: `https://github.com/Belphemur/SoundSwitch/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 
-#### 10.9 Gaming & Account Switching
+#### 11.9 Gaming & Account Switching
 
 - **Download TcNo Account Switcher** (`download-tcno-account-switcher` · link · from Max.mov's guide · side road)
   - Description: Multi-account switcher for Steam, Epic Games, EA, Origin, Riot, Ubisoft, and more.
   - What it does: Opens the site in your browser: `https://github.com/TCNOco/TcNo-Acc-Switcher/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download Fan Control (cooling management)** (`download-fan-control-recommended` · link · from Max.mov's guide)
   - Description: Fan Control provides detailed fan curve configuration for system cooling. Listed here as a general recommended program.
   - What it does: Opens the site in your browser: `https://github.com/Rem0o/FanControl.Releases/releases`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, PORTABLE, SITE
 - **Download qBittorrent (torrent client)** (`download-qbittorrent` · link)
   - Description: Free, open-source torrent client without bundled adware. Full-featured with search, RSS, and sequential download.
   - What it does: Opens the site in your browser: `https://www.qbittorrent.org/download`
-  - Buttons: OPEN
+  - Buttons: INSTALL, INSTALLER, SITE
 
-#### 10.10 Smartphone + PC Ecosystem
+#### 11.10 Smartphone + PC Ecosystem
 
 - **Phone Link — Microsoft ecosystem for Android** (`smartphone-pc-phone-link` · manual step · from Max.mov's guide)
-  - Description: Microsoft Phone Link integrates your Android phone with Windows: shared clipboard, notifications, calls, and file transfer. See Section 4 for full setup instructions.
+  - Description: Microsoft Phone Link integrates your Android phone with Windows: shared clipboard, notifications, calls, and file transfer. See Section 5 for full setup instructions.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: For full setup instructions refer to Section 4 (Windows Settings) → Phone Link subsection.
+  - Instruction: For full setup instructions refer to Section 5 (Windows Settings) → Phone Link subsection.
 - **Download KDE Connect (cross-platform phone/PC integration)** (`download-kde-connect` · link)
   - Description: KDE Connect provides clipboard sync, file transfer, notifications, and remote input between Windows and Android/Linux. Open-source alternative to Phone Link.
   - What it does: Opens the site in your browser: `https://kdeconnect.kde.org/`
-  - Buttons: OPEN
+  - Buttons: INSTALLER, SITE
 - **Download Plain App (self-hosted phone/PC bridge)** (`download-plain-app` · link)
   - Description: Plain App is an open-source Android app that exposes your phone as a local web server for file management, clipboard sync, and SMS from your PC browser. No cloud account needed.
   - What it does: Opens the site in your browser: `https://github.com/ismartcoding/plain-app/tags`
   - Buttons: OPEN
 
-### 11. Mouse & Keyboard Settings
+### 12. Mouse & Keyboard Settings
 
-#### 11.0 Mouse Settings
+#### 12.0 Mouse Settings
 
 - **Gaming mouse myths — 8000 Hz polling, high DPI, mouse acceleration (YouTube)** (`mouse-myths-guide` · link · from Max.mov's guide · side road)
   - Description: Video guide debunking common gaming mouse myths: ultra-high polling rates, high DPI advantages, and mouse acceleration effects. Helps understand what settings actually matter for gaming.
@@ -1677,16 +1796,16 @@ A subsection of Max.mov's guide.
   - What it does: Opens the site in your browser: `https://t.me/allp1ay/1211`
   - Buttons: OPEN
 
-#### 11.1 Keyboard Settings
+#### 12.1 Keyboard Settings
 
 - **Magnetic keyboard setup guide — Rapid Trigger, actuation point, Snap Tap, etc. (YouTube)** (`magnetic-keyboard-guide` · link · from Max.mov's guide · side road)
   - Description: Video guide for configuring Hall-effect / magnetic keyboards: Rapid Trigger, actuation height, Snap Tap (simultaneous opposite directions), and other advanced features.
   - What it does: Opens the site in your browser: `https://www.youtube.com/@MAXiM0V/videos`
   - Buttons: OPEN
 
-### 12. Max.mov Tweaks
+### 13. Max.mov Tweaks
 
-#### 12.0 Max.mov Hub
+#### 13.0 Max.mov Hub
 
 - **What belongs in Max.mov Tweaks** (`maxmov-what-is-this` · manual step · side road)
   - Description: A separate place for the Max.mov pack: profiles, wallpapers, cursor packs, personalization files, and community gaming notes.
@@ -1703,7 +1822,7 @@ A subsection of Max.mov's guide.
   - Buttons: OPEN RESOURCES
   - Note: Direct action: opens the local Max.mov resources folder.
 
-#### 12.1 Profiles & Presets
+#### 13.1 Profiles & Presets
 
 - **Open local personalization pack** (`maxmov-open-personalization-pack` · script · side road)
   - Description: Opens the local Max.mov personalization area with cursor packs, icons, wallpapers, and visual presets.
@@ -1724,7 +1843,7 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: If an old Max.mov operation is useful, convert it into a manifest card with PS-native Apply/Detect/Revert logic first. Do not restore legacy scripts as clickable files inside the resources folder.
 
-#### 12.2 Wallpapers, Cursors & Visuals
+#### 13.2 Wallpapers, Cursors & Visuals
 
 - **Open local wallpapers/cursors** (`maxmov-open-wallpapers-cursors` · script · side road)
   - Description: Opens the local Max.mov visual assets area with .cur/.ani cursors and image files.
@@ -1740,7 +1859,7 @@ A subsection of Max.mov's guide.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Copy the wallpapers you want to keep into your user Pictures or Wallpapers folder, then open Settings -> Personalization -> Background and select the image or slideshow folder.
 
-#### 12.3 Gaming Pack
+#### 13.3 Gaming Pack
 
 - **Open local Gaming resources** (`maxmov-open-gaming-folder` · script · side road)
   - Description: Opens the local Max.mov gaming resources folder with launcher notes, Timer Resolution notes, and FPS/latency notes.
