@@ -1,6 +1,6 @@
 {
   "schema": "audion.build_licenses.components.v1",
-  "generated_utc": "2026-09-27T19:43:36Z",
+  "generated_utc": "2026-09-28T07:58:25Z",
   "project_id": "audion-setup-tools",
   "project_name": "Audion Setup Tools",
   "scan_root": ".",
@@ -15,7 +15,7 @@
       "bundled": true,
       "optional_runtime": false,
       "provider": "",
-      "artifact_sha256": "e399860ca20743d959f636155eb4d19fdae08915b3622b86d54676e2beb05ee2",
+      "artifact_sha256": "179a73c9fe6855dd72c4cb7a49bb541d7446089dc9a84b91037bd427dd803fbf",
       "artifact_path": "Start.exe",
       "obligation_class": "permissive",
       "redistributable": true,

@@ -1,7 +1,7 @@
 # Audion Build Licenses Scan Report
 
 - Project: **Audion Setup Tools** (`audion-setup-tools`)
-- Run: `20260927T194336Z_audion-setup-tools_1d601691`
+- Run: `20260928T075824Z_audion-setup-tools_de2633c1`
 - Scan root (from the project root): `.`
 - Output (from the project root): `licenses`
 - Status: **PASS**
