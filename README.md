@@ -8,14 +8,15 @@
   <a href="https://github.com/Tensionix/setup-tools/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/setup-tools?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
 </p>
 
-**Version 2.3.2** · 2026-09-28 · 88.2 MB
+**Version 2.3.3** · 2026-09-28 · 88.2 MB
 
-- [Direct download](https://audion.dev/get/setup-tools/2.3.2/Audion_Setup_Tools_v2.3.2_Full.zip) — unmetered, no rate limits
+- [Direct download](https://dl.audion.dev/setup-tools/2.3.3/Audion_Setup_Tools_v2.3.3_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/setup-tools) — every version and how to install
+- [GitHub release](https://github.com/Tensionix/setup-tools/releases/tag/v2.3.3)
 
 <p align="center"><img src="Docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: 24eb08ec277f21c9dd9dec650695175262aaa587c32577e5bc8f5055a9091779`
+`SHA-256: 31a39a585c1302c799addf74b31879444e6a48edb1b48c2b75703984b7cfa3aa`
 
 ---
 
