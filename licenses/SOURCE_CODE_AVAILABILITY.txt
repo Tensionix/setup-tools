@@ -8,6 +8,18 @@ record and does not replace review of the applicable license terms.
 
 BUNDLED COMPONENTS WITH SOURCE REFERENCES
 --------------------------------------------------------------------------------
+Component: Inter
+Version/profile: 3.019
+Method: upstream
+version: 3.019
+url: https://github.com/rsms/inter
+
+Component: JetBrains Mono
+Version/profile: 2.211
+Method: upstream
+version: 2.211
+url: https://github.com/JetBrains/JetBrainsMono
+
 Component: Lucide
 Version/profile: 1.48.0
 Method: upstream

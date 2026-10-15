@@ -13,6 +13,32 @@
     ]
   },
   {
+    "name": "Inter",
+    "version": "3.019",
+    "license": "OFL-1.1",
+    "source": "embedded-asset",
+    "license_files": [
+      "licenses/THIRD_PARTY_NOTICES.txt"
+    ],
+    "license_fingerprint": "64c6abff57f3c23b88e6b7a326ae5cfa1147609bc47ee7d1f8250a693ee96b3c",
+    "legal_document_hashes": [
+      "5cfd4b1a4302f0828b4d2756b7927f37008767a0f1ec2c30f1238cbc9c43fdea"
+    ]
+  },
+  {
+    "name": "JetBrains Mono",
+    "version": "2.211",
+    "license": "OFL-1.1",
+    "source": "embedded-asset",
+    "license_files": [
+      "licenses/THIRD_PARTY_NOTICES.txt"
+    ],
+    "license_fingerprint": "c7facead91bc38a824f1473566f7815f8eff2175ca1fec767c28eb611a65f129",
+    "legal_document_hashes": [
+      "c1ab7c666206842a02b35b30770dac0d7a10156ed401c9defc3f02a754d89e90"
+    ]
+  },
+  {
     "name": "Lucide",
     "version": "1.48.0",
     "license": "ISC AND MIT",
