@@ -1,7 +1,7 @@
 {
   "schema": "audion.build_licenses.pack_manifest.v1",
-  "generated_utc": "2026-10-15T23:23:20Z",
-  "run_id": "20261015T232319Z_audion-setup-tools_9b04f49d",
+  "generated_utc": "2026-10-29T01:23:15Z",
+  "run_id": "20261029T012315Z_audion-setup-tools_6c638159",
   "project_id": "audion-setup-tools",
   "project_name": "Audion Setup Tools",
   "scan_root": ".",
@@ -19,7 +19,7 @@
     },
     {
       "name": "COMPONENTS.json",
-      "sha256": "51e976e9375a0db1dfe94abf103adbab5cb3c2c59d617abb5af28f150aaa4e32",
+      "sha256": "f027ef4045db8b8a63bf4d3c5dd4b34488faaa38ad568ce79c5f988af5c6781d",
       "size": 7993
     },
     {
@@ -29,8 +29,8 @@
     },
     {
       "name": "LICENSE_SCAN_REPORT.md",
-      "sha256": "938aad1bfa86fa6aecc78e307d01d004302c2aff30fe3b47735768d0ac64fdf8",
-      "size": 1169
+      "sha256": "e5c9fb941f171b6da245f3532dc1fb9d49ec9d92b492590be5db4c476268da9b",
+      "size": 1104
     }
   ]
 }

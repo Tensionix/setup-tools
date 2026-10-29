@@ -136,7 +136,7 @@ Audion Setup Tools/
 ## Complete Section And Function Map
 
 <!-- card-map:start -->
-Built from the manifests by `Docs\tools\Build-GuideMap.ps1` - not edited by hand. Sections 14, subsections 90, cards 333. Kinds: deeplink=59, docs=1, feature=1, link=137, manual=74, powerscheme=9, registry=17, script=34, service=1.
+Built from the manifests by `Docs\tools\Build-GuideMap.ps1` - not edited by hand. Sections 14, subsections 90, cards 349. Kinds: deeplink=59, docs=1, feature=1, link=144, manual=81, powerscheme=9, registry=17, script=36, service=1.
 
 ### 0. Windows Installation
 
@@ -184,11 +184,11 @@ A subsection of Max.mov's guide.
   - What it does: Opens the site in your browser: `https://www.nvidia.com/en-us/drivers/`
   - Buttons: VERSIONS, SITE
 - **Download AMD GPU driver** (`download-amd-driver-prep` · link · from Max.mov's guide)
-  - Description: Official AMD driver download page. Download the latest Adrenalin driver for your GPU.
+  - Description: Official AMD driver download page. Download the latest Adrenalin driver for your GPU. VERSIONS lists the packages for this PC's Radeon: every release for RX 7000 / RX 9000, the combined packages for RX 5000 / RX 6000; the driver of RX 400 / RX 500 and Vega is on AMD's page only.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
   - Buttons: VERSIONS, SITE
 - **Download Intel GPU / Arc driver (site availability varies by region)** (`download-intel-gpu-driver-prep` · link)
-  - Description: Official Intel driver download center. Download the Intel graphics driver for your iGPU or Arc GPU.
+  - Description: Official Intel driver download center. Download the Intel graphics driver for your iGPU or Arc GPU. VERSIONS lists the driver line of this PC's Intel graphics: Arc and Core Ultra, Core 11th-14th gen or Core 7th-10th gen.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download-center/home.html`
   - Buttons: VERSIONS, SITE
 - **Move driver installers to a USB drive or separate partition** (`move-drivers-to-usb` · manual step · **ESSENTIAL** · from Max.mov's guide)
@@ -224,6 +224,10 @@ A subsection of Max.mov's guide.
   - Description: If your network adapter is from Broadcom, Realtek, or Intel Killer and is not recognized after install, search for the driver on the manufacturer website or use the motherboard support page.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: If Windows Update does not install your LAN/Wi-Fi driver automatically, download it from: Realtek — realtek.com, Broadcom — broadcom.com, Intel Killer — killer.intel.com. Or search for it by adapter model in Device Manager.
+- **Realtek audio drivers** (`download-realtek-audio-site` · link · from Max.mov's guide)
+  - Description: The driver of the Realtek audio codec for the drive with the other drivers - from the Microsoft Update Catalog, as Windows Update gives it, or from the Realtek site. realtek.com can be very slow: then take the audio driver from the support page of the motherboard maker.
+  - What it does: Opens the site in your browser: `https://www.realtek.com/Download/List?cate_id=593`
+  - Buttons: VERSIONS, SITE
 
 #### 0.3 Create Installation Media
 
@@ -247,6 +251,15 @@ A subsection of Max.mov's guide.
   - Description: Use Rufus to write the Windows 11 ISO to a USB flash drive. In Rufus, select the ISO file, choose the target USB drive, and click Start. Use GPT partition scheme for UEFI systems.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: 1. Open Rufus. 2. Select your USB drive (8GB+). 3. Click "SELECT" and choose the Windows 11 ISO. 4. Partition scheme: GPT. Target system: UEFI (non-CSM). 5. File system: NTFS. 6. Click START. Wait for completion. The USB drive is now bootable.
+- **Download Ventoy (a USB drive for ISO images)** (`download-ventoy-install` · link · from Max.mov's guide · side road)
+  - Description: Another way to make the installation drive: Ventoy goes onto the USB drive once, and then every ISO copied onto it boots - Windows 11 beside other images, with the drivers and the guide on the same drive.
+  - What it does: Opens the site in your browser: `https://github.com/ventoy/Ventoy/releases`
+  - Buttons: PORTABLE, SITE
+- **Create a Ventoy USB drive** (`create-ventoy-drive` · manual step · from Max.mov's guide · side road)
+  - Description: Ventoy2Disk erases the chosen USB drive and makes it bootable: ISO images lie on it as plain files and boot from the Ventoy menu. With Secure Boot on, the first boot asks once to enroll the key of Ventoy.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Buttons: OPEN SITE
+  - Instruction: 1. Unpack the Windows zip of Ventoy and run Ventoy2Disk.exe. 2. Choose the USB drive - everything on it is erased. 3. Option: Secure Boot Support on, Partition Style GPT (an old PC without UEFI: Secure Boot Support off, MBR). 4. Install, confirm twice. 5. Copy the Windows 11 ISO, the drivers and the guide onto the drive as plain files. 6. With Secure Boot on, the first boot from it shows the blue MOK management screen: OK, Enroll key from disk, VTOYEFI, ENROLL_THIS_KEY_IN_MOK_MANAGER, Continue, Yes, reboot; then choose the image in Ventoy and Boot in normal mode. OPEN SITE shows these steps with pictures - keep them on your phone.
 
 #### 0.4 Install Without USB
 
@@ -339,6 +352,14 @@ A subsection of Max.mov's guide.
 INSTALL WITHOUT USB (no-USB method): If you return to the install screen, try entering BIOS and changing the UEFI Hard Drive BBS Priorities to put the correct Windows partition first (e.g. MSI BIOS → Settings → Boot → UEFI Hard Drive BBS Priorities).
 
 If BIOS does not allow changing partition priority (common on MSI laptops): press Shift+F10 at the install screen to open CMD. Run: diskpart → list vol → select vol N (where N is the ~12GB Win11 partition) → delete vol. Reboot. Windows will then boot from the installed partition. Note: this deletes the install partition — download any needed files from another PC or phone before reconnecting to the internet.
+- **Windows 11 26H2: worth installing, the guide is current** (`win11-26h2-guide-current` · manual step · from Max.mov's guide)
+  - Description: Max.mov in guide 0.5: 26H2 is worth installing - he used it a month before the release, and everything works. His video stays current and the guide files are updated for 26H2; where the video and the files disagree, follow the files. The cards of this program follow guide 0.5.
+  - What it does: A manual step: the program changes nothing, you do it.
+- **The language of Windows: Russian or English** (`install-language-choice` · manual step · restart · from Max.mov's guide)
+  - Description: The Russian translation of Windows 11 has grown worse; if you know English well, the English Windows is a good choice. Do not install it if you do not know English and may want Russian back. Programs in Russian on the English Windows, or after going back to Russian, may show garbled characters instead of text - the setting below fixes it.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: Garbled characters instead of Russian: OPEN IN WINDOWS opens Region - Administrative tab, Change system locale: choose Russian (Russia), tick Beta: Use Unicode UTF-8 for worldwide language support, then restart the PC.
 
 #### 0.8 New Driver Install Method & MS Account Bypass
 
@@ -439,10 +460,18 @@ A subsection of Max.mov's guide.
 
 A subsection of Max.mov's guide.
 
-- **Download official AMD graphics driver** (`download-amd-driver` · link)
-  - Description: Official AMD Drivers and Support page. Use it for Radeon graphics, Ryzen processors with graphics, and the AMD auto-detect tool.
+- **Download AMD Radeon RX 7000 / RX 9000 driver (RDNA 3 and 4)** (`download-amd-driver` · link)
+  - Description: Radeon RX 7000 and RX 9000 and the Radeon 7xxM / 8xxM graphics of Ryzen: every Adrenalin release. Since October 2025 RX 5000 and RX 6000 take only the combined package of a release, and Polaris and Vega have a legacy driver of their own - the cards below.
   - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
   - Buttons: VERSIONS, SITE
+- **Download AMD Radeon RX 5000 / RX 6000 driver (RDNA 1 and 2)** (`download-amd-driver-rdna1-2` · link)
+  - Description: Radeon RX 5000 and RX 6000 and the Radeon 6xxM graphics of Ryzen 6000 / 7000: the combined package of a release (TechPowerUp marks it "For older GPUs"); some releases come out for RDNA 3 and 4 only. AMD keeps these cards in maintenance mode since October 2025; fixes and the support of new games come in the combined package.
+  - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
+  - Buttons: VERSIONS, SITE
+- **Download AMD Radeon RX 400 / RX 500 / Vega driver (Polaris and Vega)** (`download-amd-driver-polaris-vega` · link)
+  - Description: Radeon RX 400 and RX 500, RX Vega, Radeon VII and the Vega graphics of Ryzen up to 5000: a legacy driver of their own since November 2023, released now and then; the usual Adrenalin does not install on them. TechPowerUp does not carry it - pick the card on AMD's page, or let AMD Auto-Detect find it.
+  - What it does: Opens the site in your browser: `https://www.amd.com/en/support/download/drivers.html`
+  - Buttons: OPEN
 - **Install AMD graphics/chipset drivers** (`install-amd-drivers` · manual step · administrator · restart · **ESSENTIAL**)
   - Description: Install AMD graphics and chipset packages from the official AMD page or from your motherboard/laptop support page.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -452,9 +481,17 @@ A subsection of Max.mov's guide.
 
 A subsection of Max.mov's guide.
 
-- **Download Intel Arc / integrated graphics driver** (`download-intel-graphics-driver` · link)
-  - Description: Official Intel Arc and Intel integrated graphics driver page for Windows.
+- **Download Intel Arc / Core Ultra graphics driver** (`download-intel-graphics-driver` · link)
+  - Description: Intel Arc graphics cards and the graphics of Core Ultra processors: drivers 101.8xxx and newer. Since September 2025 the graphics of Core 11th-14th gen and of Core 7th-10th gen have driver lines of their own - the cards below.
   - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/785597/intel-arc-graphics-windows.html`
+  - Buttons: VERSIONS, SITE
+- **Download Intel Core 11th-14th gen graphics driver** (`download-intel-graphics-driver-core11-14` · link)
+  - Description: Iris Xe and UHD 7xx graphics of Core 11th-14th gen processors: drivers 101.7xxx. Intel keeps them on legacy support since September 2025 - fixes of critical bugs and vulnerabilities, about once a quarter.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/864990/intel-11th-14th-gen-processor-graphics-windows.html`
+  - Buttons: VERSIONS, SITE
+- **Download Intel Core 7th-10th gen graphics driver** (`download-intel-graphics-driver-core7-10` · link)
+  - Description: HD / UHD 6xx and Iris Plus graphics of Core 7th-10th gen processors and of the Pentium, Celeron and Atom of those years: drivers 101.2xxx, legacy support. The 6th gen (HD 5xx) is on none of the lines - its driver comes from the maker of the laptop or the board.
+  - What it does: Opens the site in your browser: `https://www.intel.com/content/www/us/en/download/776137/intel-7th-10th-gen-processor-graphics-windows.html`
   - Buttons: VERSIONS, SITE
 
 #### 1.5 Graphics cards · Qualcomm Snapdragon
@@ -730,6 +767,16 @@ A subsection of Max.mov's guide.
   - Description: Open the Users folder in Explorer, then right-click each shell folder (Desktop, Documents, etc.) → Properties → Location to redirect them to the new drive.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Navigate to C:\Users\YourName\. Right-click Desktop → Properties → Location tab → Move → select D:\User\Desktop. Repeat for Documents, Downloads, Music, Pictures, Videos.
+- **Move AppData\Roaming to the second drive** (`move-appdata-roaming` · manual step · restart · from Max.mov's guide)
+  - Description: AppData grows fat and keeps the data of many programs, the saves of games among them. The whole AppData cannot be moved without errors, but Roaming can - the same way as the libraries. Local and LocalLow stay where they are.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Buttons: OPEN IN WINDOWS
+  - Instruction: 1. Make the folder D:\User\AppData\Roaming (the User folder of the guide has it already). 2. OPEN IN WINDOWS opens Roaming: go one level up, right-click Roaming, Properties, Location, Move, choose the new folder; close the programs that use it if asked. 3. Restart the PC and delete the old Roaming folder if it is left.
+- **Move big folders out of AppData\Local by symbolic links** (`appdata-local-symlinks` · manual step · administrator · from Max.mov's guide · side road)
+  - Description: Local grows fast: the shader cache of the video driver and Temp live there. Local cannot be moved whole, but big folders inside it (NVIDIA, for one) can - to D:\User\AppData\Local, with a symbolic link left in the old place, so programs still find them there. LocalLow stays small - leave it.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Buttons: PORTABLE, SITE
+  - Instruction: 1. Close the program whose folder you move. 2. Move the folder (for example %LOCALAPPDATA%\NVIDIA) into D:\User\AppData\Local - no folder of this name may stay in the old Local. 3. Unpack Symlink Creator and run SymlinkCreator.Launcher.exe. 4. On the left, Add Folder: the moved folder (D:\User\AppData\Local\NVIDIA); on the right, Destination path: the old Local (C:\Users\<name>\AppData\Local). 5. Create symlinks. In the old Local the folder shows with a shortcut arrow; a file made in it lands in the new place.
 - **Relocate user folders to C:\<username>\ (script)** (`relocate-user-folders-to-root` · script · **CAREFUL** · side road)
   - Description: Creates C:\<username>\Desktop|Documents|Music|Pictures|Videos and writes legacy User Shell Folders registry keys. On Windows 11 the KnownFolders API may override these; sign out and back in to let Explorer pick up the change. Marked unofficial — test before relying on it.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
@@ -788,10 +835,10 @@ A subsection of Max.mov's guide.
 A subsection of Max.mov's guide.
 
 - **Configure Microsoft Edge settings** (`configure-edge` · Windows page)
-  - Description: Open Edge settings page to disable telemetry, personalisation, shopping features, and configure startup behaviour.
-  - What it does: Opens in Windows: `microsoft-edge:settings/privacy`
+  - Description: Open Edge and its settings to disable telemetry, personalisation, shopping features, and configure startup behaviour. Edge lets no other program open its settings pages: the address is typed in its address bar.
+  - What it does: Opens in Windows: `microsoft-edge:`
   - Buttons: OPEN IN WINDOWS
-  - Instruction: Disable all telemetry and personalisation toggles. Under Privacy, search, and services → disable Help improve Microsoft products. Under New tab page → turn off news feed.
+  - Instruction: In the address bar of Edge type edge://settings/privacy and press Enter. Disable all telemetry and personalisation toggles. Under Privacy, search, and services → disable Help improve Microsoft products. Under New tab page → turn off news feed.
 - **Configure sound devices & default playback** (`configure-sound` · manual step)
   - Description: Open Windows Sound control panel to set default playback and recording devices.
   - What it does: A manual step: the program changes nothing, you do it.
@@ -886,6 +933,11 @@ A subsection of Max.mov's guide.
   - What it does: Opens in Windows: `shell:::{ED7BA470-8E54-465E-825C-99712043E01C}`
   - Buttons: OPEN IN WINDOWS
   - Instruction: Set view preferences and show hidden/system files as desired.
+- **Explorer tabs instead of windows (ExplorerTabUtility, optional)** (`explorer-tabs-utility` · manual step · from Max.mov's guide · side road)
+  - Description: The ViVeTool code that turned on the own option of Windows - opening folder links in new Explorer tabs - was removed by Microsoft in 2026. ExplorerTabUtility does it: folder links and Win+E open as tabs of the open window, with browser-like keys (Ctrl+D, Ctrl+Shift+T) and your own.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Buttons: INSTALLER, PORTABLE, SITE
+  - Instruction: 1. PORTABLE downloads the zip for x64 - move the ExplorerTabUtility folder into Apps. 2. Run ExplorerTabUtility. 3. In its tray menu tick Add to startup and turn Windows Hook off. 4. Its settings window shows the shortcuts and takes your own.
 - **PowerToys — keyboard shortcut remapping** (`explorer-powertoys-keybindings` · link)
   - Description: Download Microsoft PowerToys for advanced keyboard shortcuts and utilities.
   - What it does: Opens the site in your browser: `https://github.com/microsoft/PowerToys/releases`
@@ -1044,6 +1096,10 @@ A subsection of Max.mov's guide.
   - Description: Apply an ICC color profile for accurate color reproduction on your monitor.
   - What it does: A manual step: the program changes nothing, you do it.
   - Instruction: Download your monitor ICC profile from the manufacturer, from Windows Update (optional updates) or rtings.com - its reviews are paid now, older ones open through archive.org - then open Color Management (colorcpl.exe), select your display, check "Use my settings for this device" and add the profile.
+- **Keep the properties of sound devices after a restart** (`devices-audio-restart-at-logon` · script · administrator · restart · from Max.mov's guide · side road)
+  - Description: In current Windows 11 builds the properties of sound devices do not survive a restart: enhancements or Listen to this device look ticked but do not work until ticked again. A restart of the Windows Audio service fixes it - this card has Windows do it at every sign-in by the Task Scheduler task Audion Audio Restart, as the .bat of the guide does. Turning it off removes the task.
+  - What it does: A script from the manifest. Its state is checked. It has a way back.
+  - Buttons: APPLY, REVERT
 
 #### 5.6 USB Power Management
 
@@ -1132,8 +1188,8 @@ A subsection of Max.mov's guide.
   - Buttons: OPEN IN WINDOWS
   - Instruction: Set preferred DNS server to a fast provider (e.g. 1.1.1.1 / 1.0.0.1 or 8.8.8.8 / 8.8.4.4). Run DNSBench to find fastest DNS for your location.
 - **DNS Benchmark — find fastest DNS for your ISP** (`network-dnsbench` · link)
-  - Description: GRC DNSBench tests all known DNS resolvers and ranks them by speed from your location. The free version is on the GRC freeware page.
-  - What it does: Opens the site in your browser: `https://www.grc.com/freepopular.htm`
+  - Description: GRC DNS Benchmark tests the known DNS resolvers and ranks them by speed from your location. GRC made it paid, so the guide links to its page on comss.ru - or find another source.
+  - What it does: Opens the site in your browser: `https://www.comss.ru/page.php?id=7464`
   - Buttons: OPEN
 - **Disable Cross-Device sync (if not needed)** (`network-cross-device` · Windows page)
   - Description: Turns off phone link and cross-device experience if you do not use them.
@@ -1182,7 +1238,7 @@ A subsection of Max.mov's guide.
 
 #### 5.12 More Personalization
 
-Switches: 6 - the subsection head has APPLY ALL and REVERT ALL.
+Switches: 7 - the subsection head has APPLY ALL and REVERT ALL.
 
 - **Classic right-click context menu (Win10 style)** (`personalization-classic-context-menu` · script · from Max.mov's guide · side road)
   - Description: Restores the full one-level context menu. Removes the "Show more options" extra click introduced in Win11.
@@ -1205,17 +1261,22 @@ Switches: 6 - the subsection head has APPLY ALL and REVERT ALL.
   - What it does: A script from the manifest. Its state is checked. It has a way back.
   - Buttons: APPLY, REVERT
 - **ViVeTool — download (GitHub releases)** (`download-vivetool-personalization` · link · side road)
-  - Description: Tool for enabling undocumented Windows feature flags via A/B experiment IDs. Required for unlocking 25H2 and other experimental features.
+  - Description: Tool for enabling undocumented Windows feature flags via A/B experiment IDs. Required for unlocking 26H2 and other experimental features.
   - What it does: Opens the site in your browser: `https://github.com/thebookisclosed/ViVe/releases`
   - Buttons: PORTABLE, SITE
-- **Enable 25H2 feature flags (ViVeTool)** (`personalization-25h2-features` · manual step · administrator · restart · **CAREFUL** · side road)
-  - Description: Unlock experimental features for Win11 25H2 using ViVeTool. This is an unofficial tool that manipulates undocumented A/B feature flags.
+- **Enable the new features of 26H2 (ViVeTool)** (`personalization-25h2-features` · manual step · administrator · restart · **CAREFUL** · from Max.mov's guide · side road)
+  - Description: 25H2 and 26H2 bring new settings - moving and resizing the taskbar (not with auto-hide), a small or a large Start - but they turn on in waves: one build has them on one PC and not yet on another. ViVeTool turns them on now. Unofficial: undocumented A/B feature flags.
   - What it does: A manual step: the program changes nothing, you do it.
-  - Instruction: Codes of the guide, current on 03.05.2026 for build 26200.8328 - they change from build to build. In an admin Command Prompt in the ViVeTool folder: vivetool /enable /id:CODES, then restart; undo - vivetool /disable /id:CODES. Explorer preload 58778013; restore Explorer tabs 54572881; links in tabs of one window 49453572,49143212,48433719; new Start 47205210; Xbox full screen experience 59765208; dark theme base 49453572,48433719,58383338; dark Run (Win+R) 59270880; dark Explorer options 59203365; dark file operation dialogs 57857165,57994323. Taskbar auto-hide animation (41356296,48433719) is broken on 8328.
+  - Buttons: OPEN SITE
+  - Instruction: Codes go stale fast - take them from the packs of guide 0.5 (itstechbased.com): OPEN SITE - the pack of the October 2026 update (build 26300.9807, KB5127936); the first one - itstechbased.com/how-to-enable-all-new-features-in-windows-11-26h2-official-release/. In an admin Command Prompt in the ViVeTool folder: vivetool /enable /id:CODES, then restart; undo - vivetool /disable /id:CODES (a feature that was on before you may break when turned off). The smooth taskbar animation is a card of its own.
 - **Compact (Tablet) Taskbar mode** (`personalization-compact-taskbar` · registry switch · from Max.mov's guide · side road)
-  - Description: Reduces taskbar icon size and spacing via registry. Restart Explorer (or sign out) to apply.
+  - Description: Reduces taskbar icon size and spacing via registry. Restart Explorer (or sign out) to apply. The guide's old way to the smooth taskbar animation; the current one is the next card.
   - What it does: Writes the registry: `HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer` / `TabletPostureTaskbar` = `1` (DWord). REVERT puts back the previous value from the backup. WINDOWS DEFAULT removes the value.
   - Buttons: APPLY, REVERT (after this program applied it), WINDOWS DEFAULT (when the value is not the default)
+- **Smooth taskbar animation (auto-hide)** (`personalization-taskbar-animation` · script · administrator · restart · from Max.mov's guide · side road)
+  - Description: Brings back the smooth animation of the auto-hiding taskbar that later builds rolled back - by the feature override of the .bat of guide 0.5 (FeatureManagement 276172940). Restart the PC, then turn auto-hide on in the taskbar settings; it works only with the taskbar at the bottom. Turn off showing flashing on taskbar apps too, or the taskbar may stay open.
+  - What it does: A script from the manifest. Its state is checked. It has a way back.
+  - Buttons: APPLY, OPEN IN WINDOWS, REVERT
 - **Auto Dark/Light theme switching (PowerToys)** (`personalization-auto-dark-mode` · link · from Max.mov's guide)
   - Description: PowerToys has the Light Switch module: it switches the Windows theme on a schedule or at sunrise and sunset (it replaced the separate AutoDarkMode app).
   - What it does: Opens the site in your browser: `https://github.com/microsoft/PowerToys/releases`
@@ -1239,9 +1300,9 @@ A subsection of Max.mov's guide.
 
 - **Disable background app activity** (`apps-background-apps` · Windows page)
   - Description: Prevent apps from running and updating data in the background.
-  - What it does: Opens in Windows: `ms-settings:privacy-backgroundapps`
+  - What it does: Opens in Windows: `ms-settings:appsfeatures`
   - Buttons: OPEN IN WINDOWS
-  - Instruction: For each app, disable background access or set to "Power optimized".
+  - Instruction: Windows 11 has no common page for this: in Installed apps press ... at an app, then Advanced options, and under Background apps permissions choose Never or Power optimized.
 - **Disable transfer between devices & backup** (`apps-cross-device` · Windows page)
   - Description: Turns off cross-device transfer and app backup to Microsoft account.
   - What it does: Opens in Windows: `ms-settings:advanced-apps`
@@ -1405,6 +1466,11 @@ A subsection of Max.mov's guide.
   - Description: Online guide for configuring a VRR monitor with G-Sync or FreeSync. Includes correct G-Sync mode selection.
   - What it does: Opens the site in your browser: `https://andrilaz.github.io/vrr`
   - Buttons: OPEN
+- **On the monitor itself: Overdrive and Backlight Strobing** (`monitor-overdrive-strobing` · manual step · from Max.mov's guide · side road)
+  - Description: Overdrive (response time, OD) trades latency for trails: it pushes a pixel past its target and back - fewer trails behind moving objects, but too much of it draws trails and wrong colours in front of them. Backlight Strobing (BFI, DyAC and other names) flickers the backlight at every refresh to take away motion blur: it cannot lower latency, adds some, does not work with VRR and tires the eyes - a cosmetic feature, not an esports one.
+  - What it does: A manual step: the program changes nothing, you do it.
+  - Buttons: OPEN SITE
+  - Instruction: Overdrive: on the TestUFO page (OPEN SITE) go through the levels in the monitor menu and keep the one with the fewest trails on both sides of the UFO. Backlight Strobing: leave it off - the lowest latency is strobing off and FPS unlocked. Try it only on a high refresh monitor in a game far above the refresh rate (360 Hz and a steady 600-800 FPS), if blur bothers you and the flicker does not; at 290-400 FPS on 360 Hz, VRR (G-Sync + V-Sync + Reflex) is better.
 
 #### 6.2 Nvidia Settings
 
@@ -1709,7 +1775,7 @@ A subsection of Max.mov's guide.
 #### 11.3 File Management
 
 - **Download ExplorerTabUtility (improved Explorer tabs)** (`download-explorer-tab-utility` · link · from Max.mov's guide · side road)
-  - Description: ExplorerTabUtility forces all Explorer windows to open as tabs instead of new windows. Adds browser-like tab shortcuts (Ctrl+D, Ctrl+Shift+T). On Windows 25H2+, the built-in option "open folders in new tab" already covers most cases, but ETU still adds hotkey support.
+  - Description: ExplorerTabUtility forces all Explorer windows to open as tabs instead of new windows. Adds browser-like tab shortcuts (Ctrl+D, Ctrl+Shift+T). The ViVeTool code for the own option of Windows (open folder links in new tabs) was removed by Microsoft in 2026, so ETU is the way to it now.
   - What it does: Opens the site in your browser: `https://github.com/w4po/ExplorerTabUtility/releases`
   - Buttons: INSTALLER, PORTABLE, SITE
 - **Download Symbolic11 (symlink manager)** (`download-symbolic11` · link · side road)
@@ -1769,6 +1835,10 @@ A subsection of Max.mov's guide.
   - Description: Open-source screen recorder and live streaming software. Supports replay buffers, scene switching, and many plugins.
   - What it does: Opens the site in your browser: `https://github.com/obsproject/obs-studio/releases`
   - Buttons: INSTALLER, PORTABLE, SITE
+- **The OBS setup of Max.mov (early access, Telegram)** (`obs-maxmov-setup` · link · from Max.mov's guide · side road)
+  - Description: How Max.mov sets up OBS - in early access on his Telegram channel.
+  - What it does: Opens the site in your browser: `https://t.me/allp1ay`
+  - Buttons: OPEN
 - **Download 3D YouTube Downloader** (`download-3d-youtube-downloader` · link · side road)
   - Description: Convenient GUI downloader for YouTube, Vimeo, and many other video sites. Supports playlists and various quality options.
   - What it does: Opens the site in your browser: `https://yd.3dyd.com/download/`

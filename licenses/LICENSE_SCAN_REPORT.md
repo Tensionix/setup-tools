@@ -1,7 +1,7 @@
 # Audion Build Licenses Scan Report
 
 - Project: **Audion Setup Tools** (`audion-setup-tools`)
-- Run: `20261015T232319Z_audion-setup-tools_9b04f49d`
+- Run: `20261029T012315Z_audion-setup-tools_6c638159`
 - Scan root (from the project root): `.`
 - Output (from the project root): `licenses`
 - Status: **PASS**
@@ -17,9 +17,9 @@ No issues detected.
 
 | Component | Change | Old | New |
 |---|---|---:|---:|
-| Audion launcher | `VERSION_OR_ARTIFACT_CHANGED_LICENSE_SAME` | bundled | bundled |
-| Inter | `NEW_COMPONENT_APPROVED_PROFILE` | - | 3.019 |
-| JetBrains Mono | `NEW_COMPONENT_APPROVED_PROFILE` | - | 2.211 |
+| Audion launcher | `UNCHANGED` | bundled | bundled |
+| Inter | `UNCHANGED` | 3.019 | 3.019 |
+| JetBrains Mono | `UNCHANGED` | 2.211 | 2.211 |
 | Lucide | `UNCHANGED` | 1.48.0 | 1.48.0 |
 | Simple Icons | `UNCHANGED` | 16.32.0 | 16.32.0 |
 
